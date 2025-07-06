@@ -1,0 +1,213 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+:root{
+    --light-blue: #87CEEB;
+    --dark-blue: #0b6285;
+    --dark-white: #757575;
+    --light-white: #f0f7fa;
+    --dark: #131516;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.roboto-bold {
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700; /* gras */
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+  }
+ul {
+  list-style: none;
+}
+a {
+    text-decoration: none;
+}
+h1,h2,h3 {
+    color : var(--dark);
+}
+h1,h2 {
+    font-weight: 600;
+}
+p {
+    color: var(--dark-white);
+    font-size: 14px;
+}
+/* home start */
+#home {
+    height: 100vh;
+    /* background-color:var(--light-white); */
+    
+}
+#home .navbar{
+    /* position: fixed; */
+    top: 0;
+    width: 100%;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+}
+#home .navbar nav {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+    /* background-color: yellow; */
+    height: 60px;
+    padding: 0 3rem;
+}
+#home .navbar nav ul {
+    display: flex;
+}
+
+#home .navbar nav ul a {
+    position: relative;
+    margin: 0 15px;
+    color: var(--dark);
+    font-weight: 800;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  #home .navbar nav ul a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0);
+    transform-origin: center;
+    width: 100%;
+    height: 2px;
+    background-color: #0b6285;
+    transition: transform 0.3s ease;
+  }
+  
+  #home .navbar nav ul a:hover {
+    color: var(--dark-blue);
+  }
+  
+  #home .navbar nav ul a:hover::after {
+    transform: translateX(-50%) scaleX(1);
+  }
+  
+#home .navbar img {
+    width: 80px;
+}
+
+#home .home-content {
+    display: flex;
+    align-items: center;
+    background: url("/img/homeimg.png") no-repeat center center;
+    background-size: 60%; /* réduit la taille de l’image */
+    background-position: 80% 20%; /* ← ici on décale vers la droite */
+    height: 100vh;
+    
+  }
+  
+ #home .home-content .text {
+    background:none;
+    width: 1000px;
+    margin: auto;
+    padding: 0 2rem;
+
+    
+}
+
+#home .home-content .text h1 {
+    font-size: 50px;
+    /* font-weight:bold; */
+    color: var(--dark);
+    max-width: 600px;
+}
+#home .home-content .text h1 span{
+    color:var(--dark-blue);
+}
+#home .home-content .text p{
+    margin: 10px 0 30px;
+    max-width: 500px;
+    line-height: 1.4;
+} 
+/* button for learn more */
+ 
+button {
+    padding: 15px 25px;
+    border: unset;
+    border-radius: 15px;
+    color: #3b3b3b;
+    z-index: 1;
+    background: rgb(255, 255, 255);
+    position: relative;
+    font-weight: 1000;
+    font-size: 17px;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    transition: all 300ms;
+    overflow: hidden;
+    border: var(--dark-blue) 2px solid;
+    border-radius: 20px;
+   }
+   
+   button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    border-radius: 10px;
+    background-color:var(--dark-blue);
+    z-index: -1;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    transition: all 300ms
+   }
+   
+   button:hover {
+    color: #e8e8e8;
+    cursor: pointer;
+   }
+   
+   button:hover::before {
+    width: 100%;
+   }
+/* fin button for learn more */
+/* home end */
+/* about-content */
+#about {
+    padding: 6rem 0;
+    background-color: var(--light-blue);
+    max-width: 1100px;
+    margin: auto;
+}
+#about .about-content {
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
+    column-gap: 4rem;
+
+}
+#about .about-content h2 {
+    font-size: 25px;
+
+}
+#about .about-content hr {
+    width: 100px;
+    height: 3px;
+    background-color: var(--dark-blue);
+    border: none;
+    margin: 10px 0;
+}
+#about .about-content p{
+    font-size: 16px;
+    margin-bottom: 25px;
+}
+#about .about-content li{
+    margin-bottom: 5px;
+    color: var(--dark-white);
+    font-size: 20px;
+}
+#about .about-content li i {
+    color: var(--dark-blue);
+}
+
+/* fin about-content */
