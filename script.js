@@ -53,3 +53,29 @@ const counterObserver = new IntersectionObserver((entries) => {
 document.querySelectorAll('.stat-number').forEach(counter => {
     counterObserver.observe(counter);
 });
+
+
+ // Incrémenter le compteur de j’aime
+ const likeBtn = document.getElementById('like-btn');
+ const likeCount = document.getElementById('like-count');
+ const heartIcon = document.getElementById('heart-icon');
+
+ let liked = false; // pour empêcher plusieurs clics si nécessaire
+
+likeBtn.addEventListener('click', () => {
+  let current = parseInt(likeCount.textContent);
+  
+ if (!liked) {
+    likeCount.textContent = current + 1;
+    heartIcon.classList.remove('fa-regular');
+    heartIcon.classList.add('fa-solid');
+    liked = true;
+  } else {
+    // Si tu veux que le like soit réversible :
+    likeCount.textContent = current - 1;
+    heartIcon.classList.remove('fa-solid');
+    heartIcon.classList.add('fa-regular');
+    liked = false;
+  }
+ });
+//  ---------------------------------
