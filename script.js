@@ -78,4 +78,23 @@ likeBtn.addEventListener('click', () => {
     liked = false;
   }
  });
-//  ---------------------------------
+//  ----------------empty contact-----------------
+document.querySelector("#submit-contact").addEventListener("submit", (e) => {
+    let inputemail = document.querySelector("#email");
+    let inputtextarea = document.querySelector("#textarea");
+    if (!inputemail.value || !inputtextarea.value) {
+        e.preventDefault(); // Prevent form submission
+        alert("Input contact cannot be empty");
+    }
+});
+// -------------humburger-----------------------------
+const ul=document.querySelector(".navbar nav ul");
+const bars=document.querySelector(".fa-bars");
+const xmark=document.querySelector(".fa-xmark");
+const humbergerMenu=document.querySelector(".humburger");
+humbergerMenu.addEventListener("click",()=>{
+
+    bars.classList.toggle("active");
+    xmark.classList.toggle("active");
+    ul.classList.toggle("active");
+});

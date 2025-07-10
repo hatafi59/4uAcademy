@@ -42,6 +42,9 @@ p {
     /* background-color:var(--light-white); */
     
 }
+.humburger {
+  display: none;
+}
 #home .navbar{
     /* position: fixed; */
     top: 0;
@@ -100,11 +103,59 @@ p {
     display: flex;
     align-items: center;
     background: url("/img/homeimg.png") no-repeat center center;
-    background-size: 60%; /* réduit la taille de l’image */
-    background-position: 80% 20%; /* ← ici on décale vers la droite */
+    background-size: 60%; 
+    background-position: 80% 20%; 
     height: 100vh;
     
   }
+
+@media (max-width: 900px) { 
+  .navbar nav {
+    position: relative;
+  }
+    .humburger{
+      display: block;
+      cursor: pointer;
+      font-size: 25px;
+      width: 45px;
+      height: 45px;
+      position: relative;
+
+    }
+    .humburger i{
+      position: absolute;
+      inset: 0; /* center*/
+      margin: auto;
+      width: max-content;
+      height: max-content;
+      opacity: 0;
+      font-size: xx-large;
+
+    }
+    .humburger i.active{
+      opacity: 1;
+
+    }
+    .navbar nav ul {
+      opacity: 0;
+      position: absolute;
+      background: rgba(21, 130, 177, 0.2); /* Semi-transparent */
+      backdrop-filter: blur(10px); /* Flou */
+      -webkit-backdrop-filter: blur(10px); /* Pour Safari */
+      top:60px;
+      left: 0;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap:1rem;
+      padding: 1rem 3rem;
+    }
+    .navbar nav ul.active{
+      opacity: 1;
+    }
+
+}
   
  #home .home-content .text {
     background:none;
@@ -175,15 +226,23 @@ button {
    }
 /* fin button for learn more */
 /* home end */
+
+
+
 /* about-content */
 #about {
     padding: 3rem 6rem;
     margin: auto;
 }
 #about .about-content {
-    display:grid;
+    /* display:grid;
     grid-template-columns: repeat(2,1fr);
-    column-gap: 4rem;
+    column-gap: 4rem; */
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    justify-items: center;
 
 }
 #about .about-content .leftcol {
