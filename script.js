@@ -87,6 +87,40 @@ document.querySelector("#submit-contact").addEventListener("submit", (e) => {
         alert("Input contact cannot be empty");
     }
 });
+//---------------------valid email-------------
+
+document.querySelector(".form").addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const email = document.getElementById("email").value;
+    const errMsg = document.getElementById("error-message");
+
+    const pattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+
+    if (pattern.test(email)) {
+        errMsg.style.display = "inline";
+        errMsg.textContent ="Form Submitted.";
+        errMsg.style.color = "green";
+        errMsg.style.fontSize = "14px";
+        errMsg.style.marginBottom = "5px";
+        document.querySelector(".form").reset();
+    } else {
+        errMsg.style.display = "inline";
+        errMsg.textContent = "Please enter a valid email address.";
+        errMsg.style.color = "red";
+        errMsg.style.fontSize = "14px";
+        errMsg.style.marginBottom = "5px";
+    }
+    setTimeout(()=>{
+        errMsg.style.display = "none";
+    },3000); //actualiser le msg d"erreur
+    
+});
+
+
+
+
+
 // -------------humburger-----------------------------
 const ul=document.querySelector(".navbar nav ul");
 const bars=document.querySelector(".fa-bars");
@@ -97,4 +131,26 @@ humbergerMenu.addEventListener("click",()=>{
     bars.classList.toggle("active");
     xmark.classList.toggle("active");
     ul.classList.toggle("active");
+});
+// --------------------fAQs Toggle-------------------
+document.querySelectorAll('.faq-question').forEach(question => {
+    question.addEventListener('click', (e) => {
+        if(e.target.classList.contains('faq-icon')){
+            const faqItem = question.parentElement;
+        const faqAnswer = faqItem.querySelector('.faq-answer');
+        
+        // Close all other FAQ items
+        document.querySelectorAll('.faq-item').forEach(item => {
+            if (item !== faqItem) {
+                item.classList.remove('active');
+                item.querySelector('.faq-answer').classList.remove('active');
+            }
+        });
+        
+        // Toggle current FAQ item
+        faqItem.classList.toggle('active');
+        faqAnswer.classList.toggle('active');
+        }
+        
+    });
 });
