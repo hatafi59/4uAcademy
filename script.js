@@ -117,10 +117,6 @@ document.querySelector(".form").addEventListener("submit", function (event) {
     
 });
 
-
-
-
-
 // -------------humburger-----------------------------
 const ul=document.querySelector(".navbar nav ul");
 const bars=document.querySelector(".fa-bars");
@@ -154,3 +150,68 @@ document.querySelectorAll('.faq-question').forEach(question => {
         
     });
 });
+// // --------------------Scroll to Top-------------------
+const scrollTopBtn = document.getElementById('scrollTop');
+scrollTopBtn.addEventListener('click', function() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+window.addEventListener('scroll', function() {
+    if (window.scrollY > 300) {
+        scrollTopBtn.classList.add('show');
+    } else {
+        scrollTopBtn.classList.remove('show');
+    }
+});
+
+
+
+// const scrollToTopBtn = document.querySelector('.scroll-to-top');
+// window.addEventListener('scroll', () => {
+//     if (window.scrollY > 300) {
+//         scrollToTopBtn.classList.add('visible');
+//     } else {
+//         scrollToTopBtn.classList.remove('visible');
+//     }
+// });
+// scrollToTopBtn.addEventListener('click', () => {
+//     window.scrollTo({
+//         top: 0,
+//         behavior: 'smooth'
+//     });
+// });
+// // --------------------Smooth Scroll-------------------
+// document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+//     anchor.addEventListener('click', function (e) {
+//         e.preventDefault();
+//         const targetId = this.getAttribute('href').substring(1);
+//         const targetElement = document.getElementById(targetId);
+        
+//         if (targetElement) {
+//             targetElement.scrollIntoView({
+//                 behavior: 'smooth'
+//             });
+//         }
+//     });
+// });
+// // --------------------Dark Mode Toggle-------------------
+// const darkModeToggle = document.querySelector('.dark-mode-toggle');
+// darkModeToggle.addEventListener('click', () => {
+//     document.body.classList.toggle('dark-mode');
+//     darkModeToggle.classList.toggle('active');
+
+//     // Save preference in localStorage
+//     if (document.body.classList.contains('dark-mode')) {
+//         localStorage.setItem('theme', 'dark');
+//     } else {
+//         localStorage.setItem('theme', 'light');
+//     }
+// });
+// // Load saved theme preference
+// if (localStorage.getItem('theme') === 'dark') {
+//     document.body.classList.add('dark-mode');
+//     darkModeToggle.classList.add('active');
+// }
+

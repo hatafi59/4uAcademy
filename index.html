@@ -59,6 +59,10 @@
         </div>
     </header>
     <main>
+        <!-- Scroll to top button -->
+    <button class="scroll-top" id="scrollTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
         <!-- about section -->
         <section id="about">
             <div class="about-content">
@@ -329,8 +333,246 @@
             </div>
         
     </section>
-
     </main>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <!-- Floating particles -->
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        
+        
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="/img/logo.png" alt="4uacademy Logo" >
+                    <h3>OriConcours</h3>
+                    
+                    <p>Votre partenaire pour réussir vos concours d'entrée aux écoles supérieures au Maroc.</p>
+                    <div class="social-links">
+                        <a href="#" title="LinkedIn" data-social="linkedin" >
+                            <i class="fab fa-linkedin" ></i>
+                        </a>
+                        <a href="#" title="Instagram" data-social="instagram" >
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" title="WhatsApp" data-social="whatsapp" >
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="#" title="Facebook" data-social="facebook" >
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Liens Rapides</h3>
+                    <ul>
+                        <li><a href="#home">Accueil</a></li>
+                        <li><a href="#about">À propos</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#experiences">Expériences</a></li>
+                        <li><a href="#faqs">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#" data-service="concours">Liste des concours</a></li>
+                        <li><a href="#" data-service="ecoles">Infos écoles</a></li>
+                        <li><a href="#" data-service="orientation">Orientation</a></li>
+                        <li><a href="#" data-service="preparation">Préparation</a></li>
+                        <li><a href="#" data-service="coaching">Coaching</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Newsletter</h3>
+                    <p>Restez informé des dernières actualités et nouveaux concours.</p>
+                    <div class="newsletter">
+                        <form class="newsletter-form" id="newsletterForm">
+                            <input type="email" placeholder="Votre email" class="newsletter-input" id="emailfooter" required>
+                            <button type="submit" class="newsletter-btn">
+                                <span>S'abonner</span>
+                            </button>
+                        </form>
+                        <div class="success-message" id="successMessage">
+                            <i class="fas fa-check-circle"></i> Merci pour votre inscription !
+                        </div>
+                        <div class="failure-message" id="failureMessage">
+                            <i class="fa-solid fa-xmark"></i> email est invalid !!</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 OriConcours. Tous droits réservés. | <a href="#" id="legalLink">Mentions légales</a> | <a href="#" id="privacyLink">Politique de confidentialité</a></p>
+            </div>
+        </div>
+    </footer>
+     <script>
+         
+        
+        // Newsletter form handling and email validation
+        document.getElementById('newsletterForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const emailfooter = document.getElementById('emailfooter');
+            const successMessage = document.getElementById('successMessage');
+            const failureMessage = document.getElementById('failureMessage');
+            const submitBtn = this.querySelector('.newsletter-btn');
+            const pattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+
+            if (emailfooter.value && pattern.test(emailfooter.value)) {
+                // Simulate loading state
+                submitBtn.style.transform = 'scale(0.95)';
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi...';
+                
+                setTimeout(() => {
+                    // Show success message
+                    successMessage.classList.add('show');
+                    emailfooter.value = '';
+                    submitBtn.innerHTML = '<i class="fas fa-check"></i> Inscrit !';
+                    
+                    // Reset button after 3 seconds
+                    setTimeout(() => {
+                        submitBtn.innerHTML = '<span>S\'abonner</span>';
+                        submitBtn.style.transform = '';
+                        successMessage.classList.remove('show');
+                    }, 3000);
+                }, 1500);
+            }else{
+                failureMessage.classList.add('show');
+                emailfooter.value = '';
+                setTimeout(() => {
+                    failureMessage.classList.remove('show');
+                }, 3000);
+            }
+        });
+        
+         // ------------------------------------------------------------------------------------------------------
+
+
+        // // // Social links interactions
+        
+        // document.querySelectorAll('.social-links a').forEach(link => {
+        //     link.addEventListener('click', function(e) {
+        //         e.preventDefault();
+        //         const platform = this.getAttribute('data-social');
+                
+        //         // Create ripple effect
+        //         const ripple = document.createElement('span');
+        //         ripple.style.position = 'absolute';
+        //         ripple.style.background = 'rgba(255,255,255,0.6)';
+        //         ripple.style.borderRadius = '50%';
+        //         ripple.style.width = '100px';
+        //         ripple.style.height = '100px';
+        //         ripple.style.left = '50%';
+        //         ripple.style.top = '50%';
+        //         ripple.style.transform = 'translate(-50%, -50%) scale(0)';
+        //         ripple.style.transition = 'transform 0.6s ease';
+        //         ripple.style.pointerEvents = 'none';
+                
+        //         this.appendChild(ripple);
+                
+        //         setTimeout(() => {
+        //             ripple.style.transform = 'translate(-50%, -50%) scale(1)';
+        //         }, 10);
+                
+        //         setTimeout(() => {
+        //             ripple.remove();
+        //         }, 600);
+                
+        //         // Show notification
+        //         showNotification(`Redirection vers ${platform}...`);
+        //     });
+        // });
+
+        // // Service links interactions
+        // document.querySelectorAll('[data-service]').forEach(link => {
+        //     link.addEventListener('click', function(e) {
+        //         e.preventDefault();
+        //         const service = this.getAttribute('data-service');
+        //         showNotification(`Accès au service: ${service}`);
+        //     });
+        // });
+
+        // // Legal links interactions
+        // document.getElementById('legalLink').addEventListener('click', function(e) {
+        //     e.preventDefault();
+        //     showNotification('Mentions légales - Page en construction');
+        // });
+
+        // document.getElementById('privacyLink').addEventListener('click', function(e) {
+        //     e.preventDefault();
+        //     showNotification('Politique de confidentialité - Page en construction');
+        // });
+        // // Notification system
+        // function showNotification(message) {
+        //     const notification = document.createElement('div');
+        //     notification.style.position = 'fixed';
+        //     notification.style.top = '20px';
+        //     notification.style.right = '20px';
+        //     notification.style.background = 'linear-gradient(135deg, #667eea, #764ba2)';
+        //     notification.style.color = 'white';
+        //     notification.style.padding = '12px 20px';
+        //     notification.style.borderRadius = '25px';
+        //     notification.style.boxShadow = '0 10px 25px rgba(102, 126, 234, 0.4)';
+        //     notification.style.zIndex = '1001';
+        //     notification.style.opacity = '0';
+        //     notification.style.transform = 'translateY(-20px)';
+        //     notification.style.transition = 'all 0.3s ease';
+        //     notification.innerHTML = `<i class="fas fa-info-circle"></i> ${message}`;
+            
+        //     document.body.appendChild(notification);
+            
+        //     setTimeout(() => {
+        //         notification.style.opacity = '1';
+        //         notification.style.transform = 'translateY(0)';
+        //     }, 10);
+            
+        //     setTimeout(() => {
+        //         notification.style.opacity = '0';
+        //         notification.style.transform = 'translateY(-20px)';
+        //         setTimeout(() => {
+        //             notification.remove();
+        //         }, 300);
+        //     }, 3000);
+        // }
+
+
+
+
+
+//-------------------------------------------------------------------------------------------------------------------------
+
+        // // Intersection Observer for animation triggers
+        // const observerOptions = {
+        //     threshold: 0.1,
+        //     rootMargin: '0px 0px -50px 0px'
+        // };
+
+        // const observer = new IntersectionObserver((entries) => {
+        //     entries.forEach(entry => {
+        //         if (entry.isIntersecting) {
+        //             entry.target.style.animationPlayState = 'running';
+        //         }
+        //     });
+        // }, observerOptions);
+
+        // // Observe footer sections
+        // document.querySelectorAll('.footer-section').forEach(section => {
+        //     observer.observe(section);
+        // });
+
+
+        //----------------------------------------------------------------------------------------------------------------------------
+ 
+    </script> 
 
 </body>
 
