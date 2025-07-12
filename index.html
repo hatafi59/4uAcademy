@@ -32,7 +32,22 @@
                 <ul>
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
-                    <li><a href="#services">Services</a></li>
+                    <li class="dropdown">
+                        <div style="display: flex; align-items: center;">
+                          <a href="#services" style="margin-right: 0;">Services</a>
+                          <span class="dropdown-toggle-icon">
+                            <i class="fas fa-chevron-down icon-down"></i>
+                            <i class="fas fa-chevron-up icon-up"></i>
+                          </span>
+                        </div>
+                        <div class="dropdown-content">
+                          <a href="concours.html" target="_blank">concours</a>                            
+                          <a href="orientation.html" target="_blank">Orientation</a>
+                          <a href="recommendation.html" target="_blank">Recommendation</a>
+                          
+                        </div>
+                      </li>
+                      
                     <li><a href="#experiences">Experiences</a></li>
                     <li><a href="#contact">Contact</a></li>
                     <li><a href="#faqs">FAQs</a></li>
@@ -95,6 +110,10 @@
 
             </div>
         </section>
+
+
+
+
         <!-- services section -->
         <section id="services">
             <h2>Nos Services</h2>
@@ -111,7 +130,7 @@
                                 →
                             </div>
                         </div>
-                        <span class="stat-number">50+ concours</span>
+                        <span class="stat-number">100+ </span>
                     </a>
                 </div>
                 <div class="card">
@@ -124,7 +143,7 @@
                                 →
                             </div>
                         </div>
-                        <span class="stat-number">50+ écoles</span>
+                        <span class="stat-number">50+ </span>
                     </a>
                 </div>
                 <div class="card">
@@ -140,7 +159,7 @@
                                 →
                             </div>
                         </div>
-                        <span class="stat-number">50+ conseils</span>
+                        <span class="stat-number">250+</span>
                     </a>
                 </div>
                 <div class="card">
@@ -153,7 +172,7 @@
                                 →
                             </div>
                         </div>
-                        <span class="stat-number">50+ ressources</span>
+                        <span class="stat-number">130+ </span>
                     </a>
                 </div>
 
@@ -453,125 +472,8 @@
                 }, 3000);
             }
         });
+        //-------------------------------------------------------------------
         
-         // ------------------------------------------------------------------------------------------------------
-
-
-        // // // Social links interactions
-        
-        // document.querySelectorAll('.social-links a').forEach(link => {
-        //     link.addEventListener('click', function(e) {
-        //         e.preventDefault();
-        //         const platform = this.getAttribute('data-social');
-                
-        //         // Create ripple effect
-        //         const ripple = document.createElement('span');
-        //         ripple.style.position = 'absolute';
-        //         ripple.style.background = 'rgba(255,255,255,0.6)';
-        //         ripple.style.borderRadius = '50%';
-        //         ripple.style.width = '100px';
-        //         ripple.style.height = '100px';
-        //         ripple.style.left = '50%';
-        //         ripple.style.top = '50%';
-        //         ripple.style.transform = 'translate(-50%, -50%) scale(0)';
-        //         ripple.style.transition = 'transform 0.6s ease';
-        //         ripple.style.pointerEvents = 'none';
-                
-        //         this.appendChild(ripple);
-                
-        //         setTimeout(() => {
-        //             ripple.style.transform = 'translate(-50%, -50%) scale(1)';
-        //         }, 10);
-                
-        //         setTimeout(() => {
-        //             ripple.remove();
-        //         }, 600);
-                
-        //         // Show notification
-        //         showNotification(`Redirection vers ${platform}...`);
-        //     });
-        // });
-
-        // // Service links interactions
-        // document.querySelectorAll('[data-service]').forEach(link => {
-        //     link.addEventListener('click', function(e) {
-        //         e.preventDefault();
-        //         const service = this.getAttribute('data-service');
-        //         showNotification(`Accès au service: ${service}`);
-        //     });
-        // });
-
-        // // Legal links interactions
-        // document.getElementById('legalLink').addEventListener('click', function(e) {
-        //     e.preventDefault();
-        //     showNotification('Mentions légales - Page en construction');
-        // });
-
-        // document.getElementById('privacyLink').addEventListener('click', function(e) {
-        //     e.preventDefault();
-        //     showNotification('Politique de confidentialité - Page en construction');
-        // });
-        // // Notification system
-        // function showNotification(message) {
-        //     const notification = document.createElement('div');
-        //     notification.style.position = 'fixed';
-        //     notification.style.top = '20px';
-        //     notification.style.right = '20px';
-        //     notification.style.background = 'linear-gradient(135deg, #667eea, #764ba2)';
-        //     notification.style.color = 'white';
-        //     notification.style.padding = '12px 20px';
-        //     notification.style.borderRadius = '25px';
-        //     notification.style.boxShadow = '0 10px 25px rgba(102, 126, 234, 0.4)';
-        //     notification.style.zIndex = '1001';
-        //     notification.style.opacity = '0';
-        //     notification.style.transform = 'translateY(-20px)';
-        //     notification.style.transition = 'all 0.3s ease';
-        //     notification.innerHTML = `<i class="fas fa-info-circle"></i> ${message}`;
-            
-        //     document.body.appendChild(notification);
-            
-        //     setTimeout(() => {
-        //         notification.style.opacity = '1';
-        //         notification.style.transform = 'translateY(0)';
-        //     }, 10);
-            
-        //     setTimeout(() => {
-        //         notification.style.opacity = '0';
-        //         notification.style.transform = 'translateY(-20px)';
-        //         setTimeout(() => {
-        //             notification.remove();
-        //         }, 300);
-        //     }, 3000);
-        // }
-
-
-
-
-
-//-------------------------------------------------------------------------------------------------------------------------
-
-        // // Intersection Observer for animation triggers
-        // const observerOptions = {
-        //     threshold: 0.1,
-        //     rootMargin: '0px 0px -50px 0px'
-        // };
-
-        // const observer = new IntersectionObserver((entries) => {
-        //     entries.forEach(entry => {
-        //         if (entry.isIntersecting) {
-        //             entry.target.style.animationPlayState = 'running';
-        //         }
-        //     });
-        // }, observerOptions);
-
-        // // Observe footer sections
-        // document.querySelectorAll('.footer-section').forEach(section => {
-        //     observer.observe(section);
-        // });
-
-
-        //----------------------------------------------------------------------------------------------------------------------------
- 
     </script> 
 
 </body>
