@@ -12,11 +12,13 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="concours.css">
     <!-- Favicon -->
     <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
     <!-- js -->
     <script src="script.js" defer></script>
 </head>
+
 <body>
     <button class="scroll-top" id="scrollTop">
         <i class="fas fa-arrow-up"></i>
@@ -36,20 +38,20 @@
                     <li><a href="index.html">About</a></li>
                     <li class="dropdown">
                         <div style="display: flex; align-items: center;">
-                          <a href="index.html" style="margin-right: 0;">Services</a>
-                          <span class="dropdown-toggle-icon">
-                            <i class="fas fa-chevron-down icon-down"></i>
-                            <i class="fas fa-chevron-up icon-up"></i>
-                          </span>
+                            <a href="index.html" style="margin-right: 0;">Services</a>
+                            <span class="dropdown-toggle-icon">
+                                <i class="fas fa-chevron-down icon-down"></i>
+                                <i class="fas fa-chevron-up icon-up"></i>
+                            </span>
                         </div>
                         <div class="dropdown-content">
-                          <a href="concours.html" target="_blank">concours</a>                            
-                          <a href="orientation.html" target="_blank">Orientation</a>
-                          <a href="recommendation.html" target="_blank">Recommendation</a>
-                          
+                            <a href="concours.html" target="_blank">concours</a>
+                            <a href="orientation.html" target="_blank">Orientation</a>
+                            <a href="recommendation.html" target="_blank">Recommendation</a>
+
                         </div>
-                      </li>
-                      
+                    </li>
+
                     <li><a href="index.html">Experiences</a></li>
                     <li><a href="index.html">Contact</a></li>
                     <li><a href="index.html">FAQs</a></li>
@@ -57,12 +59,59 @@
             </nav>
         </div>
     </header>
+    <div class="concours-container">
+        <h1>Concours des grandes écoles</h1>
+        <p> Ici, vous trouverez toutes les informations nécessaires pour vous préparer efficacement.</p>
+        <div class="concours-list">
+            <div class="card-concours">
+                <div class="logo-ecole">
+                    <img src="/img/ensa-logo.svg" alt="ENSA Logo">
+                </div>
+                <strong> Instagram </strong>
+                <div class="card__body">Get UI elements that help you stand out.</div>
+                <span>Follow us</span>
+            </div>
+
+            <div class="card-concours">
+                <div class="logo-ecole">
+                    <img src="/img/ensam-logo.png" alt="ENSA Logo">
+                </div>
+                <strong> Instagram </strong>
+                <div class="card__body">Get UI elements that help you stand out.</div>
+                <span>Follow us</span>
+            </div>
+            <div class="card-concours">
+                <div class="logo-ecole">
+                    <img src="/img/concours/ensa.png" alt="ENSA Logo">
+                </div>
+                <strong> Instagram </strong>
+                <div class="card__body">Get UI elements that help you stand out.</div>
+                <span>Follow us</span>
+            </div>
+            <div class="card-concours">
+                <div class="logo-ecole">
+                    <img src="/img/concours/ensa.png" alt="ENSA Logo">
+                </div>
+                <strong> Instagram </strong>
+                <div class="card__body">Get UI elements that help you stand out.</div>
+                <span>Follow us</span>
+            </div>
+            <div class="card-concours">
+                <div class="logo-ecole">
+                    <img src="/img/concours/ensa.png" alt="ENSA Logo">
+                </div>
+                <strong> Instagram </strong>
+                <div class="card__body">Get UI elements that help you stand out.</div>
+                <span>Follow us</span>
+            </div>
+
+        </div>
+    </div>
 
 
 
 
 
-    
     <!-- Footer -->
     <footer class="footer">
         <!-- Floating particles -->
@@ -70,31 +119,31 @@
         <div class="particle"></div>
         <div class="particle"></div>
         <div class="particle"></div>
-        
-        
+
+
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <img src="/img/logo.png" alt="4uacademy Logo" >
+                    <img src="/img/logo.png" alt="4uacademy Logo">
                     <h3>OriConcours</h3>
-                    
+
                     <p>Votre partenaire pour réussir vos concours d'entrée aux écoles supérieures au Maroc.</p>
                     <div class="social-links">
-                        <a href="#" title="LinkedIn" data-social="linkedin" >
-                            <i class="fab fa-linkedin" ></i>
+                        <a href="#" title="LinkedIn" data-social="linkedin">
+                            <i class="fab fa-linkedin"></i>
                         </a>
-                        <a href="#" title="Instagram" data-social="instagram" >
+                        <a href="#" title="Instagram" data-social="instagram">
                             <i class="fab fa-instagram"></i>
                         </a>
-                        <a href="#" title="WhatsApp" data-social="whatsapp" >
+                        <a href="#" title="WhatsApp" data-social="whatsapp">
                             <i class="fab fa-whatsapp"></i>
                         </a>
-                        <a href="#" title="Facebook" data-social="facebook" >
+                        <a href="#" title="Facebook" data-social="facebook">
                             <i class="fab fa-facebook"></i>
                         </a>
                     </div>
                 </div>
-                
+
                 <div class="footer-section">
                     <h3>Liens Rapides</h3>
                     <ul>
@@ -106,7 +155,7 @@
                         <li><a href="index.html">FAQ</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="footer-section">
                     <h3>Services</h3>
                     <ul>
@@ -117,13 +166,14 @@
                         <li><a href="#" data-service="coaching">Coaching</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="footer-section">
                     <h3>Newsletter</h3>
                     <p>Restez informé des dernières actualités et nouveaux concours.</p>
                     <div class="newsletter">
                         <form class="newsletter-form" id="newsletterForm">
-                            <input type="email" placeholder="Votre email" class="newsletter-input" id="emailfooter" required>
+                            <input type="email" placeholder="Votre email" class="newsletter-input" id="emailfooter"
+                                required>
                             <button type="submit" class="newsletter-btn">
                                 <span>S'abonner</span>
                             </button>
@@ -132,13 +182,15 @@
                             <i class="fas fa-check-circle"></i> Merci pour votre inscription !
                         </div>
                         <div class="failure-message" id="failureMessage">
-                            <i class="fa-solid fa-xmark"></i> email est invalid !!</div>
+                            <i class="fa-solid fa-xmark"></i> email est invalid !!
+                        </div>
                     </div>
                 </div>
             </div>
-            
+
             <div class="footer-bottom">
-                <p>&copy; 2025 OriConcours. Tous droits réservés. | <a href="#" id="legalLink">Mentions légales</a> | <a href="#" id="privacyLink">Politique de confidentialité</a></p>
+                <p>&copy; 2025 OriConcours. Tous droits réservés. | <a href="#" id="legalLink">Mentions légales</a> | <a
+                        href="#" id="privacyLink">Politique de confidentialité</a></p>
             </div>
         </div>
     </footer>
