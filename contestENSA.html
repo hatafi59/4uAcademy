@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4uacademy</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="concours.css">
+    <link rel="stylesheet" href="examen.css">
+    <link rel="stylesheet" href="virtualContest.css">
+
+    <!-- Favicon -->
+    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+    <!-- js -->
+    <script src="script.js" defer></script>
+    <script src="virtualContest.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script><!--  for pdf export -->
+
+</head>
+
+<body>
+    <button class="scroll-top" id="scrollTop" style="bottom: 20px; left :20px;">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    <header id="home">
+        <div class="navbar">
+            <nav>
+                <a href="index.html" class="logo">
+                    <img src="/img/logo.png" alt="4uacademy Logo">
+                </a>
+                <div class="humburger">
+                    <i class="fa-solid fa-bars active"></i>
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html">About</a></li>
+                    <li class="dropdown">
+                        <div style="display: flex; align-items: center;">
+                            <a href="index.html" style="margin-right: 0;">Services</a>
+                            <span class="dropdown-toggle-icon">
+                                <i class="fas fa-chevron-down icon-down"></i>
+                                <i class="fas fa-chevron-up icon-up"></i>
+                            </span>
+                        </div>
+                        <div class="dropdown-content">
+                            <a href="concours.html" target="_blank">concours</a>
+                            <a href="orientation.html" target="_blank">Orientation</a>
+                            <a href="recommendation.html" target="_blank">Recommendation</a>
+
+                        </div>
+                    </li>
+
+                    <li><a href="index.html">Experiences</a></li>
+                    <li><a href="index.html">Contact</a></li>
+                    <li><a href="index.html">FAQs</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+    <div id="pdfContent" style="display: none;"></div> <!--  for pdf export -->
+
+
+     <!-- Contest Start Modal -->
+     <div class="contest-overlay" id="startModal">
+        <div class="contest-modal">
+            <div class="modal-title">Confirmation de début du contest</div>
+            <div class="modal-text">
+                Vous êtes sur le point de commencer le Contest.<br>
+                <strong>Durée:</strong> 2 heures<br>
+                <strong>Questions:</strong> 20<br>
+                <strong>Système de points:</strong><br> +1 point par bonne réponse<br> -1 point par mauvaise réponse <br>
+                Êtes-vous prêt à commencer ?
+            </div>
+            <div class="modal-buttons">
+                <button class="modal-btn secondary" onclick="cancelContest()">Annuler</button>
+                <button class="modal-btn primary" onclick="startContest()">Commencer le Contest</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="contest-container ">
+        <div class="sidebar">
+            <div class="timer-container" id="timerContainer">
+                <div>Temps restant</div>
+                <div class="timer-display" id="timerDisplay">02:00:00</div>
+            </div>
+            
+            <button class="stop-contest-btn" onclick="stopContest()" id="stopBtn">
+                🛑 Arrêter le Contest
+            </button>
+            
+         
+
+            <div class="question-grid" id="questionGrid">
+                <!-- Questions 1-7 -->
+                <div class="question-number active" onclick="goToQuestion(1)">1</div>
+                <div class="question-number" onclick="goToQuestion(2)">2</div>
+                <div class="question-number" onclick="goToQuestion(3)">3</div>
+                <div class="question-number" onclick="goToQuestion(4)">4</div>
+                <div class="question-number" onclick="goToQuestion(5)">5</div>
+                <div class="question-number" onclick="goToQuestion(6)">6</div>
+                <div class="question-number" onclick="goToQuestion(7)">7</div>
+                <div class="question-number" onclick="goToQuestion(8)">8</div>
+                <div class="question-number" onclick="goToQuestion(9)">9</div>
+                <div class="question-number" onclick="goToQuestion(10)">10</div>
+                <div class="question-number" onclick="goToQuestion(11)">11</div>
+                <div class="question-number" onclick="goToQuestion(12)">12</div>
+                <div class="question-number" onclick="goToQuestion(13)">13</div>
+                <div class="question-number" onclick="goToQuestion(14)">14</div>
+                <div class="question-number" onclick="goToQuestion(15)">15</div>
+                <div class="question-number" onclick="goToQuestion(16)">16</div>
+                <div class="question-number" onclick="goToQuestion(17)">17</div>
+                <div class="question-number" onclick="goToQuestion(18)">18</div>
+                <div class="question-number" onclick="goToQuestion(19)">19</div>
+                <div class="question-number" onclick="goToQuestion(20)">20</div>
+            </div>
+
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-circle answered"></div>
+                    <span id="answeredCount">0</span>
+                    <span>Answered</span>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-circle unanswered"></div>
+                    <span id="unansweredCount">20</span>
+                    <span>Unanswered</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="question-header">
+                <div class="question-title" id="questionTitle">QUESTION 1</div>
+                <div class="marks-info">Correct Answer: +5 Marks</div>
+            </div>
+
+            <div class="question-text" id="questionText">
+                In how many phases an execution context is created?
+            </div>
+
+            <div class="options" id="optionsContainer">
+                <div class="option" onclick="selectOption(this, 2)">
+                    <input type="radio" name="answer" value="2">
+                    <span class="option-text">2</span>
+                </div>
+                <div class="option" onclick="selectOption(this, 3)">
+                    <input type="radio" name="answer" value="3">
+                    <span class="option-text">3</span>
+                </div>
+                <div class="option" onclick="selectOption(this, 4)">
+                    <input type="radio" name="answer" value="4">
+                    <span class="option-text">4</span>
+                </div>
+                <div class="option" onclick="selectOption(this, 1)">
+                    <input type="radio" name="answer" value="1">
+                    <span class="option-text">1</span>
+                </div>
+            </div>
+
+            <div class="bottom-controls">
+                <button class="nav-button disabled" id="prevBtn" onclick="previousQuestion()">
+                    ← Previous
+                </button>
+                <button class="submit-btn" onclick="submitAnswer()">Submit</button>
+                <button class="nav-button" id="nextBtn" onclick="nextQuestion()">
+                    Next →
+                </button>
+            </div>
+            <div class="hint-text">
+                You can view answers by clicking <strong>Submit</strong> button.
+            </div>
+        </div>
+    </div>
+
+   
+
+    <!-- Contest End Modal -->
+    <div class="contest-overlay" id="endModal" style="display: none;">
+        <div class="contest-modal">
+            <div class="modal-title">🏁 Contest terminé !</div>
+            <div class="modal-text" id="endModalText">
+                Le temps est écoulé !<br><br>
+                <strong>Résultats:</strong><br>
+                <span id="finalResults"></span>
+            </div>
+            <div class="modal-buttons-end">
+                <button class="modal-btn primary" onclick="closeContest()">Voir les résultats détaillés</button>
+                <button class="modal-btn secondary" onclick="restartContest()">Recommencer</button>
+                <button class="modal-btn thirdly" onclick="cancelContest()">Annuler</button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    
+
+
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <!-- Floating particles -->
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+
+
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="/img/logo.png" alt="4uacademy Logo">
+                    <h3>OriConcours</h3>
+
+                    <p>Votre partenaire pour réussir vos concours d'entrée aux écoles supérieures au Maroc.</p>
+                    <div class="social-links">
+                        <a href="#" title="LinkedIn" data-social="linkedin">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" title="Instagram" data-social="instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" title="WhatsApp" data-social="whatsapp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="#" title="Facebook" data-social="facebook">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Liens Rapides</h3>
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="index.html">À propos</a></li>
+                        <li><a href="index.html">Services</a></li>
+                        <li><a href="index.html">Contact</a></li>
+                        <li><a href="index.html">Expériences</a></li>
+                        <li><a href="index.html">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#" data-service="concours">Liste des concours</a></li>
+                        <li><a href="#" data-service="ecoles">Infos écoles</a></li>
+                        <li><a href="#" data-service="orientation">Orientation</a></li>
+                        <li><a href="#" data-service="preparation">Préparation</a></li>
+                        <li><a href="#" data-service="coaching">Coaching</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Newsletter</h3>
+                    <p>Restez informé des dernières actualités et nouveaux concours.</p>
+                    <div class="newsletter">
+                        <form class="newsletter-form" id="newsletterForm">
+                            <input type="email" placeholder="Votre email" class="newsletter-input" id="emailfooter"
+                                required>
+                            <button type="submit" class="newsletter-btn">
+                                <span>S'abonner</span>
+                            </button>
+                        </form>
+                        <div class="success-message" id="successMessage">
+                            <i class="fas fa-check-circle"></i> Merci pour votre inscription !
+                        </div>
+                        <div class="failure-message" id="failureMessage">
+                            <i class="fa-solid fa-xmark"></i> email est invalid !!
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 OriConcours. Tous droits réservés. | <a href="#" id="legalLink">Mentions légales</a> | <a
+                        href="#" id="privacyLink">Politique de confidentialité</a></p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

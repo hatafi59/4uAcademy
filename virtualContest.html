@@ -13,6 +13,8 @@
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="concours.css">
+    <link rel="stylesheet" href="examen.css">
+    <link rel="stylesheet" href="virtualContest.css">
     <!-- Favicon -->
     <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
     <!-- js -->
@@ -20,7 +22,7 @@
 </head>
 
 <body>
-    <button class="scroll-top" id="scrollTop">
+    <button class="scroll-top" id="scrollTop" style="bottom: 20px; left :20px;">
         <i class="fas fa-arrow-up"></i>
     </button>
     <header id="home">
@@ -60,60 +62,52 @@
         </div>
     </header>
 
-    <div class="concours-container">
-
-        
-
-        <div class="content">
-            <h1>Concours des grandes écoles</h1>
-            <p> Ici, vous trouverez toutes les informations nécessaires pour vous préparer efficacement.</p>
-            <div class="concours-list">
-                <div class="card-concours" onclick="window.location.href='concoursENSA.html'">
-                    <div class="logo-ecole">
-                        <img src="/img/ensa-logo.svg" alt="ENSA Logo">
-                    </div>
-                    <strong> ENSA </strong>
-                    <div class="card__body">Get UI elements that help you stand out.</div>
-                    <span>Go to concours</span>
-                </div>
-
-                <div class="card-concours">
-                    <div class="logo-ecole">
-                        <img src="/img/ensam-logo.png" alt="ENSA Logo">
-                    </div>
-                    <strong> ENSAM </strong>
-                    <div class="card__body">Get UI elements that help you stand out.</div>
-                    <span>Go to concours</span>
-                </div>
-                <div class="card-concours">
-                    <div class="logo-ecole">
-                        <img src="/img/fmp-logo.png" alt="ENSA Logo">
-                    </div>
-                    <strong> Médcine </strong>
-                    <div class="card__body">Get UI elements that help you stand out.</div>
-                    <span>Go to concours</span>
-                </div>
-                <div class="card-concours">
-                    <div class="logo-ecole">
-                        <img src="/img/encg-logo.png" alt="ENSA Logo">
-                    </div>
-                    <strong> ENCG </strong>
-                    <div class="card__body">Get UI elements that help you stand out.</div>
-                    <span>Go to concours</span>
-                </div>
-
+   
+    <div class="virtualContest-container">
+            <div class="ecoles-list">
+                <h3>Écoles Supérieures :</h3>
+                <button class="form-submit-btn" ><a href="contestENSA.html" > ENSA</a></button>
+                <button class="form-submit-btn" ><a href="ENSAMVirtualContest" > ENSAM</a></button>
+                <button class="form-submit-btn" ><a href="FMPVirtualContest" > FMP</a></button>
+                <button class="form-submit-btn" ><a href="ENCGVirtualContest" > ENCG</a></button>
             </div>
-        </div>
-        <div class="divVirtualContest">
-            <h2>Virtual Contest</h2>
-            <p>Participate in our virtual contests to test your knowledge and skills.</p>
-            <button class="virtualContestBtn" onclick="window.open('virtualContest.html','_blank')">Join Now</button>
-        </div>
-
+            <div class="content">
+                <div class="contestDescription">
+                    <h1>Concours Virtuel</h1>
+                    <div class="description-icons">
+                        <span><i class="fa-regular fa-file-lines"></i> 20 questions </span>
+                        <span><i class="fa-solid fa-clock"></i> 2 heures</span>
+                    </div>
+                    <p>Bienvenue au concours virtuel d'OriConcours ! Ce concours est conçu pour vous aider à vous préparer
+                        aux concours d'entrée aux écoles supérieures au Maroc. Vous aurez 20 minutes pour répondre à 20
+                        questions, avec un total de 75 points possibles.</p>
+                    <p>Bonne chance !</p>
+                </div>
+                <div class="instructions">
+                    <h2>Instructions du Concours</h2>
+                    <ul>
+                        <li>La durée du concours est de 20 minutes.</li>
+                        <li>Il y a un total de 20 questions, 5 points sont attribués pour chaque réponse correcte.</li>
+                        <li>Il y a quatre options pour chaque QCM dont seulement une sera correcte.</li>
+                        <li>Votre réponse sera enregistrée seulement quand vous soumettez votre réponse pour chaque question, assurez-vous de soumettre votre réponse dans le délai imparti.</li>
+                        <li>Veuillez soumettre une réponse à un QCM une fois que vous êtes sûr, car vous ne pouvez pas la changer une fois soumise.</li>
+                        <li>Le nombre maximum de points pour le concours est de 75.</li>
+                    </ul>
+                </div>
+            </div>
+            
+           
     </div>
 
 
 
+
+
+
+
+
+
+    
 
 
     <!-- Footer -->

@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4uacademy</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="concours.css">
+    <link rel="stylesheet" href="examen.css">
+    <!-- Favicon -->
+    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+    <!-- js -->
+    <script src="script.js" defer></script>
+    <script src="examen.js" defer></script>
+</head>
+
+<body>
+    <button class="scroll-top" id="scrollTop" style="bottom: 20px; left :20px;">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    <header id="home">
+        <div class="navbar">
+            <nav>
+                <a href="index.html" class="logo">
+                    <img src="/img/logo.png" alt="4uacademy Logo">
+                </a>
+                <div class="humburger">
+                    <i class="fa-solid fa-bars active"></i>
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html">About</a></li>
+                    <li class="dropdown">
+                        <div style="display: flex; align-items: center;">
+                            <a href="index.html" style="margin-right: 0;">Services</a>
+                            <span class="dropdown-toggle-icon">
+                                <i class="fas fa-chevron-down icon-down"></i>
+                                <i class="fas fa-chevron-up icon-up"></i>
+                            </span>
+                        </div>
+                        <div class="dropdown-content">
+                            <a href="concours.html" target="_blank">concours</a>
+                            <a href="orientation.html" target="_blank">Orientation</a>
+                            <a href="recommendation.html" target="_blank">Recommendation</a>
+
+                        </div>
+                    </li>
+
+                    <li><a href="index.html">Experiences</a></li>
+                    <li><a href="index.html">Contact</a></li>
+                    <li><a href="index.html">FAQs</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+
+
+
+    <div class="container-examen">
+        <!-- Sidebar gauche - Navigation par année -->
+        <div class="sidebar-left">
+            <h3>Concours par année</h3>
+            <ul class="year-links">
+                <li><a href="#" class="active">2025</a></li>
+                <li><a href="#">2024</a></li>
+                <li><a href="#">2023</a></li>
+                <li><a href="#">2022</a></li>
+                <li><a href="#">2021</a></li>
+                <li><a href="#">2020</a></li>
+                <li><a href="#">2019</a></li>
+                <li><a href="#">2018</a></li>
+            </ul>
+        </div>
+        <!-- Section principale - Questions -->
+        <div class="main-content">
+            <div class="header">
+                <h1>Concours ENSA 2025</h1>
+            </div>
+
+            <p class="subtitle">This section covers the questions for ENSA concours .</p>
+            <p class="last-updated">Last Updated : Jan 9, 2025</p>
+
+            <div class="question-card" id="Q1">
+                <div class="question-header">Question 1</div>
+                <div class="question-text">Which of the following statements creates a new empty array?</div>
+                <ul class="options">
+                    <li data-option="A" onclick="selectOption(this, 'A')">
+                        <span class="option-letter">A</span>
+                        <span>let arr = [ ];</span>
+                    </li>
+                    <li data-option="B" onclick="selectOption(this, 'B')">
+                        <span class="option-letter">B</span>
+                        <span>let arr = new Array();</span>
+                    </li>
+                    <li data-option="C" onclick="selectOption(this, 'C')">
+                        <span class="option-letter">C</span>
+                        <span>let arr = Array();</span>
+                    </li>
+                    <li data-option="D" onclick="selectOption(this, 'D')">
+                        <span class="option-letter">D</span>
+                        <span>All of the above</span>
+                    </li>
+                </ul>
+                <a href="#" class="discuss-link">Discuss it</a>
+                <div class="discuss-answer">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, vero omnis. Cupiditate
+                        dignissimos nulla esse voluptas, obcaecati at dolor praesentium!
+                    </p>
+                </div>
+            </div>
+
+            <div class="question-card" id="Q2">
+                <div class="question-header">Question 2</div>
+                <div class="question-text">How do you access an element in an array?</div>
+                <ul class="options">
+                    <li data-option="A" onclick="selectOption(this, 'A')">
+                        <span class="option-letter">A</span>
+                        <span>By using curly braces { }</span>
+                    </li>
+                    <li data-option="B" onclick="selectOption(this, 'B')">
+                        <span class="option-letter">B</span>
+                        <span>By using square brackets [ ]</span>
+                    </li>
+                    <li data-option="C" onclick="selectOption(this, 'C')">
+                        <span class="option-letter">C</span>
+                        <span>By using parentheses ( )</span>
+                    </li>
+                    <li data-option="A" onclick="selectOption(this, 'D')">
+                        <span class="option-letter">D</span>
+                        <span>By using dot notation</span>
+                    </li>
+                </ul>
+                <a href="#" class="discuss-link">Discuss it</a>
+                <div class="discuss-answer">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, vero omnis. Cupiditate
+                        dignissimos nulla esse voluptas, obcaecati at dolor praesentium!
+                    </p>
+                </div>
+            </div>
+
+            <div class="question-card" id="Q3">
+                <div class="question-header">Question 3</div>
+                <div class="question-text">How do you access an element in an array?</div>
+                <ul class="options">
+                    <li data-option="A" onclick="selectOption(this, 'A')">
+                        <span class="option-letter">A</span>
+                        <span>By using curly braces { }</span>
+                    </li>
+                    <li data-option="B" onclick="selectOption(this, 'B')">
+                        <span class="option-letter">B</span>
+                        <span>By using square brackets [ ]</span>
+                    </li>
+                    <li data-option="C" onclick="selectOption(this, 'C')">
+                        <span class="option-letter">C</span>
+                        <span>By using parentheses ( )</span>
+                    </li>
+                    <li data-option="D" onclick="selectOption(this, 'D')">
+                        <span class="option-letter">D</span>
+                        <span>By using dot notation</span>
+                    </li>
+                </ul>
+                <a href="#" class="discuss-link">Discuss it</a>
+                <div class="discuss-answer">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, vero omnis. Cupiditate
+                        dignissimos nulla esse voluptas, obcaecati at dolor praesentium!</p>
+                </div>
+            </div>
+
+            <div class="question-card" id="Q4">
+                <div class="question-header">Question 4</div>
+                <div class="question-text">How do you access an element in an array?</div>
+                <ul class="options">
+                    <li data-option="A" onclick="selectOption(this, 'A')">
+                        <span class="option-letter">A</span>
+                        <span>By using curly braces { }</span>
+                    </li>
+                    <li data-option="B" onclick="selectOption(this, 'B')">
+                        <span class="option-letter">B</span>
+                        <span>By using square brackets [ ]</span>
+                    </li>
+                    <li data-option="C" onclick="selectOption(this, 'C')">
+                        <span class="option-letter">C</span>
+                        <span>By using parentheses ( )</span>
+                    </li>
+                    <li data-option="D" onclick="selectOption(this, 'D')">
+                        <span class="option-letter">D</span>
+                        <span>By using dot notation</span>
+                    </li>
+                </ul>
+                <a href="#" class="discuss-link">Discuss it</a>
+                <div class="discuss-answer">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, vero omnis. Cupiditate
+                        dignissimos nulla esse voluptas, obcaecati at dolor praesentium!</p>
+                </div>
+            </div>
+
+            <div class="question-card" id="Q5">
+                <div class="question-header">Question 5</div>
+                <div class="question-text">How do you access an element in an array?</div>
+                <ul class="options">
+                    <li data-option="A" onclick="selectOption(this, 'A')">
+                        <span class="option-letter">A</span>
+                        <span>By using curly braces { }</span>
+                    </li>
+                    <li data-option="B" onclick="selectOption(this, 'B')">
+                        <span class="option-letter">B</span>
+                        <span>By using square brackets [ ]</span>
+                    </li>
+                    <li data-option="C" onclick="selectOption(this, 'C')">
+                        <span class="option-letter">C</span>
+                        <span>By using parentheses ( )</span>
+                    </li>
+                    <li data-option="D" onclick="selectOption(this, 'D')">
+                        <span class="option-letter">D</span>
+                        <span>By using dot notation</span>
+                    </li>
+                </ul>
+                <a href="#" class="discuss-link">Discuss it</a>
+                <div class="discuss-answer">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, vero omnis. Cupiditate
+                        dignissimos nulla esse voluptas, obcaecati at dolor praesentium!</p>
+                </div>
+            </div>
+
+            <div class="question-card" id="Q6">
+                <div class="question-header">Question 6</div>
+                <div class="question-text">How do you access an element in an array?</div>
+                <ul class="options">
+                    <li data-option="A" onclick="selectOption(this, 'A')">
+                        <span class="option-letter">A</span>
+                        <span>By using curly braces { }</span>
+                    </li>
+                    <li data-option="B" onclick="selectOption(this, 'B')">
+                        <span class="option-letter">B</span>
+                        <span>By using square brackets [ ]</span>
+                    </li>
+                    <li data-option="C" onclick="selectOption(this, 'C')">
+                        <span class="option-letter">C</span>
+                        <span>By using parentheses ( )</span>
+                    </li>
+                    <li data-option="D" onclick="selectOption(this, 'D')">
+                        <span class="option-letter">D</span>
+                        <span>By using dot notation</span>
+                    </li>
+                </ul>
+                <a href="#" class="discuss-link">Discuss it</a>
+                <div class="discuss-answer">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, vero omnis. Cupiditate
+                        dignissimos nulla esse voluptas, obcaecati at dolor praesentium!</p>
+                </div>
+            </div>
+
+            <div class="question-card" id="Q7">
+                <div class="question-header">Question 7</div>
+                <div class="question-text">How do you access an element in an array?</div>
+                <ul class="options">
+                    <li data-option="A" onclick="selectOption(this, 'A')">
+                        <span class="option-letter">A</span>
+                        <span>By using curly braces { }</span>
+                    </li>
+                    <li data-option="B" onclick="selectOption(this, 'B')">
+                        <span class="option-letter">B</span>
+                        <span>By using square brackets [ ]</span>
+                    </li>
+                    <li data-option="C" onclick="selectOption(this, 'C')">
+                        <span class="option-letter">C</span>
+                        <span>By using parentheses ( )</span>
+                    </li>
+                    <li data-option="D" onclick="selectOption(this, 'D')">
+                        <span class="option-letter">D</span>
+                        <span>By using dot notation</span>
+                    </li>
+                </ul>
+                <a href="#" class="discuss-link">Discuss it</a>
+                <div class="discuss-answer">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, vero omnis. Cupiditate
+                        dignissimos nulla esse voluptas, obcaecati at dolor praesentium!</p>
+                </div>
+            </div>
+
+            <div class="question-card" id="Q8">
+                <div class="question-header">Question 8</div>
+                <div class="question-text">How do you access an element in an array?</div>
+                <ul class="options">
+                    <li data-option="A" onclick="selectOption(this, 'A')">
+                        <span class="option-letter">A</span>
+                        <span>By using curly braces { }</span>
+                    </li>
+                    <li data-option="B" onclick="selectOption(this, 'B')">
+                        <span class="option-letter">B</span>
+                        <span>By using square brackets [ ]</span>
+                    </li>
+                    <li data-option="C" onclick="selectOption(this, 'C')">
+                        <span class="option-letter">C</span>
+                        <span>By using parentheses ( )</span>
+                    </li>
+                    <li data-option="D" onclick="selectOption(this, 'D')">
+                        <span class="option-letter">D</span>
+                        <span>By using dot notation</span>
+                    </li>
+                </ul>
+                <a href="#" class="discuss-link">Discuss it</a>
+                <div class="discuss-answer">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, vero omnis. Cupiditate
+                        dignissimos nulla esse voluptas, obcaecati at dolor praesentium!</p>
+                </div>
+            </div>
+
+            <div class="question-card" id="Q9">
+                <div class="question-header">Question 9</div>
+                <div class="question-text">How do you access an element in an array?</div>
+                <ul class="options">
+                    <li data-option="A" onclick="selectOption(this, 'A')">
+                        <span class="option-letter">A</span>
+                        <span>By using curly braces { }</span>
+                    </li>
+                    <li data-option="B" onclick="selectOption(this, 'B')">
+                        <span class="option-letter">B</span>
+                        <span>By using square brackets [ ]</span>
+                    </li>
+                    <li data-option="C" onclick="selectOption(this, 'C')">
+                        <span class="option-letter">C</span>
+                        <span>By using parentheses ( )</span>
+                    </li>
+                    <li data-option="D" onclick="selectOption(this, 'D')">
+                        <span class="option-letter">D</span>
+                        <span>By using dot notation</span>
+                    </li>
+                </ul>
+                <a href="#" class="discuss-link">Discuss it</a>
+                <div class="discuss-answer">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, vero omnis. Cupiditate
+                        dignissimos nulla esse voluptas, obcaecati at dolor praesentium!</p>
+                </div>
+            </div>
+
+            <div class="question-card" id="Q10">
+                <div class="question-header">Question 10</div>
+                <div class="question-text">How do you access an element in an array?</div>
+                <ul class="options">
+                    <li data-option="A" onclick="selectOption(this, 'A')">
+                        <span class="option-letter">A</span>
+                        <span>By using curly braces { }</span>
+                    </li>
+                    <li data-option="B" onclick="selectOption(this, 'B')">
+                        <span class="option-letter">B</span>
+                        <span>By using square brackets [ ]</span>
+                    </li>
+                    <li data-option="C" onclick="selectOption(this, 'C')">
+                        <span class="option-letter">C</span>
+                        <span>By using parentheses ( )</span>
+                    </li>
+                    <li data-option="D" onclick="selectOption(this, 'D')">
+                        <span class="option-letter">D</span>
+                        <span>By using dot notation</span>
+                    </li>
+                </ul>
+                <a href="#" class="discuss-link">Discuss it</a>
+                <div class="discuss-answer">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, vero omnis. Cupiditate
+                        dignissimos nulla esse voluptas, obcaecati at dolor praesentium!</p>
+                </div>
+            </div>
+
+            <div class="question-card" id="Q11">
+                <div class="question-header">Question 11</div>
+                <div class="question-text">How do you access an element in an array?</div>
+                <ul class="options">
+                    <li data-option="A" onclick="selectOption(this, 'A')">
+                        <span class="option-letter">A</span>
+                        <span>By using curly braces { }</span>
+                    </li>
+                    <li data-option="B" onclick="selectOption(this, 'B')">
+                        <span class="option-letter">B</span>
+                        <span>By using square brackets [ ]</span>
+                    </li>
+                    <li data-option="C" onclick="selectOption(this, 'C')">
+                        <span class="option-letter">C</span>
+                        <span>By using parentheses ( )</span>
+                    </li>
+                    <li data-option="D" onclick="selectOption(this, 'D')">
+                        <span class="option-letter">D</span>
+                        <span>By using dot notation</span>
+                    </li>
+                </ul>
+                <a href="#" class="discuss-link">Discuss it</a>
+                <div class="discuss-answer">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, vero omnis. Cupiditate
+                        dignissimos nulla esse voluptas, obcaecati at dolor praesentium!</p>
+                </div>
+            </div>
+
+            <div class="question-card" id="Q12">
+                <div class="question-header">Question 12</div>
+                <div class="question-text">How do you access an element in an array?</div>
+                <ul class="options">
+                    <li data-option="A" onclick="selectOption(this, 'A')">
+                        <span class="option-letter">A</span>
+                        <span>By using curly braces { }</span>
+                    </li>
+                    <li data-option="B" onclick="selectOption(this, 'B')">
+                        <span class="option-letter">B</span>
+                        <span>By using square brackets [ ]</span>
+                    </li>
+                    <li data-option="C" onclick="selectOption(this, 'C')">
+                        <span class="option-letter">C</span>
+                        <span>By using parentheses ( )</span>
+                    </li>
+                    <li data-option="D" onclick="selectOption(this, 'D')">
+                        <span class="option-letter">D</span>
+                        <span>By using dot notation</span>
+                    </li>
+                </ul>
+                <a href="#" class="discuss-link">Discuss it</a>
+                <div class="discuss-answer">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, vero omnis. Cupiditate
+                        dignissimos nulla esse voluptas, obcaecati at dolor praesentium!</p>
+                </div>
+            </div>
+
+            <div class="question-card" id="Q13">
+                <div class="question-header">Question 13</div>
+                <div class="question-text">How do you access an element in an array?</div>
+                <ul class="options">
+                    <li data-option="A" onclick="selectOption(this, 'A')">
+                        <span class="option-letter">A</span>
+                        <span>By using curly braces { }</span>
+                    </li>
+                    <li data-option="B" onclick="selectOption(this, 'B')">
+                        <span class="option-letter">B</span>
+                        <span>By using square brackets [ ]</span>
+                    </li>
+                    <li data-option="C" onclick="selectOption(this, 'C')">
+                        <span class="option-letter">C</span>
+                        <span>By using parentheses ( )</span>
+                    </li>
+                    <li data-option="D" onclick="selectOption(this, 'D')">
+                        <span class="option-letter">D</span>
+                        <span>By using dot notation</span>
+                    </li>
+                </ul>
+                <a href="#" class="discuss-link">Discuss it</a>
+                <div class="discuss-answer">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, vero omnis. Cupiditate
+                        dignissimos nulla esse voluptas, obcaecati at dolor praesentium!</p>
+                </div>
+            </div>
+
+            <div class="question-card" id="Q14">
+                <div class="question-header">Question 14</div>
+                <div class="question-text">How do you access an element in an array?</div>
+                <ul class="options">
+                    <li data-option="A" onclick="selectOption(this, 'A')">
+                        <span class="option-letter">A</span>
+                        <span>By using curly braces { }</span>
+                    </li>
+                    <li data-option="B" onclick="selectOption(this, 'B')">
+                        <span class="option-letter">B</span>
+                        <span>By using square brackets [ ]</span>
+                    </li>
+                    <li data-option="C" onclick="selectOption(this, 'C')">
+                        <span class="option-letter">C</span>
+                        <span>By using parentheses ( )</span>
+                    </li>
+                    <li data-option="D" onclick="selectOption(this, 'D')">
+                        <span class="option-letter">D</span>
+                        <span>By using dot notation</span>
+                    </li>
+                </ul>
+                <a href="#" class="discuss-link">Discuss it</a>
+                <div class="discuss-answer">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, vero omnis. Cupiditate
+                        dignissimos nulla esse voluptas, obcaecati at dolor praesentium!</p>
+                </div>
+            </div>
+
+            <div class="question-card" id="Q15">
+                <div class="question-header">Question 15</div>
+                <div class="question-text">How do you access an element in an array?</div>
+                <ul class="options">
+                    <li data-option="A" onclick="selectOption(this, 'A')">
+                        <span class="option-letter">A</span>
+                        <span>By using curly braces { }</span>
+                    </li>
+                    <li data-option="B" onclick="selectOption(this, 'B')">
+                        <span class="option-letter">B</span>
+                        <span>By using square brackets [ ]</span>
+                    </li>
+                    <li data-option="C" onclick="selectOption(this, 'C')">
+                        <span class="option-letter">C</span>
+                        <span>By using parentheses ( )</span>
+                    </li>
+                    <li data-option="D" onclick="selectOption(this, 'D')">
+                        <span class="option-letter">D</span>
+                        <span>By using dot notation</span>
+                    </li>
+                </ul>
+                <a href="#" class="discuss-link">Discuss it</a>
+                <div class="discuss-answer">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, vero omnis. Cupiditate
+                        dignissimos nulla esse voluptas, obcaecati at dolor praesentium!</p>
+                </div>
+            </div>
+
+            <div class="question-card" id="Q16">
+                <div class="question-header">Question 16</div>
+                <div class="question-text">How do you access an element in an array?</div>
+                <ul class="options">
+                    <li data-option="A" onclick="selectOption(this, 'A')">
+                        <span class="option-letter">A</span>
+                        <span>By using curly braces { }</span>
+                    </li>
+                    <li data-option="B" onclick="selectOption(this, 'B')">
+                        <span class="option-letter">B</span>
+                        <span>By using square brackets [ ]</span>
+                    </li>
+                    <li data-option="C" onclick="selectOption(this, 'C')">
+                        <span class="option-letter">C</span>
+                        <span>By using parentheses ( )</span>
+                    </li>
+                    <li data-option="D" onclick="selectOption(this, 'D')">
+                        <span class="option-letter">D</span>
+                        <span>By using dot notation</span>
+                    </li>
+                </ul>
+                <a href="#" class="discuss-link">Discuss it</a>
+                <div class="discuss-answer">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, vero omnis. Cupiditate
+                        dignissimos nulla esse voluptas, obcaecati at dolor praesentium!</p>
+                </div>
+            </div>
+
+            <div class="question-card" id="Q17">
+                <div class="question-header">Question 17</div>
+                <div class="question-text">How do you access an element in an array?</div>
+                <ul class="options">
+                    <li data-option="A" onclick="selectOption(this, 'A')">
+                        <span class="option-letter">A</span>
+                        <span>By using curly braces { }</span>
+                    </li>
+                    <li data-option="B" onclick="selectOption(this, 'B')">
+                        <span class="option-letter">B</span>
+                        <span>By using square brackets [ ]</span>
+                    </li>
+                    <li data-option="C" onclick="selectOption(this, 'C')">
+                        <span class="option-letter">C</span>
+                        <span>By using parentheses ( )</span>
+                    </li>
+                    <li data-option="D" onclick="selectOption(this, 'D')">
+                        <span class="option-letter">D</span>
+                        <span>By using dot notation</span>
+                    </li>
+                </ul>
+                <a href="#" class="discuss-link">Discuss it</a>
+                <div class="discuss-answer">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, vero omnis. Cupiditate
+                        dignissimos nulla esse voluptas, obcaecati at dolor praesentium!</p>
+                </div>
+            </div>
+
+            <div class="question-card" id="Q18">
+                <div class="question-header">Question 18</div>
+                <div class="question-text">How do you access an element in an array?</div>
+                <ul class="options">
+                    <li data-option="A" onclick="selectOption(this, 'A')">
+                        <span class="option-letter">A</span>
+                        <span>By using curly braces { }</span>
+                    </li>
+                    <li data-option="B" onclick="selectOption(this, 'B')">
+                        <span class="option-letter">B</span>
+                        <span>By using square brackets [ ]</span>
+                    </li>
+                    <li data-option="C" onclick="selectOption(this, 'C')">
+                        <span class="option-letter">C</span>
+                        <span>By using parentheses ( )</span>
+                    </li>
+                    <li data-option="D" onclick="selectOption(this, 'D')">
+                        <span class="option-letter">D</span>
+                        <span>By using dot notation</span>
+                    </li>
+                </ul>
+                <a href="#" class="discuss-link">Discuss it</a>
+                <div class="discuss-answer">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, vero omnis. Cupiditate
+                        dignissimos nulla esse voluptas, obcaecati at dolor praesentium!</p>
+                </div>
+            </div>
+
+            <div class="question-card" id="Q19">
+                <div class="question-header">Question 19</div>
+                <div class="question-text">How do you access an element in an array?</div>
+                <ul class="options">
+                    <li data-option="A" onclick="selectOption(this, 'A')">
+                        <span class="option-letter">A</span>
+                        <span>By using curly braces { }</span>
+                    </li>
+                    <li data-option="B" onclick="selectOption(this, 'B')">
+                        <span class="option-letter">B</span>
+                        <span>By using square brackets [ ]</span>
+                    </li>
+                    <li data-option="C" onclick="selectOption(this, 'C')">
+                        <span class="option-letter">C</span>
+                        <span>By using parentheses ( )</span>
+                    </li>
+                    <li data-option="D" onclick="selectOption(this, 'D')">
+                        <span class="option-letter">D</span>
+                        <span>By using dot notation</span>
+                    </li>
+                </ul>
+                <a href="#" class="discuss-link">Discuss it</a>
+                <div class="discuss-answer">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, vero omnis. Cupiditate
+                        dignissimos nulla esse voluptas, obcaecati at dolor praesentium!</p>
+                </div>
+            </div>
+
+            <div class="question-card" id="Q20">
+                <div class="question-header">Question 20</div>
+                <div class="question-text">How do you access an element in an array?</div>
+                <ul class="options">
+                    <li data-option="A" onclick="selectOption(this, 'A')">
+                        <span class="option-letter">A</span>
+                        <span>By using curly braces { }</span>
+                    </li>
+                    <li data-option="B" onclick="selectOption(this, 'B')">
+                        <span class="option-letter">B</span>
+                        <span>By using square brackets [ ]</span>
+                    </li>
+                    <li data-option="C" onclick="selectOption(this, 'C')">
+                        <span class="option-letter">C</span>
+                        <span>By using parentheses ( )</span>
+                    </li>
+                    <li data-option="D" onclick="selectOption(this, 'D')">
+                        <span class="option-letter">D</span>
+                        <span>By using dot notation</span>
+                    </li>
+                </ul>
+                <a href="#" class="discuss-link">Discuss it</a>
+                <div class="discuss-answer">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, vero omnis. Cupiditate
+                        dignissimos nulla esse voluptas, obcaecati at dolor praesentium!</p>
+                </div>
+            </div>
+
+
+        </div>
+
+        <!-- Sidebar droite - Suivi des réponses -->
+        <div class="sidebar-right">
+            <h3>Suivi des réponses</h3>
+            <div class="progress-grid">
+                <div class="progress-item unanswered" onclick="goToQuestion(1)">1</div>
+                <div class="progress-item unanswered" onclick="goToQuestion(2)">2</div>
+                <div class="progress-item unanswered" onclick="goToQuestion(3)">3</div>
+                <div class="progress-item unanswered" onclick="goToQuestion(4)">4</div>
+                <div class="progress-item unanswered" onclick="goToQuestion(5)">5</div>
+                <div class="progress-item unanswered" onclick="goToQuestion(6)">6</div>
+                <div class="progress-item unanswered" onclick="goToQuestion(7)">7</div>
+                <div class="progress-item unanswered" onclick="goToQuestion(8)">8</div>
+                <div class="progress-item unanswered" onclick="goToQuestion(9)">9</div>
+                <div class="progress-item unanswered" onclick="goToQuestion(10)">10</div>
+                <div class="progress-item unanswered" onclick="goToQuestion(11)">11</div>
+                <div class="progress-item unanswered" onclick="goToQuestion(12)">12</div>
+                <div class="progress-item unanswered" onclick="goToQuestion(13)">13</div>
+                <div class="progress-item unanswered" onclick="goToQuestion(14)">14</div>
+                <div class="progress-item unanswered" onclick="goToQuestion(15)">15</div>
+                <div class="progress-item unanswered" onclick="goToQuestion(16)">16</div>
+                <div class="progress-item unanswered" onclick="goToQuestion(17)">17</div>
+                <div class="progress-item unanswered" onclick="goToQuestion(18)">18</div>
+                <div class="progress-item unanswered" onclick="goToQuestion(19)">19</div>
+                <div class="progress-item unanswered" onclick="goToQuestion(20)">20</div>
+            </div>
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-label">Correctes:</span>
+                    <span class="stat-value correct">3</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Incorrectes:</span>
+                    <span class="stat-value incorrect">2</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Non répondues:</span>
+                    <span class="stat-value">15</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Total:</span>
+                    <span class="stat-value total">20</span>
+                </div>
+            </div>
+            <div class="virtual-contest">
+                <h3>Concours Virtuel</h3>
+                <p>Participez à notre concours virtuel pour tester vos connaissances.</p>
+                <button class="btn-virtual-contest"><a href="contestENSA.html">Start contest</a></button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <!-- Floating particles -->
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+
+
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="/img/logo.png" alt="4uacademy Logo">
+                    <h3>OriConcours</h3>
+
+                    <p>Votre partenaire pour réussir vos concours d'entrée aux écoles supérieures au Maroc.</p>
+                    <div class="social-links">
+                        <a href="#" title="LinkedIn" data-social="linkedin">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" title="Instagram" data-social="instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" title="WhatsApp" data-social="whatsapp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="#" title="Facebook" data-social="facebook">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Liens Rapides</h3>
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="index.html">À propos</a></li>
+                        <li><a href="index.html">Services</a></li>
+                        <li><a href="index.html">Contact</a></li>
+                        <li><a href="index.html">Expériences</a></li>
+                        <li><a href="index.html">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#" data-service="concours">Liste des concours</a></li>
+                        <li><a href="#" data-service="ecoles">Infos écoles</a></li>
+                        <li><a href="#" data-service="orientation">Orientation</a></li>
+                        <li><a href="#" data-service="preparation">Préparation</a></li>
+                        <li><a href="#" data-service="coaching">Coaching</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Newsletter</h3>
+                    <p>Restez informé des dernières actualités et nouveaux concours.</p>
+                    <div class="newsletter">
+                        <form class="newsletter-form" id="newsletterForm">
+                            <input type="email" placeholder="Votre email" class="newsletter-input" id="emailfooter"
+                                required>
+                            <button type="submit" class="newsletter-btn">
+                                <span>S'abonner</span>
+                            </button>
+                        </form>
+                        <div class="success-message" id="successMessage">
+                            <i class="fas fa-check-circle"></i> Merci pour votre inscription !
+                        </div>
+                        <div class="failure-message" id="failureMessage">
+                            <i class="fa-solid fa-xmark"></i> email est invalid !!
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 OriConcours. Tous droits réservés. | <a href="#" id="legalLink">Mentions légales</a> | <a
+                        href="#" id="privacyLink">Politique de confidentialité</a></p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
