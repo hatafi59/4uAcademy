@@ -1,3 +1,9 @@
+// pour empecher le selection de text
+document.querySelector('.main-content')?.addEventListener('selectstart', function (e) {
+    e.preventDefault();
+});
+
+// ------------------------------------start---------------
 let questionsState = {
     1: { answered: false, correct: null, selectedOption: null },
     2: { answered: false, correct: null, selectedOption: null },

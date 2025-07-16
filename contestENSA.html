@@ -21,7 +21,16 @@
     <!-- js -->
     <script src="script.js" defer></script>
     <script src="virtualContest.js" defer></script>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script><!--  for pdf export -->
+     <!-- ✅ Intégration de MathJax -->
+     <script>
+        window.MathJax = {
+            tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
+            svg: { fontCache: 'global' }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" defer></script>
 
 </head>
 
