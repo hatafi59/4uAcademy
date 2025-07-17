@@ -223,8 +223,16 @@ const questions = {
        ],
        correct: "$\\frac{1}{2}+i\\frac{\\sqrt{3}}{2}$"
    },
-   /* NOTE: La question 15 [cite: 94] du document source contient une erreur car aucune des options proposées n'est correcte. Le calcul de z^5 donne -16√3 + 16i, ce qui ne correspond à aucune des options ( -8z, -16z, 16z). */
-   16: {
+   15: {
+    text: "$cos(\\pi/16)$ est égal à : [cite: 83]",
+    options: [
+        "$\\frac{1}{2}\\sqrt{2+\\sqrt{2-\\sqrt{2}}}$",
+        "$\\frac{1}{2}\\sqrt{2-\\sqrt{2+\\sqrt{2}}}$",
+        "$\\frac{1}{16}\\sqrt{2+\\sqrt{2+\\sqrt{2}}}$",
+        "$\\frac{1}{2}\\sqrt{2+\\sqrt{2+\\sqrt{2}}}$"
+    ],
+    correct: "$\\frac{1}{2}\\sqrt{2+\\sqrt{2+\\sqrt{2}}}$"
+},   16: {
        text: "Soient $z_{1}$ et $z_{2}$ les solutions de l'équation suivante : $2z^{2}-2(m+1+i)z+m^{2}+(1+i)m+i=0$ où $m \\in \\mathbb{C}^{*}$ et $m \\neq 1,i$. Alors $Im(z_{1}) \\times Im(z_{2})=$ [cite: 105, 106, 107, 108]",
        options: [
            "$\\frac{1-m^{2}}{2}$",
