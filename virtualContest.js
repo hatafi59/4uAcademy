@@ -269,7 +269,7 @@ const data = {
                 text: "L'équation à variables réelles $9x^{5}-12x^{4}+6x-5=0$ :",
                 options: [
                     "admet une seule solution entière",
-                    "admet trois solutions entières", 
+                    "admet trois solutions entières",
                     "admet cinq solutions entières",
                     "n'admet pas de solution entière"
                 ],
@@ -603,9 +603,9 @@ const data = {
         2021: {},
         2020: {}
     },
-    "FMP":{},
-    "ENSAM":{},
-    "ENCG":{}
+    "FMP": {},
+    "ENSAM": {},
+    "ENCG": {}
 };
 
 
@@ -666,7 +666,7 @@ function getRandamQuestions(ecole, count = 20) {
 
     return questionsObj;
 }
-
+let ecole="ENSA"; // Par défaut, on peut changer cette valeur selon l'école choisie
 // Initialize the page
 document.addEventListener('DOMContentLoaded', function () {
     const params = new URLSearchParams(window.location.search);
@@ -680,6 +680,7 @@ document.addEventListener('DOMContentLoaded', function () {
     console.log("École choisie :", school);
 
     // Maintenant, tu peux l'utiliser :
+    ecole=school;
     questions = getRandamQuestions(school); // Exemple
     generateQuestionNumbers();
     loadQuestion();
@@ -721,28 +722,28 @@ function loadQuestion() {
             optionsContainer.appendChild(div);
         });
         return;
-    } 
+    }
 
-        document.getElementById('questionTitle').textContent = `QUESTION ${currentQuestion}`;
-        // CORRECTION: Vérifier si question.text existe
-        document.getElementById('questionText').textContent = question.text || 'Texte de question non disponible';
+    document.getElementById('questionTitle').textContent = `QUESTION ${currentQuestion}`;
+    // CORRECTION: Vérifier si question.text existe
+    document.getElementById('questionText').textContent = question.text || 'Texte de question non disponible';
 
-        const optionsContainer = document.getElementById('optionsContainer');
-        optionsContainer.innerHTML = '';
+    const optionsContainer = document.getElementById('optionsContainer');
+    optionsContainer.innerHTML = '';
 
-        question.options.forEach(option => {
-            const optionDiv = document.createElement('div');
-            optionDiv.className = 'option';
-            optionDiv.onclick = () => selectOption(optionDiv, option);
+    question.options.forEach(option => {
+        const optionDiv = document.createElement('div');
+        optionDiv.className = 'option';
+        optionDiv.onclick = () => selectOption(optionDiv, option);
 
-            optionDiv.innerHTML = `
+        optionDiv.innerHTML = `
                  <input type="radio" name="answer" value="${option}">
                  <span class="option-text">${option}</span>
              `;
 
-            optionsContainer.appendChild(optionDiv);
-        });
-    
+        optionsContainer.appendChild(optionDiv);
+    });
+
 
     // Restore selected answer if exists
     if (answers[currentQuestion] !== undefined) {
@@ -1024,7 +1025,13 @@ function restartContest() {
 
 // ------------------start
 function showDetailedResults() {
-    let resultsHtml = '<h3>Résultats détaillés du Contest JavaScript:</h3><br>';
+    let resultsHtml = `
+        <div style="max-width: 750px; margin: 0 auto; font-family: Arial, sans-serif; background: white; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+            <div style="background: #0b6285; color: white; padding: 20px; text-align: center; border-bottom: 1px solid #ddd;">
+                <h2 style="margin: 0;">Résultats du Contest ${ecole}</h2>
+            </div>
+            <div style="padding: 20px; background: white; color: #212529;">
+    `;
 
     const score = calculateScore();
     const totalAnswered = Object.keys(answers).length;
@@ -1032,14 +1039,15 @@ function showDetailedResults() {
     const timeUsed = formatDuration(Math.floor((endTime - startTime) / 1000));
 
     resultsHtml += `
-        <div style="background-color: #f8f9fa; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
-            <strong>📈 Résumé global:</strong><br>
-            Questions correctes: ${score.correct} points<br>
-            Questions incorrectes: ${score.wrong} points<br>
-            Temps total: ${timeUsed}<br>
-            Pourcentage de réussite: ${percentage}%<br>
-            Questions répondues: ${totalAnswered}/20<br>
+        <div style="background: #f0f8fa; padding: 15px; border-radius: 5px; margin-bottom: 20px; border: 1px solid #cce5ff;">
+            <h3 style="margin-top: 0; color: #0b6285;">📊 Résumé</h3>
+            <p><strong>✅ Questions correctes:</strong> ${score.correct}/20</p>
+            <p><strong>❌ Questions incorrectes:</strong> ${score.wrong}/20</p>
+            <p><strong>📝 Questions répondues:</strong> ${totalAnswered}/20</p>
+            <p><strong>📈 Pourcentage de réussite:</strong> ${percentage}%</p>
+            <p><strong>⏱ Temps total:</strong> ${timeUsed}</p>
         </div>
+        <h3 style="color: #0b6285; border-bottom: 2px solid #0b6285; padding-bottom: 5px;">📌 Détail des questions</h3>
     `;
 
     for (let i = 1; i <= 20; i++) {
@@ -1049,41 +1057,114 @@ function showDetailedResults() {
         if (question && userAnswer !== undefined) {
             const isCorrect = userAnswer === question.correct;
             const status = isCorrect ? '✅ Correct' : '❌ Incorrect';
-            const points = isCorrect ? '+1' : '-1';
+            const bgColor = isCorrect ? '#d4edda' : '#f8d7da';
+            const borderColor = isCorrect ? '#c3e6cb' : '#f5c6cb';
+            const textColor = isCorrect ? '#155724' : '#721c24';
 
             resultsHtml += `
-                <div style="border: 1px solid #ddd; padding: 10px; margin-bottom: 10px; border-radius: 5px;">
-                    <strong>Question ${i}:</strong> ${status} (${points} points)<br>
-                    <em>${question.text}</em><br>
-                    Votre réponse: <strong>${userAnswer}</strong><br>
-                    Bonne réponse: <strong style="color: #4CAF50;">${question.correct}</strong>
+                <div style="background: ${bgColor}; border: 1px solid ${borderColor}; color: ${textColor}; padding: 15px; margin-bottom: 10px; border-radius: 5px;">
+                    <strong>Question ${i}:</strong> ${status}<br>
+                    <em style="color: #212529;">${question.text}</em><br>
+                    <strong>Votre réponse:</strong> ${userAnswer}<br>
+                    <strong>Bonne réponse:</strong> ${question.correct}
                 </div>
             `;
         } else {
             resultsHtml += `
-                <div style="border: 1px solid #ddd; padding: 10px; margin-bottom: 10px; border-radius: 5px; background-color: #fff3cd;">
-                    <strong>Question ${i}:</strong> ❌ Non répondue (0 points)<br>
+                <div style="background: #fff3cd; border: 1px solid #ffeeba; color: #856404; padding: 15px; margin-bottom: 10px; border-radius: 5px;">
+                    <strong>Question ${i}:</strong> ⚠️ Non répondue
                 </div>
             `;
         }
     }
 
-    // Créer un conteneur en mémoire (pas dans le DOM)
-    const container = document.createElement('div');
-    container.innerHTML = resultsHtml;
+    resultsHtml += `
+            </div>
+        </div>
+    `;
 
-    // Générer et télécharger le PDF
-    html2pdf()
-        .set({
-            margin: 10,
-            filename: 'resultats_contest.pdf',
-            image: { type: 'jpeg', quality: 0.98 },
-            html2canvas: { scale: 2 },
-            jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
-        })
-        .from(container)
-        .save();
+    // Affichage dans une nouvelle fenêtre
+    const newWindow = window.open('', '_blank', 'width=800,height=600,scrollbars=yes,resizable=yes');
+
+    if (newWindow) {
+        newWindow.document.write(`
+            <!DOCTYPE html>
+            <html lang="fr">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Résultats du Contest</title>
+                <style>
+                    body {
+                        margin: 0;
+                        padding: 15px;
+                        background: #f0f2f5;
+                        font-family: Arial, sans-serif;
+                    }
+                </style>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+                <script>
+                    window.MathJax = {
+                        tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
+                        svg: { fontCache: 'global' }
+                    };
+
+
+//-----------------------------Désactiver le clic droit et les raccourcis clavier
+document.addEventListener('contextmenu', e => e.preventDefault());
+document.onkeydown = function (e) {
+    
+    if (e.key === "F12" || (e.ctrlKey && e.shiftKey && e.key === "I")) {
+        alert("Fonction désactivée.");
+        return false;
+    }
+};
+
+
+
+// ------------------------Empêcher copier, couper, coller via événements
+document.addEventListener('copy', e => {
+    
+    e.preventDefault();
+    alert("❌ Copie interdite !");
+});
+document.addEventListener('cut', e => {
+   
+    e.preventDefault();
+    alert("❌ Coupe interdite !");
+});
+
+document.addEventListener('paste', e => {
+   
+    e.preventDefault();
+    alert("❌ Collage interdit !");
+});
+
+// ------------------------------------------ Désactiver sélection de texte
+document.addEventListener('selectstart', e => {  e.preventDefault(); });
+
+
+
+                </script>
+                <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" defer></script>
+            </head>
+            <body>
+                ${resultsHtml}
+            </body>
+            </html>
+        `);
+        newWindow.document.close();
+        newWindow.focus();
+    } else {
+        alert("Impossible d'ouvrir une nouvelle fenêtre. Vérifiez que les pop-ups ne sont pas bloquées.");
+    }
+
+    // MathJax rendering
+    if (window.MathJax) {
+        MathJax.typesetPromise();
+    }
 }
+
 
 // -----------------------fin
 //  -------------si l'utulisateur change visibility
@@ -1141,7 +1222,7 @@ function stopContest() {
     }
 
     const answeredCount = Object.keys(answers).length;
-    
+
     // Créer une confirmation personnalisée avec timeout
     showConfirmWithTimeout(
         `Êtes-vous sûr de vouloir arrêter le contest ?\n\nQuestions répondues: ${answeredCount}/20\n\nVotre progression sera perdue si vous continuez.`,
@@ -1188,7 +1269,7 @@ function showConfirmWithTimeout(message, timeoutMs, callback) {
 
     const confirmBtn = document.createElement('button');
     confirmBtn.textContent = 'Confirmer';
-    confirmBtn.classList.add('modal-btn' , 'secondary');
+    confirmBtn.classList.add('modal-btn', 'secondary');
 
     const cancelBtn = document.createElement('button');
     cancelBtn.textContent = 'Annuler';
@@ -1196,7 +1277,7 @@ function showConfirmWithTimeout(message, timeoutMs, callback) {
 
 
     // Assembler la modal
-    
+
     modal.appendChild(titleDiv);
     modal.appendChild(messageDiv);
     modal.appendChild(countdownDiv);
@@ -1216,7 +1297,7 @@ function showConfirmWithTimeout(message, timeoutMs, callback) {
     function cleanup(result) {
         if (resolved) return;
         resolved = true;
-        
+
         clearTimeout(timeoutId);
         clearInterval(intervalId);
         document.body.removeChild(overlay);
@@ -1245,7 +1326,7 @@ function showConfirmWithTimeout(message, timeoutMs, callback) {
     // Event listeners
     confirmBtn.addEventListener('click', () => cleanup(true));
     cancelBtn.addEventListener('click', () => cleanup(false));
-    
+
     // Fermer avec Escape
     function handleKeyDown(e) {
         if (e.key === 'Escape') {

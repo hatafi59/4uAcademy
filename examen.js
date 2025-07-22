@@ -2,6 +2,16 @@
 document.querySelector('.main-content')?.addEventListener('selectstart', function (e) {
     e.preventDefault();
 });
+//-----------------------------Désactiver le clic droit et les raccourcis clavier
+document.addEventListener('contextmenu', e => e.preventDefault());
+document.onkeydown = function (e) {
+    
+    if (e.key === "F12" || (e.ctrlKey && e.shiftKey && e.key === "I")) {
+        alert("Fonction désactivée.");
+        return false;
+    }
+};
+
 
 const data = {
     "ENSA": {
