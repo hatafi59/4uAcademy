@@ -14,11 +14,15 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="concours.css">
     <link rel="stylesheet" href="examen.css">
+    <link rel="stylesheet" href="virtualContest.css">
+
     <!-- Favicon -->
     <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
     <!-- js -->
     <script src="script.js" defer></script>
-    <script src="examen.js" defer></script>
+    <script src="virtualContest.js" defer></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script><!--  for pdf export -->
      <!-- ✅ Intégration de MathJax -->
      <script>
         window.MathJax = {
@@ -73,77 +77,130 @@
 
 
 
-    <div class="container-examen">
-        <!-- Sidebar gauche - Navigation par année -->
-        <div class="sidebar-left">
-            <h3>Concours par année</h3>
-            <ul class="year-links">
-                <li><a href="#" class="active" onclick="goToConcour('2025','2023-10-01')">2025</a></li>
-                <li><a href="#"  onclick="goToConcour('2024','2023-10-01')">2024</a></li>
-                <li><a href="#" onclick="goToConcour('2023','2023-10-01')">2023</a></li>
-                <li><a href="#" onclick="goToConcour('2022','2023-10-01')">2022</a></li>
-                <li><a href="#" onclick="goToConcour('2021','2023-10-01')">2021</a></li>
-                <li><a href="#" onclick="goToConcour('2020','2023-10-01')">2020</a></li>
-                <li><a href="#" onclick="goToConcour('2019','2023-10-01')">2019</a></li>
-                <li><a href="#" onclick="goToConcour('2018','2023-10-01')">2018</a></li>
-            </ul>
-        </div>
-        <!-- Section principale - Questions -->
-        <div class="main-content">
 
-        </div>
 
-        <!-- Sidebar droite - Suivi des réponses -->
-        <div class="sidebar-right">
-            <h3>Suivi des réponses</h3>
-            <div class="progress-grid">
-                <div class="progress-item unanswered" onclick="goToQuestion(1)">1</div>
-                <div class="progress-item unanswered" onclick="goToQuestion(2)">2</div>
-                <div class="progress-item unanswered" onclick="goToQuestion(3)">3</div>
-                <div class="progress-item unanswered" onclick="goToQuestion(4)">4</div>
-                <div class="progress-item unanswered" onclick="goToQuestion(5)">5</div>
-                <div class="progress-item unanswered" onclick="goToQuestion(6)">6</div>
-                <div class="progress-item unanswered" onclick="goToQuestion(7)">7</div>
-                <div class="progress-item unanswered" onclick="goToQuestion(8)">8</div>
-                <div class="progress-item unanswered" onclick="goToQuestion(9)">9</div>
-                <div class="progress-item unanswered" onclick="goToQuestion(10)">10</div>
-                <div class="progress-item unanswered" onclick="goToQuestion(11)">11</div>
-                <div class="progress-item unanswered" onclick="goToQuestion(12)">12</div>
-                <div class="progress-item unanswered" onclick="goToQuestion(13)">13</div>
-                <div class="progress-item unanswered" onclick="goToQuestion(14)">14</div>
-                <div class="progress-item unanswered" onclick="goToQuestion(15)">15</div>
-                <div class="progress-item unanswered" onclick="goToQuestion(16)">16</div>
-                <div class="progress-item unanswered" onclick="goToQuestion(17)">17</div>
-                <div class="progress-item unanswered" onclick="goToQuestion(18)">18</div>
-                <div class="progress-item unanswered" onclick="goToQuestion(19)">19</div>
-                <div class="progress-item unanswered" onclick="goToQuestion(20)">20</div>
+    
+    <div id="pdfContent" style="display: none;"></div> <!--  for pdf export -->
+
+
+     <!-- Contest Start Modal -->
+     <div class="contest-overlay" id="startModal">
+        <div class="contest-modal">
+            <div class="modal-title">Confirmation de début du contest</div>
+            <div class="modal-text">
+                Vous êtes sur le point de commencer le Contest.<br>
+                <strong>Durée:</strong> 2 heures<br>
+                <strong>Questions:</strong> 20<br>
+                <strong>Système de points:</strong><br> +1 point par bonne réponse<br> -1 point par mauvaise réponse <br>
+                Êtes-vous prêt à commencer ?
             </div>
+            <div class="modal-buttons">
+                <button class="modal-btn secondary" onclick="cancelContest()">Annuler</button>
+                <button class="modal-btn primary" onclick="startContest()">Commencer le Contest</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="contest-container ">
+        <div class="sidebar">
+            <div class="timer-container" id="timerContainer">
+                <div>Temps restant</div>
+                <div class="timer-display" id="timerDisplay">02:00:00</div>
+            </div>
+            
+            <button class="stop-contest-btn" onclick="stopContest()" id="stopBtn">
+                🛑 Arrêter le Contest
+            </button>
+            
+         
+
+            <div class="question-grid" id="questionGrid">
+                
+            </div>
+
             <div class="stats">
                 <div class="stat-item">
-                    <span class="stat-label">Correctes:</span>
-                    <span class="stat-value correct">0</span>
+                    <div class="stat-circle answered"></div>
+                    <span id="answeredCount">0</span>
+                    <span>Answered</span>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-label">Incorrectes:</span>
-                    <span class="stat-value incorrect">0</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-label">Non répondues:</span>
-                    <span class="stat-value">20</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-label">Total:</span>
-                    <span class="stat-value total">20</span>
+                    <div class="stat-circle unanswered"></div>
+                    <span id="unansweredCount">20</span>
+                    <span>Unanswered</span>
                 </div>
             </div>
-            <div class="virtual-contest">
-                <h3>Concours Virtuel</h3>
-                <p>Participez à notre concours virtuel pour tester vos connaissances.</p>
-                <button class="btn-virtual-contest"><a href="contestENSA.html">Start contest</a></button>
+        </div>
+
+        <div class="main-content">
+            
+            <div class="question-header">
+                <div class="question-title" id="questionTitle">QUESTION 1</div>
+                <div class="marks-info">Correct Answer: +5 Marks</div>
+            </div>
+            <div class="question-text" id="questionText">
+                In how many phases an execution context is created?
+            </div>
+            <div class="options" id="optionsContainer">
+                <div class="option" onclick="selectOption(this, 2)">
+                    <input type="radio" name="answer" value="2">
+                    <span class="option-text">2</span>
+                </div>
+                <div class="option" onclick="selectOption(this, 3)">
+                    <input type="radio" name="answer" value="3">
+                    <span class="option-text">3</span>
+                </div>
+                <div class="option" onclick="selectOption(this, 4)">
+                    <input type="radio" name="answer" value="4">
+                    <span class="option-text">4</span>
+                </div>
+                <div class="option" onclick="selectOption(this, 1)">
+                    <input type="radio" name="answer" value="1">
+                    <span class="option-text">1</span>
+                </div>
+            </div>
+
+
+
+            <div class="bottom-controls">
+                <button class="nav-button disabled" id="prevBtn" onclick="previousQuestion()">
+                    ← Previous
+                </button>
+                <button class="submit-btn" onclick="submitAnswer()">Submit</button>
+                <button class="nav-button" id="nextBtn" onclick="nextQuestion()">
+                    Next →
+                </button>
+            </div>
+            <div class="hint-text">
+                You can view answers by clicking <strong>Submit</strong> button.
             </div>
         </div>
     </div>
 
+   
+
+    <!-- Contest End Modal -->
+    <div class="contest-overlay" id="endModal" style="display: none;">
+        <div class="contest-modal">
+            <div class="modal-title">🏁 Contest terminé !</div>
+            <div class="modal-text" id="endModalText">
+                Le temps est écoulé !<br><br>
+                <strong>Résultats:</strong><br>
+                <span id="finalResults"></span>
+            </div>
+            <div class="modal-buttons-end">
+                <button class="modal-btn primary" onclick="closeContest()">Voir les résultats détaillés</button>
+                <button class="modal-btn secondary" onclick="restartContest()">Recommencer</button>
+                <button class="modal-btn thirdly" onclick="cancelContest()">Annuler</button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    
 
 
 
