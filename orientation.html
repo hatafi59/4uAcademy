@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4uacademy</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Favicon -->
+    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+    <!-- js -->
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <header id="home">
+        <div class="navbar">
+            <nav>
+                <a href="index.html" class="logo">
+                    <img src="/img/logo.png" alt="4uacademy Logo">
+                </a>
+                <div class="humburger">
+                    <i class="fa-solid fa-bars active"></i>
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li class="dropdown">
+                        <div style="display: flex; align-items: center;">
+                          <a href="#services" style="margin-right: 0;">Services</a>
+                          <span class="dropdown-toggle-icon">
+                            <i class="fas fa-chevron-down icon-down"></i>
+                            <i class="fas fa-chevron-up icon-up"></i>
+                          </span>
+                        </div>
+                        <div class="dropdown-content">
+                          <a href="concours.html" target="_blank">concours</a>                            
+                          <a href="orientation.html" target="_blank">Orientation</a>
+                          <a href="recommendation.html" target="_blank">Recommendation</a>
+                          
+                        </div>
+                      </li>
+                      
+                    <li><a href="#experiences">Experiences</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#faqs">FAQs</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="home-content">
+            <div class="text">
+                <h1><strong style="font-size:90px;">T</strong>rouve ton <span>concours</span><br> choisis ton
+                    <span>avenir</span>
+                </h1>
+                <p>OriConcours t'aide à trouver les bonnes écoles et concours après le bac au Maroc <br>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis libero ad fuga, cupiditate,
+                    nesciunt magni voluptates architecto rerum expedita a aliquam earum porro quaerat soluta aperiam
+                    reiciendis. Tempora, nobis. Voluptates.
+                </p>
+                <button> Get more!
+                </button>
+            </div>
+            <!-- <div class="image">
+                <img src="/img/homeimg.png" alt="homeImage">
+            </div> -->
+        </div>
+    </header>
+    <main>
+        <!-- Scroll to top button -->
+    <button class="scroll-top" id="scrollTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <section>
+        <h1>hello on Orientation page!!!!!</h1>
+    </section>
+
+
+
+
+
+
+
+    
+    
+</main>
+    
+<!-- Footer -->
+<footer class="footer">
+    <!-- Floating particles -->
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    
+    
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <img src="/img/logo.png" alt="4uacademy Logo" >
+                <h3>OriConcours</h3>
+                
+                <p>Votre partenaire pour réussir vos concours d'entrée aux écoles supérieures au Maroc.</p>
+                <div class="social-links">
+                    <a href="#" title="LinkedIn" data-social="linkedin" >
+                        <i class="fab fa-linkedin" ></i>
+                    </a>
+                    <a href="#" title="Instagram" data-social="instagram" >
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" title="WhatsApp" data-social="whatsapp" >
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="#" title="Facebook" data-social="facebook" >
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Liens Rapides</h3>
+                <ul>
+                    <li><a href="#home">Accueil</a></li>
+                    <li><a href="#about">À propos</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#experiences">Expériences</a></li>
+                    <li><a href="#faqs">FAQ</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="concours.html" data-service="concours">Les concours</a></li>
+                    <li><a href="#" data-service="orientation">Orientation</a></li>
+                    <li><a href="#" data-service="orientation">Recommendation</a></li>
+                    
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Newsletter</h3>
+                <p>Restez informé des dernières actualités et nouveaux concours.</p>
+                <div class="newsletter">
+                    <form class="newsletter-form" id="newsletterForm">
+                        <input type="email" placeholder="Votre email" class="newsletter-input" id="emailfooter" required>
+                        <button type="submit" class="newsletter-btn">
+                            <span>S'abonner</span>
+                        </button>
+                    </form>
+                    <div class="success-message" id="successMessage">
+                        <i class="fas fa-check-circle"></i> Merci pour votre inscription !
+                    </div>
+                    <div class="failure-message" id="failureMessage">
+                        <i class="fa-solid fa-xmark"></i> email est invalid !!</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 OriConcours. Tous droits réservés. | <a href="#" id="legalLink">Mentions légales</a> | <a href="#" id="privacyLink">Politique de confidentialité</a></p>
+        </div>
+    </div>
+</footer>
+ <script>
+     
+    
+    // Newsletter form handling and email validation
+    document.getElementById('newsletterForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const emailfooter = document.getElementById('emailfooter');
+        const successMessage = document.getElementById('successMessage');
+        const failureMessage = document.getElementById('failureMessage');
+        const submitBtn = this.querySelector('.newsletter-btn');
+        const pattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+
+        if (emailfooter.value && pattern.test(emailfooter.value)) {
+            // Simulate loading state
+            submitBtn.style.transform = 'scale(0.95)';
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi...';
+            
+            setTimeout(() => {
+                // Show success message
+                successMessage.classList.add('show');
+                emailfooter.value = '';
+                submitBtn.innerHTML = '<i class="fas fa-check"></i> Inscrit !';
+                
+                // Reset button after 3 seconds
+                setTimeout(() => {
+                    submitBtn.innerHTML = '<span>S\'abonner</span>';
+                    submitBtn.style.transform = '';
+                    successMessage.classList.remove('show');
+                }, 3000);
+            }, 1500);
+        }else{
+            failureMessage.classList.add('show');
+            emailfooter.value = '';
+            setTimeout(() => {
+                failureMessage.classList.remove('show');
+            }, 3000);
+        }
+    });
+    //-------------------------------------------------------------------
+    
+</script> 
+
+</body>
+
+</html>
