@@ -603,8 +603,135 @@ const questions = {
                 discuss: "Il s'agit d'une probabilité conditionnelle. Nombre total de garçons = 300 - 180 = 120. Garçons en Environnement = 150 - 108 = 42. Donc $P(\\text{Environnement} | \\text{Garçon}) = \\frac{42}{120} = 0.35$."
             }
         },
-        2021: {},
-        2020: {}
+        2021: {
+            1: {
+                text: "Une condition nécessaire (pas forcément suffisante) pour réussir le concours de l'ENSA est :",
+                options: ["Avoir répondu correctement à tout le QCM", "Avoir au plus 25% de réponses fausses", "Avoir au moins 50% de réponses correctes", "Avoir passé le concours"],
+                correct: "d",
+                discuss: "Une condition **nécessaire** est une condition qui doit obligatoirement être satisfaite pour qu'une conséquence (ici, réussir le concours) se produise. On ne peut pas réussir le concours si on ne l'a pas passé. \"Avoir passé le concours\" est donc une condition absolument nécessaire. Les autres options ne sont pas des conditions nécessaires. Par exemple, on peut réussir sans avoir répondu correctement à toutes les questions (ce qui rend l'option 'a' non nécessaire)."
+            },
+            2: {
+                text: "Le 17 juillet 2021, jour du concours de l'ENSA, est un samedi. Quel jour de la semaine sera le 29 février 2024?",
+                options: ["mardi", "jeudi", "samedi", "lundi"],
+                correct: "b",
+                discuss: "1. **Nombre de jours restants en 2021 :** (31-17) en juillet + 31 (août) + 30 (sept.) + 31 (oct.) + 30 (nov.) + 31 (déc.) = 167 jours.\n2. **Nombre de jours en 2022 :** 365 jours (année non bissextile).\n3. **Nombre de jours en 2023 :** 365 jours (année non bissextile).\n4. **Nombre de jours en 2024 :** 31 (janv.) + 29 (fév., car 2024 est une année bissextile) = 60 jours.\n5. **Total de jours :** $167 + 365 + 365 + 60 = 957$ jours.\n6. On divise le total par 7 pour trouver le décalage de jours : $957 = 7 \\times 136 + 5$.\n7. Le reste est de 5. On ajoute donc 5 jours au samedi : Samedi + 5 jours = **Jeudi**."
+            },
+            3: {
+                text: "Le nombre de diviseurs de $N=72^{10}\\times162^{50}$ est:",
+                options: ["17600", "17680", "17820", "17901"],
+                correct: "d",
+                discuss: "1. **Décomposition en facteurs premiers :**\n   * $72 = 8 \\times 9 = 2^3 \\times 3^2$\n   * $162 = 2 \\times 81 = 2 \\times 3^4$\n2. **Décomposition de N :**\n   * $N = (2^3 \\times 3^2)^{10} \\times (2^1 \\times 3^4)^{50}$\n   * $N = (2^{30} \\times 3^{20}) \\times (2^{50} \\times 3^{200})$\n   * $N = 2^{30+50} \\times 3^{20+200} = 2^{80} \\times 3^{220}$\n3. **Calcul du nombre de diviseurs :** Si $N = p_1^{a_1} \\times p_2^{a_2}$, le nombre de diviseurs est $(a_1 + 1)(a_2 + 1)$.\n   * Nombre de diviseurs = $(80 + 1)(220 + 1) = 81 \\times 221 = \\bf{17901}$."
+            },
+            4: {
+                text: "Soient x et y deux réels non nuls, inverses l'un de l'autre, tels que la somme du carré de leur somme avec la somme de leurs carrés est égale à 10. Le carré du nombre x vaut :",
+                options: ["$2-\\sqrt{3}$ ou $2+\\sqrt{3}$", "$1-\\sqrt{5}$ ou $1+\\sqrt{5}$", "$1-\\sqrt{3}$ ou $1+\\sqrt{3}$", "$2-\\sqrt{5}$ ou $2+\\sqrt{5}$"],
+                correct: "a",
+                discuss: "1. **Traduction de l'énoncé :**\n   * x et y sont inverses : $y = 1/x$.\n   * Équation : $(x+y)^2 + (x^2+y^2) = 10$.\n2. **Résolution :**\n   * On remplace y : $(x + \\frac{1}{x})^2 + (x^2 + \\frac{1}{x^2}) = 10$.\n   * On développe : $(x^2 + 2 + \\frac{1}{x^2}) + (x^2 + \\frac{1}{x^2}) = 10$.\n   * On simplifie : $2x^2 + \\frac{2}{x^2} + 2 = 10 \\implies 2(x^2 + \\frac{1}{x^2}) = 8 \\implies x^2 + \\frac{1}{x^2} = 4$.\n3. **Changement de variable :** On pose $X = x^2$. L'équation devient $X + \\frac{1}{X} = 4$.\n4. **Équation du second degré :** $X^2 + 1 = 4X \\implies X^2 - 4X + 1 = 0$.\n5. **Solutions pour X :** On utilise le discriminant $\\Delta = (-4)^2 - 4(1)(1) = 12$.\n   * $X = \\frac{4 \\pm \\sqrt{12}}{2} = \\frac{4 \\pm 2\\sqrt{3}}{2} = 2 \\pm \\sqrt{3}$.\n   * Les valeurs possibles pour $x^2$ sont donc **$2 - \\sqrt{3}$** et **$2 + \\sqrt{3}$**."
+            },
+            5: {
+                text: "Le produit $\\prod_{k=0}^{9}\\sqrt[3 \\cdot 2^{k}]{5}=$",
+                options: ["$\\sqrt[3]{5^{\\frac{511}{256}}}$", "$\\sqrt[3]{5^{\\frac{1023}{256}}}$", "$\\sqrt[3]{5^{\\frac{1023}{512}}}$", "$\\sqrt[3]{5^{\\frac{511}{1024}}}$"],
+                correct: "c",
+                discuss: "1. **Forme exponentielle :** Le produit s'écrit $P = \\prod_{k=0}^{9} 5^{\\frac{1}{3 \\cdot 2^k}} = 5^{\\sum_{k=0}^{9} \\frac{1}{3 \\cdot 2^k}}$.\n2. **Somme des exposants :** L'exposant est $S = \\frac{1}{3} \\sum_{k=0}^{9} (\\frac{1}{2})^k$.\n3. **Somme d'une suite géométrique :** La somme $\\sum_{k=0}^{9} (\\frac{1}{2})^k$ est la somme des 10 premiers termes d'une suite géométrique de raison $r=1/2$ et de premier terme $a=1$.\n   * La somme vaut $a \\frac{1-r^n}{1-r} = 1 \\times \\frac{1 - (1/2)^{10}}{1 - 1/2} = \\frac{1 - 1/1024}{1/2} = 2 \\times \\frac{1023}{1024} = \\frac{1023}{512}$.\n4. **Calcul final de l'exposant :** $S = \\frac{1}{3} \\times \\frac{1023}{512} = \\frac{1023}{3 \\times 512}$.\n5. **Résultat :** Le produit est $5^{\\frac{1023}{3 \\times 512}} = \\sqrt[3]{5^{\\frac{1023}{512}}}$."
+            },
+            6: {
+                text: "$\\lim_{n\\to+\\infty} 3^n e^{-3n}=$",
+                options: ["1", "0", "$+\\infty$", "e"],
+                correct: "b",
+                discuss: "1. **Réécriture de l'expression :** $3^n e^{-3n} = \\frac{3^n}{(e^3)^n} = (\\frac{3}{e^3})^n$.\n2. **Analyse de la raison :** Il s'agit d'une suite géométrique de raison $q = \\frac{3}{e^3}$.\n3. **Valeur de la raison :** $e \\approx 2.718$, donc $e^3 \\approx 20.08$. La raison $q = \\frac{3}{e^3}$ est un nombre compris entre 0 et 1 ($0 < q < 1$).\n4. **Limite de la suite :** La limite d'une suite géométrique $q^n$ avec $|q|<1$ est 0.\n   * Donc, $\\lim_{n\\to+\\infty} (\\frac{3}{e^3})^n = \\bf{0}$."
+            },
+            7: {
+                text: "En remarquant que pour tout $n\\in\\mathbb{N}$, le nombre $(3+\\sqrt{5})^{n}+(3-\\sqrt{5})^{n}$ est un entier pair, $\\lim_{n\\to+\\infty}\\sin((3+\\sqrt{5})^{n}\\pi)=$",
+                options: ["1", "-1", "0", "$+\\infty$"],
+                correct: "c",
+                discuss: "1. **Utilisation de l'indice :** Soit $K_n = (3+\\sqrt{5})^{n}+(3-\\sqrt{5})^{n}$ un entier pair. On peut écrire $K_n = 2m$ pour un entier $m$.\n2. **Isoler le terme d'intérêt :** $(3+\\sqrt{5})^n = K_n - (3-\\sqrt{5})^n$.\n3. **Argument du sinus :** L'argument est $(3+\\sqrt{5})^n \\pi = (K_n - (3-\\sqrt{5})^n)\\pi = K_n\\pi - (3-\\sqrt{5})^n\\pi$.\n4. **Propriété du sinus :** $\\sin(x + 2m\\pi) = \\sin(x)$.\n   * $\\sin((3+\\sqrt{5})^n\\pi) = \\sin(K_n\\pi - (3-\\sqrt{5})^n\\pi) = \\sin(2m\\pi - (3-\\sqrt{5})^n\\pi) = \\sin(-(3-\\sqrt{5})^n\\pi)$.\n5. **Sinus est une fonction impaire :** $\\sin(-x) = -\\sin(x)$.\n   * L'expression devient $-\\sin((3-\\sqrt{5})^n\\pi)$.\n6. **Calcul de la limite :** On a $2 < \\sqrt{5} < 3$, donc $0 < 3-\\sqrt{5} < 1$. Par conséquent, $\\lim_{n\\to+\\infty} (3-\\sqrt{5})^n = 0$.\n7. **Limite finale :** $\\lim_{n\\to+\\infty} -\\sin((3-\\sqrt{5})^n\\pi) = -\\sin(0) = \\bf{0}$."
+            },
+            8: {
+                text: "$\\lim_{x\\to\\frac{\\pi}{6}}\\frac{\\sqrt{3}\\sin x-\\cos x}{x-\\frac{\\pi}{6}}=$",
+                options: ["0", "1", "2", "$+\\infty$"],
+                correct: "c",
+                discuss: "1. **Reconnaissance du nombre dérivé :** La limite est de la forme $\\lim_{x\\to a} \\frac{f(x)-f(a)}{x-a}$, qui est la définition de $f'(a)$.\n2. **Identification :** On pose $f(x) = \\sqrt{3}\\sin x - \\cos x$ et $a = \\frac{\\pi}{6}$.\n3. **Vérification :** $f(\\frac{\\pi}{6}) = \\sqrt{3}\\sin(\\frac{\\pi}{6}) - \\cos(\\frac{\\pi}{6}) = \\sqrt{3}(\\frac{1}{2}) - \\frac{\\sqrt{3}}{2} = 0$. La forme est bien celle de la dérivée.\n4. **Calcul de la dérivée :** $f'(x) = \\sqrt{3}\\cos x - (-\\sin x) = \\sqrt{3}\\cos x + \\sin x$.\n5. **Évaluation en a :** $f'(\\frac{\\pi}{6}) = \\sqrt{3}\\cos(\\frac{\\pi}{6}) + \\sin(\\frac{\\pi}{6}) = \\sqrt{3}(\\frac{\\sqrt{3}}{2}) + \\frac{1}{2} = \\frac{3}{2} + \\frac{1}{2} = \\frac{4}{2} = \\bf{2}$."
+            },
+            9: {
+                text: "$\\lim_{x\\to0^{+}}x^{(\\frac{1}{\\ln(3x)})}=$",
+                options: ["e", "0", "ln 3", "1+e"],
+                correct: "a",
+                discuss: "1. **Forme indéterminée $0^0$ :** On utilise la forme exponentielle $a^b = e^{b \\ln a}$.\n   * $x^{(\\frac{1}{\\ln(3x)})} = e^{\\frac{1}{\\ln(3x)} \\ln(x)} = e^{\\frac{\\ln(x)}{\\ln(3x)}}$.\n2. **Limite de l'exposant :** On cherche $L = \\lim_{x\\to0^+} \\frac{\\ln(x)}{\\ln(3x)}$. C'est une forme $\\frac{-\\infty}{-\\infty}$.\n3. **Méthode 1 : Règle de L'Hôpital**\n   * $L = \\lim_{x\\to0^+} \\frac{1/x}{3/(3x)} = \\lim_{x\\to0^+} \\frac{1/x}{1/x} = 1$.\n4. **Méthode 2 : Simplification**\n   * $L = \\lim_{x\\to0^+} \\frac{\\ln(x)}{\\ln(3) + \\ln(x)} = \\lim_{x\\to0^+} \\frac{1}{\\frac{\\ln(3)}{\\ln(x)} + 1}$.\n   * Comme $\\lim_{x\\to0^+} \\ln(x) = -\\infty$, on a $\\frac{\\ln(3)}{\\ln(x)} \\to 0$. Donc $L = \\frac{1}{0+1}=1$.\n5. **Limite finale :** La limite de l'expression originale est $e^L = e^1 = \\bf{e}$."
+            },
+            10: {
+                text: "Soit $f:\\mathbb{R}\\to\\mathbb{R}$ une fonction T périodique avec $T>0$, telle que $\\lim_{x\\to+\\infty}f(x)$ existe dans $\\mathbb{R}^{*}$. Alors :",
+                options: ["f est strictement croissante", "f est strictement décroissante", "f est la fonction nulle", "f est une constante non nulle"],
+                correct: "d",
+                discuss: "1. **Hypothèses :** $f(x+T) = f(x)$ et $\\lim_{x\\to+\\infty} f(x) = L$, avec $L \\in \\mathbb{R}^*$ (L est un réel fini non nul).\n2. **Raisonnement :** Soit $x_0$ un réel quelconque. Considérons la suite $x_n = x_0 + nT$. Quand $n \\to \\infty$, $x_n \\to \\infty$.\n3. Puisque la limite de f existe en $+\\infty$, on a $\\lim_{n\\to\\infty} f(x_n) = L$.\n4. Mais par périodicité, $f(x_n) = f(x_0+nT) = f(x_0)$ pour tout n.\n5. La limite d'une suite constante est la constante elle-même, donc $\\lim_{n\\to\\infty} f(x_n) = f(x_0)$.\n6. En combinant les deux points, on a $f(x_0) = L$. Comme $x_0$ est arbitraire, la fonction doit être constante et égale à L pour tout x.\n7. Puisque $L$ est non nul, **f est une constante non nulle**."
+            },
+            11: {
+                text: "Soit la fonction f définie par : $f(x)=\\begin{cases}x^{2}+x^{3}\\cos(\\frac{1}{x}) & \\text{si } x\\ne0\\\\ f(0)=0\\end{cases}$. Soit f' la dérivée d'ordre 1 de f.",
+                options: ["$f'(0)=1$", "$f'(0)=0$", "$f'(0)=2$", "f n'est pas dérivable en 0"],
+                correct: "b",
+                discuss: "1. **Définition de la dérivée en 0 :** $f'(0) = \\lim_{h\\to 0} \\frac{f(h)-f(0)}{h}$.\n2. **Calcul de la limite :**\n   * $f'(0) = \\lim_{h\\to 0} \\frac{h^2 + h^3 \\cos(\\frac{1}{h})}{h} = \\lim_{h\\to 0} (h + h^2 \\cos(\\frac{1}{h}))$.\n3. **Théorème des gendarmes :**\n   * On sait que $-1 \\le \\cos(\\frac{1}{h}) \\le 1$, donc $-h^2 \\le h^2 \\cos(\\frac{1}{h}) \\le h^2$.\n   * Comme $\\lim_{h\\to 0} h^2 = 0$, on a $\\lim_{h\\to 0} h^2 \\cos(\\frac{1}{h}) = 0$.\n4. **Résultat final :** $f'(0) = \\lim_{h\\to 0} h + \\lim_{h\\to 0} h^2 \\cos(\\frac{1}{h}) = 0 + 0 = \\bf{0}$."
+            },
+            12: {
+                text: "Pour la même fonction f de Q11, on note $f''$ sa dérivée d'ordre 2. Alors :",
+                options: ["$f''(0)=0$", "$f''(0)=1$", "$f''(0)=2$", "f n'est pas deux fois dérivable en 0"],
+                correct: "d",
+                discuss: "1. **Calcul de f'(x) pour x non nul :**\n   * $f'(x) = 2x + [3x^2\\cos(\\frac{1}{x}) + x^3(-\\sin(\\frac{1}{x}))(-\\frac{1}{x^2})] = 2x + 3x^2\\cos(\\frac{1}{x}) + x\\sin(\\frac{1}{x})$.\n2. **Définition de la dérivée seconde en 0 :** $f''(0) = \\lim_{h\\to 0} \\frac{f'(h)-f'(0)}{h}$.\n3. **Calcul de la limite :** Sachant que $f'(0)=0$ (Q11).\n   * $f''(0) = \\lim_{h\\to 0} \\frac{2h + 3h^2\\cos(\\frac{1}{h}) + h\\sin(\\frac{1}{h})}{h} = \\lim_{h\\to 0} (2 + 3h\\cos(\\frac{1}{h}) + \\sin(\\frac{1}{h}))$.\n4. **Analyse de la limite :**\n   * $\\lim_{h\\to 0} 2 = 2$.\n   * $\\lim_{h\\to 0} 3h\\cos(\\frac{1}{h}) = 0$ (théorème des gendarmes).\n   * $\\lim_{h\\to 0} \\sin(\\frac{1}{h})$ **n'existe pas**, car la fonction oscille entre -1 et 1.\n5. **Conclusion :** Puisque l'un des termes n'a pas de limite, la limite globale n'existe pas. Donc, **f n'est pas deux fois dérivable en 0**."
+            },
+            13: {
+                text: "L'aire de la région délimitée par la courbe d'équation $y=\\cos(\\ln x)$ et les droites d'équations $x=e^{\\frac{\\pi}{2}}$ et $x=e^{\\pi}$ est égale à:",
+                options: ["$\\frac{1}{2}(e^{\\pi}+e^{\\frac{\\pi}{2}})$", "$e^{\\pi}-e^{\\frac{\\pi}{2}}$", "$e^{\\pi}+e^{\\frac{\\pi}{2}}$", "e"],
+                correct: "a",
+                discuss: "1. **Formule de l'aire :** $A = \\int_{e^{\\pi/2}}^{e^\\pi} |\\cos(\\ln x)| dx$.\n2. **Signe de la fonction :** Si $x \\in [e^{\\pi/2}, e^\\pi]$, alors $\\ln x \\in [\\frac{\\pi}{2}, \\pi]$. Sur cet intervalle, $\\cos(\\ln x) \\le 0$. Donc $|\\cos(\\ln x)| = -\\cos(\\ln x)$.\n3. **Intégrale à calculer :** $A = \\int_{e^{\\pi/2}}^{e^\\pi} -\\cos(\\ln x) dx$.\n4. **Primitive :** On trouve par double intégration par parties que $\\int \\cos(\\ln x) dx = \\frac{x}{2}(\\cos(\\ln x) + \\sin(\\ln x))$.\n5. **Calcul de l'aire :**\n   * $A = - \\left[ \\frac{x}{2}(\\cos(\\ln x) + \\sin(\\ln x)) \\right]_{e^{\\pi/2}}^{e^\\pi}$\n   * $A = - \\left[ (\\frac{e^\\pi}{2}(\\cos\\pi + \\sin\\pi)) - (\\frac{e^{\\pi/2}}{2}(\\cos\\frac{\\pi}{2} + \\sin\\frac{\\pi}{2})) \\right]$\n   * $A = - \\left[ (\\frac{e^\\pi}{2}(-1 + 0)) - (\\frac{e^{\\pi/2}}{2}(0 + 1)) \\right]$\n   * $A = - [ -\\frac{e^\\pi}{2} - \\frac{e^{\\pi/2}}{2} ] = \\frac{e^\\pi}{2} + \\frac{e^{\\pi/2}}{2} = \\bf{\\frac{1}{2}(e^\\pi + e^{\\pi/2})}$."
+            },
+            14: {
+                text: "Soit $f:[0;\\alpha]\\to \\mathbb{R}$ continue telle que $f(x)\\ne-1$ et $f(x) \\cdot f(\\alpha-x)=1$. $\\int_{0}^{\\alpha}\\frac{1}{1+f(x)}dx=$",
+                options: ["$\\frac{\\alpha}{2}$", "$\\alpha$", "$1 + \\alpha$", "$\\frac{1}{1+\\alpha}$"],
+                correct: "a",
+                discuss: "1. **Astuce de l'intégration :** Soit $I = \\int_{0}^{\\alpha}\\frac{1}{1+f(x)}dx$.\n2. **Changement de variable :** On pose $u = \\alpha - x$, donc $dx = -du$.\n   * $I = \\int_{\\alpha}^{0}\\frac{1}{1+f(\\alpha-u)}(-du) = \\int_{0}^{\\alpha}\\frac{1}{1+f(\\alpha-x)}dx$.\n3. **Utilisation de la propriété :** $f(\\alpha-x) = 1/f(x)$.\n   * $I = \\int_{0}^{\\alpha}\\frac{1}{1+1/f(x)}dx = \\int_{0}^{\\alpha}\\frac{f(x)}{f(x)+1}dx$.\n4. **Addition des deux formes de I :**\n   * $2I = I+I = \\int_{0}^{\\alpha}\\frac{1}{1+f(x)}dx + \\int_{0}^{\\alpha}\\frac{f(x)}{1+f(x)}dx = \\int_{0}^{\\alpha}\\frac{1+f(x)}{1+f(x)}dx = \\int_{0}^{\\alpha} 1 dx$.\n5. **Résultat :** $2I = [x]_{0}^{\\alpha} = \\alpha$. Donc $I = \\bf{\\frac{\\alpha}{2}}$."
+            },
+            15: {
+                text: "Soit la fonction réelle $f(x)=e^{-x}\\sin(x)$ et $f^{(4)}$ sa dérivée d'ordre 4, alors: $f^{(4)}(x)=$",
+                options: ["$-f(x)$", "$-4f(x)$", "$4f(x)$", "$-3f(x)$"],
+                correct: "b",
+                discuss: "**Méthode par les complexes :**\n1. $f(x) = \\text{Im}(e^{-x}e^{ix}) = \\text{Im}(e^{(-1+i)x})$.\n2. La dérivée n-ième est $f^{(n)}(x) = \\text{Im}((-1+i)^n e^{(-1+i)x})$.\n3. On calcule $(-1+i)^4$:\n   * $(-1+i)^2 = 1 - 2i + i^2 = -2i$.\n   * $(-1+i)^4 = (-2i)^2 = 4i^2 = -4$.\n4. Donc $f^{(4)}(x) = \\text{Im}(-4 e^{(-1+i)x}) = -4 \\cdot \\text{Im}(e^{(-1+i)x}) = \\bf{-4 f(x)}$."
+            },
+            16: {
+                text: "Pour la même fonction f de Q15, $\\int_{0}^{\\pi}f(x)dx=$",
+                options: ["$\\frac{1}{3}(1-e^{-\\pi})$", "$\\frac{1}{2}(1+e^{-\\pi})$", "$\\frac{1}{4}(1-e^{-\\pi})$", "$\\frac{1}{5}(1+e^{-\\pi})$"],
+                correct: "b",
+                discuss: "1. **Primitive :** On cherche une primitive de $f(x) = e^{-x}\\sin(x)$. Par une double intégration par parties, on trouve :\n   * $F(x) = \\int e^{-x}\\sin(x)dx = -\\frac{1}{2}e^{-x}(\\sin x + \\cos x)$.\n2. **Calcul de l'intégrale définie :**\n   * $\\int_{0}^{\\pi}f(x)dx = F(\\pi) - F(0)$.\n   * $F(\\pi) = -\\frac{1}{2}e^{-\\pi}(\\sin \\pi + \\cos \\pi) = -\\frac{1}{2}e^{-\\pi}(0-1) = \\frac{1}{2}e^{-\\pi}$.\n   * $F(0) = -\\frac{1}{2}e^{0}(\\sin 0 + \\cos 0) = -\\frac{1}{2}(1)(0+1) = -\\frac{1}{2}$.\n3. **Résultat :** $F(\\pi) - F(0) = \\frac{1}{2}e^{-\\pi} - (-\\frac{1}{2}) = \\bf{\\frac{1}{2}(1+e^{-\\pi})}$."
+            },
+            17: {
+                text: "Soit u la solution de l'équation à variable complexe : $z\\overline{z}+4iz=-3+4i$. Alors:",
+                options: ["$Re(u)\\times Im(u)=2$", "$Re(u)\\times Im(u)=1$", "$Re(u)+Im(u)=2$", "u est un imaginaire pur"],
+                correct: "a",
+                discuss: "1. **On pose z = x + iy :**\n   * $z\\overline{z} = x^2+y^2$.\n   * $4iz = 4i(x+iy) = -4y + 4ix$.\n2. **L'équation devient :** $(x^2+y^2) + (-4y+4ix) = -3+4i$.\n3. **Identification des parties réelle et imaginaire :**\n   * Partie réelle : $x^2+y^2-4y = -3$.\n   * Partie imaginaire : $4x = 4 \\implies x=1$.\n4. **Résolution :** On remplace $x=1$ dans la première équation :\n   * $1^2+y^2-4y = -3 \\implies y^2-4y+4=0 \\implies (y-2)^2=0 \\implies y=2$.\n5. **Solution :** La solution est $u = 1+2i$. Donc $Re(u)=1$ et $Im(u)=2$.\n6. **Vérification des options :** $Re(u) \\times Im(u) = 1 \\times 2 = \\bf{2}$."
+            },
+            18: {
+                text: "Soient $z_{1}$ et $z_{2}$ les solutions de l'équation à variable complexe : $z^{2}-2\\overline{z}+3=0$. $Re(\\frac{z_{1}}{z_{2}})=$",
+                options: ["$-\\frac{2\\sqrt{6}}{7}$", "$\\frac{2\\sqrt{6}}{7}$", "$\\frac{5}{7}$", "$-\\frac{5}{7}$"],
+                correct: "d",
+                discuss: "1. **On pose z = x + iy :** $(x+iy)^2 - 2(x-iy) + 3 = 0$.\n2. **Développement :** $(x^2-y^2-2x+3) + i(2xy+2y) = 0$.\n3. **Système d'équations :**\n   * $x^2-y^2-2x+3=0$.\n   * $2y(x+1)=0$.\n4. **Résolution :** La deuxième équation donne $y=0$ ou $x=-1$.\n   * Si $y=0$, la première équation $x^2-2x+3=0$ n'a pas de solution réelle ($\\Delta < 0$).\n   * Si $x=-1$, la première équation devient $1-y^2+2+3=0 \\implies y^2=6 \\implies y=\\pm\\sqrt{6}$.\n5. **Solutions :** $z_1 = -1+i\\sqrt{6}$ et $z_2 = -1-i\\sqrt{6}$.\n6. **Calcul du rapport :**\n   * $\\frac{z_1}{z_2} = \\frac{-1+i\\sqrt{6}}{-1-i\\sqrt{6}} = \\frac{(-1+i\\sqrt{6})^2}{(-1)^2 - (i\\sqrt{6})^2} = \\frac{1-2i\\sqrt{6}-6}{1+6} = \\frac{-5-2i\\sqrt{6}}{7}$.\n7. **Partie réelle :** $Re(\\frac{z_1}{z_2}) = \\bf{-\\frac{5}{7}}$."
+            },
+            19: {
+                text: "Soient $\\theta$ un nombre réel non nul et z un nombre complexe tels que : $z=\\cos^{2}\\theta+i\\sin\\theta\\cos\\theta$. La partie réelle du nombre $z^{-3}$ est:",
+                options: ["$\\frac{\\cos\\theta}{\\sin^{3}\\theta}$", "$\\frac{\\sin 3\\theta}{\\sin^{3}\\theta}$", "$\\frac{\\cos 3\\theta}{\\cos^{3}\\theta}$", "$\\frac{\\sin\\theta}{\\cos^{3}\\theta}$"],
+                correct: "c",
+                discuss: "1. **Simplification de z :** $z = \\cos\\theta(\\cos\\theta + i\\sin\\theta)$.\n2. **Forme exponentielle :** $z = \\cos\\theta \\cdot e^{i\\theta}$.\n3. **Calcul de $z^{-3}$ :**\n   * $z^{-3} = (z^3)^{-1} = (\\cos^3\\theta \\cdot e^{i3\\theta})^{-1} = \\frac{1}{\\cos^3\\theta} e^{-i3\\theta}$.\n4. **Forme algébrique :**\n   * $z^{-3} = \\frac{1}{\\cos^3\\theta}(\\cos(3\\theta) - i\\sin(3\\theta))$.\n5. **Partie réelle :** $Re(z^{-3}) = \\bf{\\frac{\\cos(3\\theta)}{\\cos^3\\theta}}$."
+            },
+            20: {
+                text: "Le nombre $\\cos 5\\theta$ est égal à :",
+                options: ["$\\cos^{5}\\theta+10\\cos^{3}\\theta\\sin^{2}\\theta+5\\cos\\theta\\sin^{4}\\theta$", "$\\cos^{5}\\theta+5\\cos^{3}\\theta\\sin^{2}\\theta+10\\cos\\theta\\sin^{4}\\theta$", "$\\cos^{5}\\theta-10\\cos^{3}\\theta\\sin^{2}\\theta+\\cos\\theta\\sin^{4}\\theta$", "$\\cos^{5}\\theta-10\\cos^{3}\\theta\\sin^{2}\\theta+5\\cos\\theta\\sin^{4}\\theta$"],
+                correct: "d",
+                discuss: "1. **Formule de Moivre :** $\\cos(5\\theta) + i\\sin(5\\theta) = (\\cos\\theta + i\\sin\\theta)^5$.\n2. **Binôme de Newton :** On développe $(\\cos\\theta + i\\sin\\theta)^5$:\n   * $\\cos^5\\theta + 5(\\cos^4\\theta)(i\\sin\\theta) + 10(\\cos^3\\theta)(i\\sin\\theta)^2 + 10(\\cos^2\\theta)(i\\sin\\theta)^3 + 5(\\cos\\theta)(i\\sin\\theta)^4 + (i\\sin\\theta)^5$.\n3. **Simplification :**\n   * $\\cos^5\\theta + 5i\\cos^4\\theta\\sin\\theta - 10\\cos^3\\theta\\sin^2\\theta - 10i\\cos^2\\theta\\sin^3\\theta + 5\\cos\\theta\\sin^4\\theta + i\\sin^5\\theta$.\n4. **Identification de la partie réelle :** $\\cos(5\\theta)$ est la partie réelle de cette expression.\n   * $\\cos(5\\theta) = \\bf{\\cos^5\\theta - 10\\cos^3\\theta\\sin^2\\theta + 5\\cos\\theta\\sin^4\\theta}$."
+            }
+        },
+        2019: {},
+		2018: {},
+		2017: {},
+		2016: {},
+		2015: {},
+		2014: {},
+		2013: {}
     }
 };
 
