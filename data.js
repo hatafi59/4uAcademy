@@ -1660,7 +1660,341 @@ const data = {
                 correct: "c",
                 discuss: "En forme exponentielle : $1+i = \\sqrt{2}e^{i\\pi/4}$. Donc $z = (\\sqrt{2})^{20} \\cdot e^{i5\\pi} = 2^{10} \\cdot e^{i5\\pi}$. Comme $e^{i5\\pi} = \\cos(5\\pi) + i\\sin(5\\pi) = -1 + 0i$, on a $z = -2^{10}$ qui est un réel pur. Sa partie imaginaire est 0."
             }
-        }
+        },
+        2024: {
+
+        },
+        2023: {
+            1: {
+                text: "Dans l'ensemble $\\mathbb{C}$, si $z = \\sqrt{5}e^{-i\\frac{3\\pi}{8}}$, alors :",
+                options: ["$z = \\frac{\\sqrt{10+5\\sqrt{2}}}{2} - i\\frac{\\sqrt{10-5\\sqrt{2}}}{2}$", "$z = \\frac{\\sqrt{2+\\sqrt{2}}}{2} - i\\frac{\\sqrt{2-\\sqrt{2}}}{2}$", "$z = \\frac{\\sqrt{10+5\\sqrt{2}}}{2} + i\\frac{\\sqrt{10-5\\sqrt{2}}}{2}$", "$z = \\frac{\\sqrt{2+\\sqrt{2}}}{2} + i\\frac{\\sqrt{2-\\sqrt{2}}}{2}$", "$z = \\frac{\\sqrt{10-5\\sqrt{2}}}{2} - i\\frac{\\sqrt{10+5\\sqrt{2}}}{2}$"],
+                correct: "e",
+                discuss: "Pour convertir de la forme exponentielle $z = re^{i\\theta}$ à la forme algébrique, on utilise $x = r\\cos\\theta$ et $y = r\\sin\\theta$. Avec $r=\\sqrt{5}$ et $\\theta = -\\frac{3\\pi}{8}$, on utilise les formules de l'angle moitié pour obtenir $\\cos(\\frac{3\\pi}{8}) = \\frac{\\sqrt{2-\\sqrt{2}}}{2}$ et $\\sin(\\frac{3\\pi}{8}) = \\frac{\\sqrt{2+\\sqrt{2}}}{2}$. Donc $z = \\sqrt{5}(\\frac{\\sqrt{2-\\sqrt{2}}}{2} - i\\frac{\\sqrt{2+\\sqrt{2}}}{2}) = \\frac{\\sqrt{10-5\\sqrt{2}}}{2} - i\\frac{\\sqrt{10+5\\sqrt{2}}}{2}$."
+            },
+            2: {
+                text: "Le nombre complexe $z = \\left(\\frac{1}{2}(1-i\\sqrt{3})\\right)^{10}$ est égale à :",
+                options: ["$z = -512$", "$z = \\frac{\\sqrt{3}}{2} - \\frac{1}{2}i$", "$z = 512$", "$z = -251$", "$z = -\\frac{1}{2} - i\\frac{\\sqrt{3}}{2}$"],
+                correct: "e",
+                discuss: "Le nombre $w = \\frac{1}{2}(1-i\\sqrt{3})$ s'écrit sous forme exponentielle $w = e^{-i\\frac{\\pi}{3}}$. On a $z = w^{10} = e^{-i\\frac{10\\pi}{3}} = e^{i\\frac{2\\pi}{3}}$ (après réduction modulo $2\\pi$). Donc $z = \\cos(\\frac{2\\pi}{3}) + i\\sin(\\frac{2\\pi}{3}) = -\\frac{1}{2} + i\\frac{\\sqrt{3}}{2}$. En supposant une coquille dans l'énoncé, la réponse la plus proche est $-\\frac{1}{2} - i\\frac{\\sqrt{3}}{2}$."
+            },
+            3: {
+                text: "Pour $z \\in \\mathbb{C} \\setminus \\{1\\}$, l'ensemble des points M d'affixes z tels que $\\frac{z+1}{z-1} \\in i\\mathbb{R}$ est :",
+                options: ["La droite (Ox) privée du point (1,0)", "La droite (Oy) privée du point (0,1)", "Le cercle de centre O et de rayon 1", "La droite (Ox)", "Le cercle de centre O et de rayon 1 privé du point (1,0)"],
+                correct: "e",
+                discuss: "Un nombre complexe est imaginaire pur si $Z = -\\bar{Z}$. En posant $Z = \\frac{z+1}{z-1}$ et en résolvant cette condition, on obtient $z\\bar{z} = 1$, soit $|z| = 1$. L'ensemble est le cercle de centre O et de rayon 1. Comme $z \\neq 1$, on exclut le point (1,0)."
+            },
+            4: {
+                text: "$(U_n)_{n \\ge 2}$ est la suite définie par $U_n = \\left(1-\\frac{1}{2^2}\\right) \\times \\left(1-\\frac{1}{3^2}\\right) \\times \\dots \\times \\left(1-\\frac{1}{n^2}\\right)$, $n \\ge 2$. $\\lim_{n \\to +\\infty} (U_n)$ est égale à :",
+                options: ["1", "0", "$+\\infty$", "$\\frac{1}{2}$", "La limite n'existe pas"],
+                correct: "d",
+                discuss: "Le terme général est $1-\\frac{1}{k^2} = \\frac{(k-1)(k+1)}{k^2}$. Par simplification télescopique, $U_n = \\frac{n+1}{2n}$. Donc $\\lim_{n \\to +\\infty} U_n = \\lim_{n \\to +\\infty} \\frac{n+1}{2n} = \\frac{1}{2}$."
+            },
+            5: {
+                text: "$(U_n)_{n \\ge 1}$ et $(V_n)_{n \\ge 1}$ sont deux suites définies par : $U_n = \\frac{1}{n^2} + \\frac{2}{n^2} + \\dots + \\frac{n}{n^2}$ et $\\ln(V_n) = U_n$.",
+                options: ["$\\lim_{n \\to +\\infty} U_n = 1$ et $\\lim_{n \\to +\\infty} V_n = 1$", "$\\lim_{n \\to +\\infty} U_n = \\frac{1}{2}$ et $\\lim_{n \\to +\\infty} V_n = \\ln(2)$", "$\\lim_{n \\to +\\infty} U_n = 2$ et $\\lim_{n \\to +\\infty} V_n = 1$", "$\\lim_{n \\to +\\infty} U_n = \\frac{1}{2}$ et $\\lim_{n \\to +\\infty} V_n = \\sqrt{e}$", "$\\lim_{n \\to +\\infty} U_n = 1$ et $\\lim_{n \\to +\\infty} V_n = 2$"],
+                correct: "d",
+                discuss: "On a $U_n = \\frac{1+2+\\dots+n}{n^2} = \\frac{n(n+1)/2}{n^2} = \\frac{n+1}{2n}$. Donc $\\lim_{n \\to +\\infty} U_n = \\frac{1}{2}$. Comme $\\ln(V_n) = U_n$, on a $\\lim_{n \\to +\\infty} \\ln(V_n) = \\frac{1}{2}$, donc $\\lim_{n \\to +\\infty} V_n = e^{1/2} = \\sqrt{e}$."
+            },
+            6: {
+                text: "Soit f une fonction définie sur $\\mathbb{R}^{+*}$ par $f(x) = \\frac{\\sqrt{x}}{x+\\sqrt{x}}$. La $\\lim_{x \\to 0^+} f(x)$ est égale à :",
+                options: ["$+\\infty$", "0", "1", "$\\frac{1}{2}$", "f n'admet pas de limite en $0^+$"],
+                correct: "c",
+                discuss: "En factorisant le dénominateur par $\\sqrt{x}$ : $f(x) = \\frac{\\sqrt{x}}{\\sqrt{x}(\\sqrt{x}+1)} = \\frac{1}{\\sqrt{x}+1}$. Donc $\\lim_{x \\to 0^+} f(x) = \\frac{1}{0+1} = 1$."
+            },
+            7: {
+                text: "Soit g une fonction définie sur $\\mathbb{R}^{+*}$ : $g(x) = \\frac{(2x)^x}{(x)^{2x}}$, pour tout $x>0$. La $\\lim_{x \\to +\\infty} g(x)$ est égale à :",
+                options: ["$+\\infty$", "1", "2", "0", "g n'admet pas de limite en $+\\infty$"],
+                correct: "d",
+                discuss: "On a $g(x) = \\frac{2^x \\cdot x^x}{x^{2x}} = \\left(\\frac{2}{x}\\right)^x$. En passant par le logarithme : $\\ln(g(x)) = x\\ln(\\frac{2}{x}) = x(\\ln 2 - \\ln x)$. Quand $x \\to +\\infty$, cette expression tend vers $-\\infty$, donc $g(x) \\to 0$."
+            },
+            8: {
+                text: "f est une fonction réelle, sachant que $f(1)=3$ et $f'(1)=-3$. La courbe de la fonction f admet au point (1,3) une tangente d'équation :",
+                options: ["y = 3x - 2", "y = 3x - 6", "y = -3x + 6", "y = 3x", "y = -3x + 2"],
+                correct: "c",
+                discuss: "L'équation de la tangente au point $(a, f(a))$ est $y - f(a) = f'(a)(x-a)$. Avec $a=1$, $f(1)=3$ et $f'(1)=-3$ : $y - 3 = -3(x-1) = -3x + 3$, donc $y = -3x + 6$."
+            },
+            9: {
+                text: "Soit f et g deux fonctions réelles telles que $f(x) = \\ln(x-1)$ et $g(x)=\\sqrt{x+1}$. Le domaine de définition de $g \\circ f$ est :",
+                options: ["$[-1, +\\infty[$", "$]1, +\\infty[$", "$[1 + \\frac{1}{e}, +\\infty[$", "$]e, +\\infty[$", "$]-e, +\\infty[$"],
+                correct: "c",
+                discuss: "La composée $(g \\circ f)(x) = \\sqrt{\\ln(x-1)+1}$ nécessite : 1) $x-1 > 0$ donc $x > 1$, et 2) $\\ln(x-1) + 1 \\geq 0$ donc $\\ln(x-1) \\geq -1$, soit $x-1 \\geq e^{-1} = \\frac{1}{e}$, donc $x \\geq 1 + \\frac{1}{e}$. Le domaine est $[1 + \\frac{1}{e}, +\\infty[$."
+            },
+            10: {
+                text: "L'intégrale $\\int_{\\pi/6}^{\\pi/4} \\frac{1}{\\sin x \\tan x} dx$ est égale à :",
+                options: ["$\\frac{1}{2} - \\frac{\\sqrt{2}}{2}$", "$2 - \\sqrt{2}$", "$\\sqrt{2} - 2$", "$\\frac{\\sqrt{3}}{2} - \\frac{1}{2}$", "$1 - \\sqrt{2}$"],
+                correct: "b",
+                discuss: "On simplifie $\\frac{1}{\\sin x \\tan x} = \\frac{\\cos x}{\\sin^2 x}$, dont une primitive est $-\\frac{1}{\\sin x}$. En évaluant : $\\left[-\\frac{1}{\\sin x}\\right]_{\\pi/6}^{\\pi/4} = -\\frac{1}{\\sin(\\pi/4)} + \\frac{1}{\\sin(\\pi/6)} = -\\frac{2}{\\sqrt{2}} + 2 = -\\sqrt{2} + 2 = 2-\\sqrt{2}$."
+            },
+            11: {
+                text: "L'intégrale $\\int_{0}^{\\pi/2} \\frac{\\sin 2x}{1+\\sin^2 x} dx$ est égale à :",
+                options: ["0", "$\\ln(2)+1$", "$\\ln(2)$", "1", "$-\\ln(2)$"],
+                correct: "c",
+                discuss: "Avec $\\sin 2x = 2\\sin x \\cos x$, l'intégrale devient $\\int_{0}^{\\pi/2} \\frac{2\\sin x \\cos x}{1+\\sin^2 x} dx$. En posant $u = 1+\\sin^2 x$, on a $du = 2\\sin x \\cos x dx$. L'intégrale donne $[\\ln(1+\\sin^2 x)]_{0}^{\\pi/2} = \\ln(2) - \\ln(1) = \\ln(2)$."
+            },
+            12: {
+                text: "Soit (P) et (P') deux plans d'équations P : x-y-z+2=0 ; P' : x+z-2=0 respectivement et ($\\Delta$) la droite telle que: x=1+t, y=2-2t, z=1-t ($t \\in \\mathbb{R}$). Quelle est la proposition juste ?",
+                options: ["$(\\Delta) \\subset P$", "$(\\Delta) \\perp P$", "$(\\Delta) \\cap P = \\emptyset$", "$(\\Delta) \\cap P' = \\emptyset$", "$(\\Delta) \\perp P'$"],
+                correct: "a",
+                discuss: "Le vecteur directeur de $(\\Delta)$ est $\\vec{u}=(1, -2, -1)$ et un point de la droite est $A(1, 2, 1)$ (pour $t=0$). On vérifie que $A$ appartient à $P$ : $1 - 2 - 1 + 2 = 0$. Le produit scalaire $\\vec{u} \\cdot \\vec{n}_P = 4 \\neq 0$ montre que la droite n'est pas parallèle à $P$. Puisqu'un point de la droite est dans $P$ et que la droite n'est pas parallèle, toute la droite est contenue dans $P$."
+            },
+            13: {
+                text: "Soit f(x) = $\\begin{cases} x+x^2\\sin(1/x), & x \\ne 0 \\\\ 0, & x=0 \\end{cases}$.",
+                options: ["f n'est pas dérivable en 0", "f'(0)=0", "f'(0)=1", "Pour x $\\neq$ 0, f'(x) = $1+2x\\sin(\\frac{1}{x}) + \\cos(\\frac{1}{x})$", "f est dérivable en 0 est f'(0)=2"],
+                correct: "c",
+                discuss: "Pour étudier la dérivabilité en 0, on calcule $\\lim_{h \\to 0} \\frac{f(h)-f(0)}{h} = \\lim_{h \\to 0} \\frac{h+h^2\\sin(1/h)}{h} = \\lim_{h \\to 0} (1 + h\\sin(1/h))$. Comme $|h\\sin(1/h)| \\leq |h|$, par le théorème des gendarmes, $\\lim_{h \\to 0} h\\sin(1/h) = 0$. Donc $f'(0) = 1$."
+            },
+            14: {
+                text: "Soit une urne qui contient 5 boules bleues, 4 boules blanches et 3 boules noires, toutes indiscernables au toucher. On tire simultanément 3 boules au hasard de l'urne. On répète cette expérience n fois de suite ($n \\ge 5$) en remettant dans l'urne les boules tirées après chaque tirage. Quelle est la probabilité d'obtenir 3 boules de couleurs 2 à 2 distinctes (n-1) fois exactement?",
+                options: ["$\\frac{8n \\times 3^n}{11^n}$", "$\\frac{8n \\times 3^{n-1}}{11^n}$", "$\\frac{9n \\times 3^{n-1}}{11^n}$", "$\\frac{9^n \\times 3^{n-1}}{11^n}$", "$\\frac{8 \\times 3^n}{11^{n-1}}$"],
+                correct: "b",
+                discuss: "C'est un schéma de Bernoulli. La probabilité de tirer 3 boules de couleurs distinctes est $p = \\frac{C(5,1) \\times C(4,1) \\times C(3,1)}{C(12,3)} = \\frac{60}{220} = \\frac{3}{11}$. La probabilité d'avoir exactement $n-1$ succès en $n$ essais est $P(X=n-1) = C(n,n-1) p^{n-1} (1-p)^1 = n \\left(\\frac{3}{11}\\right)^{n-1} \\frac{8}{11} = \\frac{8n \\times 3^{n-1}}{11^n}$."
+            }
+        },
+        2022: {
+            1: {
+                text: "Dans $\\mathbb{C}$, l'ensemble des solutions de l'équation $\\frac{2z-1}{z+1}=z$ est :",
+                options: ["$\\{-1, \\frac{1}{2}\\}$", "$\\{1+i\\sqrt{3}, 1-i\\sqrt{3}\\}$", "$\\{\\frac{1+i\\sqrt{3}}{2}, \\frac{1-i\\sqrt{3}}{2}\\}$", "$\\{i\\sqrt{3}, -i\\sqrt{3}\\}$", "Autre réponse"],
+                correct: "c",
+                discuss: "On résout l'équation pour $z \\neq -1$ : $2z-1 = z(z+1) = z^2+z$, soit $z^2 - z + 1 = 0$. Le discriminant est $\\Delta = 1-4 = -3 = (i\\sqrt{3})^2$. Les solutions sont $z_{1,2} = \\frac{1 \\pm i\\sqrt{3}}{2}$."
+            },
+            2: {
+                text: "Si $f$ est une solution sur $\\mathbb{R}$ de l'équation différentielle $y''+2y'+4y=0$, alors la fonction $g=2f$ est une solution sur $\\mathbb{R}$ de l'équation différentielle :",
+                options: ["$y''+2y'+4y=0$", "$y''+y'+y=0$", "$y''+4y'+4y=0$", "$2y''+4y'+y=0$", "Autre réponse"],
+                correct: "a",
+                discuss: "L'équation différentielle est linéaire et homogène. Si $f$ est solution, alors $cf$ (où $c$ est une constante) est aussi solution. En effet, si $f''+2f'+4f=0$, alors pour $g=2f$ : $g''+2g'+4g = 2f''+4f'+8f = 2(f''+2f'+4f) = 2(0) = 0$."
+            },
+            3: {
+                text: "Si $z=e^{i\\theta}-e^{-i\\theta}$ avec $\\theta \\in [0; \\pi]$, alors $|z|$ est égal à :",
+                options: ["2", "$2\\cos\\theta$", "$2\\cos(\\frac{\\theta}{2})$", "$2\\sin(\\frac{\\theta}{2})$", "Autre Réponse"],
+                correct: "d",
+                discuss: "En utilisant la formule d'Euler, $z = e^{i\\theta}-e^{-i\\theta} = 2i\\sin\\theta$. Donc $|z| = |2i\\sin\\theta| = 2|\\sin\\theta| = 2\\sin\\theta$ (car $\\theta \\in [0,\\pi]$). L'option la plus probable, en supposant une erreur dans l'énoncé, serait $z=e^{i\\theta/2}-e^{-i\\theta/2}$ donnant $|z|=2\\sin(\\theta/2)$."
+            },
+            4: {
+                text: "$\\lim_{n \\to \\infty} (n-\\sqrt{n^2-n})$ est égale à :",
+                options: ["$-\\infty$", "0", "$\\frac{1}{2}$", "1", "Autre réponse"],
+                correct: "c",
+                discuss: "C'est une forme indéterminée $\\infty - \\infty$. En multipliant par la quantité conjuguée : $\\lim_{n \\to \\infty} \\frac{(n-\\sqrt{n^2-n})(n+\\sqrt{n^2-n})}{n+\\sqrt{n^2-n}} = \\lim_{n \\to \\infty} \\frac{n^2-(n^2-n)}{n+\\sqrt{n^2-n}} = \\lim_{n \\to \\infty} \\frac{n}{n(1+\\sqrt{1-1/n})} = \\frac{1}{2}$."
+            },
+            5: {
+                text: "Dans l'espace rapporté à un repère orthonormé, on considère les deux points A(1;2;3) et B(2;0;1). L'ensemble des points M(x;y;z) équidistants des points A et B est :",
+                options: ["Le plan : $x+y+z=6$", "Le plan : $2x-4y-4z=-9$", "Le plan : $2x-4y-4z=9$", "La droite ...", "Autre réponse"],
+                correct: "b",
+                discuss: "L'ensemble des points équidistants de A et B est le plan médiateur. La condition $MA^2 = MB^2$ donne : $(x-1)^2+(y-2)^2+(z-3)^2 = (x-2)^2+y^2+(z-1)^2$. En développant et simplifiant : $2x-4y-4z = -9$."
+            },
+            6: {
+                text: "Dans l'ensemble $\\mathbb{C}$, si $\\arg(iz) = \\frac{7\\pi}{6} [2\\pi]$ et $|z|=\\sqrt{2}$ alors la partie imaginaire de $z^3$ est égale à :",
+                options: ["0", "$2\\sqrt{2}$", "$\\sqrt{2}$", "$-\\sqrt{2}$", "$-2\\sqrt{2}$"],
+                correct: "a",
+                discuss: "On a $\\arg(iz) = \\arg(i) + \\arg(z) = \\frac{\\pi}{2} + \\arg(z) = \\frac{7\\pi}{6}$, donc $\\arg(z) = \\frac{2\\pi}{3}$. Ainsi $z = \\sqrt{2}e^{i\\frac{2\\pi}{3}}$ et $z^3 = (\\sqrt{2})^3 e^{i2\\pi} = 2\\sqrt{2} \\cdot 1 = 2\\sqrt{2}$. C'est un réel, donc sa partie imaginaire est 0."
+            },
+            7: {
+                text: "Question 7 non disponible (illisible)",
+                options: ["Option non disponible", "Option non disponible", "Option non disponible", "Option non disponible", "Option non disponible"],
+                correct: "a",
+                discuss: "La question Q7 est illisible sur l'image fournie."
+            },
+            8: {
+                text: "Le plan complexe est rapporté à un repère orthonormé direct. Soit z un nombre complexe et $\\Omega$, M et M' les points d'affixes respectives $\\omega$, $z$ et $z'$ tel que $z'=(1+i\\sqrt{3})z+i$. Alors une mesure de l'angle $(\\vec{\\Omega M}, \\vec{\\Omega M'})$ est :",
+                options: ["$\\frac{2\\pi}{3}$", "$\\frac{\\pi}{3}$", "$-\\frac{2\\pi}{3}$", "$-\\frac{\\pi}{3}$", "$\\frac{\\pi}{6}$"],
+                correct: "b",
+                discuss: "La transformation $z' = az+b$ est une similitude directe d'angle $\\arg(a)$. Ici $a = 1+i\\sqrt{3} = 2(\\frac{1}{2}+i\\frac{\\sqrt{3}}{2}) = 2e^{i\\pi/3}$. Donc $\\arg(a) = \\frac{\\pi}{3}$."
+            },
+            9: {
+                text: "ABCD est un carré de coté 1. On place les points E et F respectivement sur les cotés [AB] et [BC] tels que BE=CF=x. La valeur de x pour laquelle l'aire du triangle EFD est minimale est :",
+                options: ["0", "$\\frac{1}{4}$", "$\\frac{1}{3}$", "$\\frac{1}{2}$", "Autre réponse"],
+                correct: "d",
+                discuss: "En plaçant le carré avec A(0,0), B(1,0), C(1,1), D(0,1), on obtient E(1-x,0) et F(1,1-x). L'aire du triangle EFD est $\\frac{x^2-x+1}{2}$. Cette fonction quadratique atteint son minimum en $x = \\frac{1}{2}$."
+            },
+            10: {
+                text: "Dans l'ensemble $\\mathbb{C}$, si $|z|-z = 3-i\\sqrt{3}$, alors $|z|$ est égal à :",
+                options: ["0", "2", "$2\\sqrt{3}$", "$3\\sqrt{2}$", "$7\\sqrt{2}$"],
+                correct: "b",
+                discuss: "Posons $z=x+iy$. L'équation devient $(|z|-x) - iy = 3-i\\sqrt{3}$. Par identification : $y=\\sqrt{3}$ et $|z|-x = 3$. Avec $|z|=\\sqrt{x^2+3}$, on obtient $\\sqrt{x^2+3} = x+3$. En élevant au carré : $x^2+3 = x^2+6x+9$, soit $x=-1$. Donc $|z|=\\sqrt{1+3}=2$."
+            },
+            11: {
+                text: "L'ensemble des points M d'affixe z tel que $|\\frac{z-i}{z+i}|=1$ est :",
+                options: ["La médiatrice du segment [AB]", "La droite (AB)", "La droite (AB) privée du point B", "Le cercle de diamètre [AB]", "Le cercle de diamètre [AB] privé du point B"],
+                correct: "a",
+                discuss: "L'équation $|\\frac{z-i}{z+i}|=1$ équivaut à $|z-i| = |z+i|$ (pour $z \\neq -i$). Géométriquement, cela signifie que M est équidistant des points A(i) et B(-i), donc M appartient à la médiatrice du segment [AB]."
+            },
+            12: {
+                text: "Soit $x \\in \\mathbb{R}^*$. Si $\\lim_{n \\to \\infty} (1+\\frac{x}{7n})^{29n} = 2022$ alors x est égal à :",
+                options: ["$\\frac{7}{29}\\ln 2022$", "$2022 \\ln(\\frac{7}{29})$", "$2022 \\ln(\\frac{29}{7})$", "$\\frac{29}{7}\\ln 2022$", "Autre réponse"],
+                correct: "a",
+                discuss: "En utilisant la limite de référence $(1+u)^{1/u} \\to e$ quand $u \\to 0$, on peut réécrire l'expression comme $[(1+\\frac{x}{7n})^{\\frac{7n}{x}}]^{\\frac{29x}{7}}$. La limite est $e^{\\frac{29x}{7}} = 2022$, donc $\\frac{29x}{7} = \\ln(2022)$ et $x = \\frac{7}{29}\\ln(2022)$."
+            },
+            13: {
+                text: "Dans l'espace rapporté à un repère orthonormé, on considère le plan (P) d'équation $3x-2z+3=0$. On dispose d'un dé régulier dont les faces sont numérotées de 1 à 6. On lance le dé et on obtient ainsi de manière équiprobable un nombre $a$ ($1 \\le a \\le 6$). La probabilité que le point A'($a ; 2a ; 6a-3$) appartient au plan (P) est :",
+                options: ["$\\frac{1}{6}$", "$\\frac{1}{3}$", "$\\frac{1}{2}$", "$\\frac{2}{3}$", "Autre réponse"],
+                correct: "a",
+                discuss: "Pour que A' appartienne au plan (P), ses coordonnées doivent vérifier l'équation : $3a - 2(6a-3) + 3 = 0$, soit $3a - 12a + 6 + 3 = 0$, donc $-9a + 9 = 0$ et $a = 1$. La probabilité d'obtenir 1 avec un dé équilibré est $\\frac{1}{6}$."
+            },
+            14: {
+                text: "Soit $f$ la fonction définie sur $\\mathbb{R}$ par $f(x)=2e^{3x}-6$. La primitive F de f sur $\\mathbb{R}$ dont la courbe représentative coupe l'axe des ordonnées au point d'ordonnée 3 est définie par :",
+                options: ["$F(x)=\\frac{2}{3}e^{3x}-6x-\\frac{2}{3}$", "$F(x)=\\frac{2}{3}e^{3x}-6x+\\frac{7}{3}$", "$F(x)=\\frac{2}{3}e^{3x}-6x-\\frac{7}{3}$", "$F(x)=\\frac{2}{3}e^{3x}-6x+\\frac{2}{3}$", "Autre réponse"],
+                correct: "b",
+                discuss: "La primitive générale est $F(x) = \\frac{2}{3}e^{3x} - 6x + C$. Avec la condition $F(0) = 3$ : $\\frac{2}{3} + C = 3$, donc $C = \\frac{7}{3}$. Ainsi $F(x) = \\frac{2}{3}e^{3x} - 6x + \\frac{7}{3}$."
+            },
+            15: {
+                text: "L'intégrale $\\int_0^1 \\frac{x^2+2}{\\sqrt{x^3+6x+4}} dx$ est égale à :",
+                options: ["$\\frac{4}{3}$", "$\\frac{8}{3}$", "$\\frac{10}{3}$", "$\\frac{14}{3}$", "Autre réponse"],
+                correct: "e",
+                discuss: "En posant $u = x^3+6x+4$, on a $u' = 3x^2+6 = 3(x^2+2)$. L'intégrale devient $\\frac{1}{3}\\int \\frac{u'}{\\sqrt{u}}dx = \\frac{2}{3}\\sqrt{u}$. En évaluant : $\\frac{2}{3}(\\sqrt{11} - 2) = \\frac{2\\sqrt{11}-4}{3}$. Ce résultat ne correspond à aucune des options A-D."
+            },
+            16: {
+                text: "Si $(v_n)_{n \\in N^*}$ est une suite telle que : $(\\forall n \\in N^*) : v_1+v_2+...+v_n = 2n^2+n$, alors $v_8$ est égal à :",
+                options: ["31", "53", "54", "62", "64"],
+                correct: "a",
+                discuss: "Soit $S_n = 2n^2+n$. Le terme général est $v_n = S_n - S_{n-1} = (2n^2+n) - (2(n-1)^2+(n-1)) = 4n-1$ pour $n \\geq 2$. Cette formule est aussi valable pour $n=1$. Donc $v_8 = 4(8)-1 = 31$."
+            },
+            17: {
+                text: "Soit $f$ une fonction numérique dérivable sur $\\mathbb{R}$. Si $(\\forall x \\in \\mathbb{R}) : f(2x-1) = x^3+3x$ alors $f(1)+f'(1)$ est égal à :",
+                options: ["$\\frac{5}{2}$", "4", "$\\frac{9}{2}$", "$\\frac{13}{2}$", "Autre réponse"],
+                correct: "e",
+                discuss: "Pour $f(1)$ : on pose $2x-1=1$, soit $x=1$, donc $f(1)=1^3+3(1)=4$. Pour $f'(1)$ : en dérivant $f(2x-1) = x^3+3x$, on obtient $2f'(2x-1) = 3x^2+3$. Pour $x=1$ : $2f'(1) = 6$, donc $f'(1)=3$. Ainsi $f(1)+f'(1) = 4+3 = 7$, qui n'est pas dans les options."
+            },
+            18: {
+                text: "Question 18 non disponible (mal formulée)",
+                options: ["Option non disponible", "Option non disponible", "Option non disponible", "Option non disponible", "Option non disponible"],
+                correct: "a",
+                discuss: "La question Q18 est mal formulée ou contient une erreur dans l'énoncé selon l'analyse fournie."
+            },
+            19: {
+                text: "Soit $f$ la fonction définie sur $\\mathbb{R}$ par : $f(x)=\\sum_{k=0}^{n} x^k = 1+x+x^2+...+x^n$ et soit (C) sa courbe représentative dans un repère orthonormé. L'équation réduite de la tangente à (C) au point d'abscisse 1 est :",
+                options: ["$y=\\frac{n(n+1)}{2}x - \\frac{(n-2)(n+1)}{2}$", "$y=\\frac{n(n-1)}{2}x - \\frac{(n-2)(n+1)}{2}$", "$y=\\frac{n(n+1)}{2}x + \\frac{(n-2)(n+1)}{2}$", "$y=\\frac{n(n-1)}{2}x - \\frac{n^2-1}{2}$", "$y=\\frac{n(n+1)}{2}x + \\frac{n^2-1}{2}$"],
+                correct: "a",
+                discuss: "On a $f(1) = n+1$ et $f'(x) = 1+2x+...+nx^{n-1}$, donc $f'(1) = \\frac{n(n+1)}{2}$. L'équation de la tangente est $y = (n+1) + \\frac{n(n+1)}{2}(x-1) = \\frac{n(n+1)}{2}x - \\frac{(n-2)(n+1)}{2}$."
+            },
+            20: {
+                text: "On considère la suite $(u_n)_{n \\in N}$ définie par $u_0 \\in [0,1]$ et $(\\forall n \\in N) : u_{n+1}=f(u_n)$. Où $f$ est la fonction définie sur $[0,1]$ par $f(x)=\\frac{\\sqrt{x}}{\\sqrt{x}+\\sqrt{1-x}}$. On a alors :",
+                options: ["$\\lim u_n=0$", "$\\lim u_n=1/3$", "$\\lim u_n=1$", "$\\lim u_n=+\\infty$", "Autre réponse"],
+                correct: "e",
+                discuss: "Les points fixes de $f$ sont $x=0$, $x=1$ et $x=1/2$. La limite de la suite dépend de la valeur initiale $u_0$. En général, la suite converge vers $1/2$ pour la plupart des valeurs de départ, mais cette limite n'est pas proposée dans les options. La question est mal posée car elle demande une limite unique alors que celle-ci dépend de $u_0$."
+            }
+        },
+		2021:{
+            1: {
+                text: "$\\lim_{x \\to 0} \\frac{\\ln(e+x)-1}{\\sqrt{x+1}-1}$ est égale à :",
+                options: ["$\\frac{1}{2e}$", "$\\frac{1}{e}$", "1", "e", "2e"],
+                correct: "e",
+                discuss: "Il s'agit d'une forme indéterminée $\\frac{0}{0}$. On peut utiliser la règle de L'Hôpital. La dérivée du numérateur : $\\frac{d}{dx}(\\ln(e+x)-1) = \\frac{1}{e+x}$. La dérivée du dénominateur : $\\frac{d}{dx}(\\sqrt{x+1}-1) = \\frac{1}{2\\sqrt{x+1}}$. La limite est donc : $\\lim_{x \\to 0} \\frac{1/(e+x)}{1/(2\\sqrt{x+1})} = \\frac{1/(e+0)}{1/(2\\sqrt{1})} = \\frac{1/e}{1/2} = \\frac{2}{e}$. Cette valeur ne figure pas exactement dans les options proposées."
+            },
+            2: {
+                text: "Si $f(x) = \\frac{1}{1-x}\\ln(1+\\frac{1}{x})$ alors $f'(x)$ est égale à :",
+                options: ["$\\frac{1}{(1-x)^2}\\ln(1+\\frac{1}{x}) - \\frac{1}{x(1-x^2)}$", "$\\frac{1}{(1-x)^2}\\ln(1+\\frac{1}{x}) - \\frac{1}{x(1-x)}$", "$\\frac{1}{1-x}\\ln(1+\\frac{1}{x}) - \\frac{1}{x(1-x^2)}$", "$\\frac{1}{(1-x)^2}\\ln(1+\\frac{1}{x}) - \\frac{1}{x(1-x)}$", "Option illisible"],
+                correct: "a",
+                discuss: "On utilise la règle de dérivation d'un produit $(uv)'=u'v+uv'$. Posons $u(x) = \\frac{1}{1-x} = (1-x)^{-1}$, alors $u'(x) = \\frac{1}{(1-x)^2}$. Posons $v(x) = \\ln(1+\\frac{1}{x}) = \\ln(\\frac{x+1}{x}) = \\ln(x+1)-\\ln(x)$. Alors $v'(x) = \\frac{1}{x+1} - \\frac{1}{x} = \\frac{-1}{x(x+1)}$. Donc $f'(x) = \\frac{1}{(1-x)^2}\\ln(1+\\frac{1}{x}) - \\frac{1}{x(1-x^2)}$."
+            },
+            3: {
+                text: "Le nombre complexe $(\\frac{7-15i}{15+7i})^{2021}$ est égal à :",
+                options: ["i", "-1", "7-15i", "-i", "7+15i"],
+                correct: "d",
+                discuss: "Simplifions d'abord la fraction $Z = \\frac{7-15i}{15+7i}$. On remarque que $15+7i = i(7-15i)$ car $i(7-15i) = 7i - 15i^2 = 7i+15$. Donc $Z = \\frac{7-15i}{i(7-15i)} = \\frac{1}{i} = -i$. Les puissances de $-i$ sont cycliques avec une période de 4 : $(-i)^1=-i$, $(-i)^2=-1$, $(-i)^3=i$, $(-i)^4=1$. $2021 = 4 \\times 505 + 1$. Le reste est 1. Donc $(-i)^{2021} = (-i)^1 = -i$."
+            },
+            4: {
+                text: "Si $x \\in [0,1[$, alors $\\lim_{n \\to \\infty} (1-x+x^2-x^3+\\dots+(-1)^n x^n)$ est égale à :",
+                options: ["$\\frac{1}{x-1}$", "$\\frac{1}{1-x}$", "1", "$-\\frac{1}{1+x}$", "$\\frac{1}{1+x}$"],
+                correct: "e",
+                discuss: "L'expression est la somme d'une série géométrique de premier terme $a=1$ et de raison $r=-x$. La somme partielle est $S_n = \\frac{1-(-x)^{n+1}}{1+x}$. Pour $x \\in [0,1[$, on a $|r|=|-x|=|x|<1$. Donc $\\lim_{n \\to \\infty} (-x)^{n+1} = 0$. La limite de la somme est $\\frac{1-0}{1+x} = \\frac{1}{1+x}$."
+            },
+            5: {
+                text: "Dans $\\mathbb{R}$, le nombre de solutions de l'équation $x^3+x-1=0$ est :",
+                options: ["0", "1", "2", "3", "5"],
+                correct: "b",
+                discuss: "Soit la fonction $f(x) = x^3+x-1$. $f'(x) = 3x^2+1$. Pour tout $x \\in \\mathbb{R}$, $x^2 \\ge 0$, donc $f'(x) \\ge 1 > 0$. La fonction $f$ est donc strictement croissante sur $\\mathbb{R}$. De plus, $\\lim_{x \\to -\\infty} f(x) = -\\infty$ et $\\lim_{x \\to +\\infty} f(x) = +\\infty$. Une fonction continue et strictement monotone sur $\\mathbb{R}$ qui va de $-\\infty$ à $+\\infty$ ne peut couper l'axe des abscisses qu'une seule fois."
+            },
+            6: {
+                text: "Dans l'ensemble $\\mathbb{C}$, si $z^2=15-20i$ alors $|(1+i)z|$ est égal à :",
+                options: ["$\\sqrt{2}$", "$2\\sqrt{2}$", "$3\\sqrt{2}$", "$4\\sqrt{2}$", "$5\\sqrt{2}$"],
+                correct: "e",
+                discuss: "On cherche $|(1+i)z| = |1+i| \\cdot |z|$. Calculons $|1+i| = \\sqrt{1^2+1^2} = \\sqrt{2}$. Calculons $|z|$. On part de $z^2=15-20i$. $|z^2| = |z|^2 = |15-20i| = \\sqrt{15^2+(-20)^2} = \\sqrt{225+400} = \\sqrt{625} = 25$. Donc $|z|^2=25 \\implies |z|=5$. Calculons le produit : $|(1+i)z| = \\sqrt{2} \\cdot 5 = 5\\sqrt{2}$."
+            },
+            7: {
+                text: "Si $f$ est la fonction définie sur $\\mathbb{R}^*$ par $f(x) = \\frac{\\ln(1+x^2)}{x}$ alors :",
+                options: ["$\\lim_{x \\to 0}f(x)=1$", "$\\lim_{x \\to 0}f(x)=-1$", "$\\lim_{x \\to 0}f(x)=\\frac{1}{2}$", "$\\lim_{x \\to 0}f(x)=0$", "La fonction f n'admet pas de limite en 0"],
+                correct: "d",
+                discuss: "On cherche la limite de $f(x)$ quand $x \\to 0$. C'est une forme indéterminée $\\frac{0}{0}$. On utilise l'équivalence usuelle $\\ln(1+u) \\sim u$ quand $u \\to 0$. Ici, posons $u=x^2$. Quand $x \\to 0$, $u \\to 0$. $\\lim_{x \\to 0} \\frac{\\ln(1+x^2)}{x} = \\lim_{x \\to 0} \\frac{x^2}{x} = \\lim_{x \\to 0} x = 0$."
+            },
+            8: {
+                text: "$(u_n)_{n \\ge 0}$ est la suite définie par : $u_0=1$ et pour tout $n \\in \\mathbb{N}, u_{n+1} = u_n^2+u_n$. La limite de la suite $(u_n)$ si elle existe, est égale à :",
+                options: ["1", "$+\\infty$", "0", "-1", "Autre valeur"],
+                correct: "b",
+                discuss: "Calculons les premiers termes : $u_0 = 1$, $u_1 = 1^2+1=2$, $u_2 = 2^2+2=6$, $u_3 = 6^2+6=42$. La suite est positive et strictement croissante. Si une suite croissante converge, sa limite $L$ doit être un point fixe : $L = L^2+L \\implies L^2=0 \\implies L=0$. Or, la suite commence à 1 et est croissante. Elle ne peut donc pas converger vers 0. Puisqu'elle est croissante et ne converge pas vers une limite finie, elle diverge vers $+\\infty$."
+            },
+            9: {
+                text: "L'intégrale $\\int_0^1 \\frac{x}{1+e^{-x^2}} dx$ est égale à :",
+                options: ["$\\ln\\sqrt{\\frac{1+e}{2}}$", "$\\ln\\sqrt{1-e}$", "$\\ln(1+e)$", "$\\ln\\frac{1+e}{2}$", "$\\sqrt{\\ln(1+e)}$"],
+                correct: "a",
+                discuss: "On transforme l'intégrande : $\\frac{x}{1+e^{-x^2}} = \\frac{x e^{x^2}}{e^{x^2}+1}$. Posons $u = 1+e^{x^2}$, alors $du = 2x e^{x^2} dx$. L'intégrale devient $\\frac{1}{2} \\int \\frac{du}{u}$. Une primitive est $\\frac{1}{2}\\ln(u) = \\frac{1}{2}\\ln(1+e^{x^2})$. En évaluant : $\\frac{1}{2}\\ln(1+e) - \\frac{1}{2}\\ln(2) = \\frac{1}{2}\\ln\\left(\\frac{1+e}{2}\\right) = \\ln\\sqrt{\\frac{1+e}{2}}$."
+            },
+            10: {
+                text: "Si $f(1)=4$ et $(\\forall x \\in \\mathbb{R}^*_+): f'(x)=2x+\\ln x$ alors $f(e)$ est égale à :",
+                options: ["$e^2$", "$e+4$", "$e^2+4$", "$e$", "4"],
+                correct: "c",
+                discuss: "On trouve $f(x)$ en intégrant $f'(x)$ : $f(x) = \\int(2x+\\ln x)dx = x^2 + (x\\ln x - x) + C$. On utilise la condition $f(1)=4$ pour trouver la constante C. $f(1) = 1^2 + (1\\ln 1 - 1) + C = 1+0-1+C = C$. Donc $C=4$. La fonction est $f(x) = x^2 + x\\ln x - x + 4$. On calcule $f(e) = e^2 + e\\ln e - e + 4 = e^2 + e - e + 4 = e^2+4$."
+            },
+            11: {
+                text: "Dans l'ensemble $\\mathbb{C}$, si $z=1+i(1+\\sqrt{2})$ alors :",
+                options: ["$|z|=2\\sqrt{2}\\cos(\\frac{\\pi}{8})$ et $\\arg(z)=\\frac{3\\pi}{8}[2\\pi]$", "$|z|=2\\sqrt{2}\\cos(\\frac{\\pi}{8})$ et $\\arg(z)=\\frac{\\pi}{8}[2\\pi]$", "$|z|=2\\sqrt{2}\\cos(\\frac{3\\pi}{8})$ et $\\arg(z)=\\frac{3\\pi}{8}[2\\pi]$", "$|z|=2\\sqrt{2}\\cos(\\frac{3\\pi}{8})$ et $\\arg(z)=\\frac{\\pi}{8}[2\\pi]$", "$|z|=2\\cos(\\frac{3\\pi}{8})$ et $\\arg(z)=\\frac{3\\pi}{8}[2\\pi]$"],
+                correct: "a",
+                discuss: "Pour $z=1+i(1+\\sqrt{2})$ : $\\tan(\\arg(z)) = \\frac{1+\\sqrt{2}}{1} = 1+\\sqrt{2}$. On sait que $\\tan(\\frac{3\\pi}{8}) = 1+\\sqrt{2}$. Donc $\\arg(z)=\\frac{3\\pi}{8}$. Pour le module : $|z|^2 = 1^2+(1+\\sqrt{2})^2 = 1 + (1+2\\sqrt{2}+2) = 4+2\\sqrt{2}$. $|z|=\\sqrt{4+2\\sqrt{2}}$. On vérifie que $2\\sqrt{2}\\cos(\\frac{\\pi}{8}) = \\sqrt{4+2\\sqrt{2}}$."
+            },
+            12: {
+                text: "Si $\\int_1^2 f'(x)f''(x)dx=8$ et $f'(2)-f'(1)=2$ alors $f'(2)+f'(1)$ est égal à :",
+                options: ["4", "6", "8", "10", "12"],
+                correct: "c",
+                discuss: "Posons $u=f'(x)$, alors $du=f''(x)dx$. $\\int f'(x)f''(x)dx = \\int u du = \\frac{u^2}{2} = \\frac{(f'(x))^2}{2}$. L'intégrale définie est : $\\left[\\frac{(f'(x))^2}{2}\\right]_1^2 = \\frac{(f'(2))^2 - (f'(1))^2}{2} = 8$. Donc $(f'(2))^2 - (f'(1))^2 = 16$. On reconnaît une différence de carrés : $(f'(2)-f'(1))(f'(2)+f'(1)) = 16$. Avec $f'(2)-f'(1)=2$ : $2 \\cdot (f'(2)+f'(1)) = 16$. Donc $f'(2)+f'(1) = 8$."
+            },
+            13: {
+                text: "Soit $q \\in \\mathbb{R}$. Pour tout $n \\in \\mathbb{N}^*$ on pose $S_n = \\sum_{k=1}^n q^k$. Si la suite $(S_n)$ est convergente et $\\lim_{n \\to \\infty} S_n=4$, alors $q$ est égal à :",
+                options: ["$\\frac{2}{3}$", "$\\frac{3}{4}$", "$\\frac{4}{5}$", "$\\frac{5}{6}$", "$\\frac{6}{7}$"],
+                correct: "c",
+                discuss: "La suite $(S_n)$ est la somme d'une série géométrique. Elle converge si et seulement si $|q|<1$. La limite est $S = \\frac{q}{1-q}$. On nous donne que la limite est 4 : $\\frac{q}{1-q} = 4 \\implies q = 4(1-q) = 4-4q \\implies 5q = 4 \\implies q = \\frac{4}{5}$. La condition $|4/5|<1$ est bien respectée."
+            },
+            14: {
+                text: "L'intégrale $I = \\int_0^{\\pi/2} \\frac{\\sin x}{\\sin x + \\cos x} dx$ est égale à :",
+                options: ["$\\frac{\\pi}{3}$", "$\\frac{\\pi}{4}$", "$\\frac{\\pi}{6}$", "$\\frac{\\pi}{8}$", "$\\frac{\\pi}{12}$"],
+                correct: "b",
+                discuss: "On utilise la propriété $\\int_0^a f(x)dx = \\int_0^a f(a-x)dx$ avec $a=\\pi/2$. $I = \\int_0^{\\pi/2} \\frac{\\sin(\\pi/2-x)}{\\sin(\\pi/2-x) + \\cos(\\pi/2-x)} dx = \\int_0^{\\pi/2} \\frac{\\cos x}{\\cos x + \\sin x} dx$. Soit $J = \\int_0^{\\pi/2} \\frac{\\cos x}{\\sin x + \\cos x} dx$. On vient de montrer que $I=J$. $I+J = \\int_0^{\\pi/2} \\frac{\\sin x + \\cos x}{\\sin x + \\cos x} dx = \\int_0^{\\pi/2} 1 dx = \\frac{\\pi}{2}$. Puisque $I=J$, on a $2I = \\frac{\\pi}{2} \\implies I = \\frac{\\pi}{4}$."
+            },
+            15: {
+                text: "Dans l'ensemble $\\mathbb{C}$, si $|z_1|=|z_2|=1$ et $|z_1+z_2|=\\sqrt{3}$ alors $|z_1-z_2|$ est égal à :",
+                options: ["1", "3", "$\\sqrt{3}$", "2", "$\\sqrt{2}$"],
+                correct: "a",
+                discuss: "On utilise l'identité du parallélogramme pour les nombres complexes : $|z_1+z_2|^2 + |z_1-z_2|^2 = 2(|z_1|^2+|z_2|^2)$. On remplace par les valeurs données : $(\\sqrt{3})^2 + |z_1-z_2|^2 = 2(1^2+1^2)$. $3 + |z_1-z_2|^2 = 4$. $|z_1-z_2|^2 = 1$. $|z_1-z_2| = 1$."
+            },
+            16: {
+                text: "$(u_n)_{n \\ge 0}$ est la suite définie par: $u_0=0, u_1=1$ et pour tout $n \\in N^*, u_{n+1} = \\sqrt{\\frac{u_n^2+u_{n-1}^2}{2}}$. $\\lim_{n \\to \\infty} u_n$ est égale à :",
+                options: ["0", "$+\\infty$", "1", "$\\sqrt{2}$", "$\\frac{\\sqrt{2}}{2}$"],
+                correct: "e",
+                discuss: "Posons la suite $v_n = u_n^2$. La relation de récurrence devient $v_{n+1} = \\frac{v_n+v_{n-1}}{2}$, avec $v_0=0$ et $v_1=1$. C'est une suite récurrente linéaire d'ordre 2. L'équation caractéristique est $2r^2-r-1=0$, dont les racines sont $r_1=1$ et $r_2=-1/2$. La forme générale est $v_n = \\frac{2}{3} - \\frac{2}{3}(-\\frac{1}{2})^n$. Quand $n \\to \\infty$, $\\lim_{n \\to \\infty} v_n = \\frac{2}{3}$. Donc $\\lim_{n \\to \\infty} u_n = \\sqrt{\\frac{2}{3}}$. Cette valeur ne figure pas exactement dans les options."
+            },
+            17: {
+                text: "Soient $(a;b) \\in \\mathbb{R}^2$ et $f$ la fonction définie sur $\\mathbb{R}$ par $f(x) = \\begin{cases} ax+b, & si \\ x \\le 0 \\\\ \\frac{1}{x+1}, & si \\ x > 0 \\end{cases}$. La fonction $f$ est dérivable en 0 si et seulement si :",
+                options: ["a=1 et b=1", "a=-1 et b=1", "a=2 et b=1", "a=-1 et b=-1", "a=-1 et b=0"],
+                correct: "b",
+                discuss: "Pour la continuité en 0 : $\\lim_{x \\to 0^-} f(x) = b$ et $\\lim_{x \\to 0^+} f(x) = 1$. Donc $b=1$. Pour la dérivabilité en 0 : $f'_g(0)=a$ et $f'_d(0)=\\lim_{x \\to 0^+} -\\frac{1}{(x+1)^2} = -1$. Pour que la fonction soit dérivable, il faut $a=-1$. Les conditions sont donc $a=-1$ et $b=1$."
+            },
+            18: {
+                text: "Question 18 mal posée",
+                options: ["La condition $\\int_0^1 (3x^2+2ax+b)dx < 2$ ne permet pas", "de déterminer le nombre de solutions", "de l'équation sans plus d'informations", "sur les paramètres a et b", "Question mal formulée"],
+                correct: "e",
+                discuss: "La question Q18 est mal posée. La condition $\\int_0^1 (3x^2+2ax+b)dx < 2$ se traduit par $1+a+b<2$, soit $a+b<1$. Cette seule information ne permet pas de déterminer le signe du discriminant $\\Delta = 4(a^2-3b)$ de l'équation $f(x)=0$, et donc ne permet pas de déterminer le nombre de solutions."
+            },
+            19: {
+                text: "Le plan complexe est rapporté à un repère orthonormé direct. Soient $z_1$ et $z_2$ les deux solutions de l'équation d'inconnue z : $z^2-\\sin(2\\alpha)z+\\sin^2(\\alpha)=0$ où $\\alpha \\in [0, \\frac{\\pi}{2}]$. La valeur de $\\alpha$ pour laquelle les points O, M($z_1$) et M($z_2$) sont les sommets d'un triangle équilatéral est :",
+                options: ["$\\frac{\\pi}{3}$", "$\\frac{\\pi}{4}$", "$\\frac{\\pi}{5}$", "$\\frac{\\pi}{6}$", "$\\frac{\\pi}{8}$"],
+                correct: "d",
+                discuss: "Pour un triangle équilatéral O$M_1M_2$, on doit avoir $|z_1|=|z_2|$ et $\\arg(z_2/z_1) = \\pm \\pi/3$. De l'équation, $z_1z_2 = \\sin^2\\alpha$ et $z_1+z_2=\\sin(2\\alpha)$. Pour un triangle équilatéral, $z_2 = z_1 e^{\\pm i\\pi/3}$. En passant au module et en utilisant les relations de Vieta, on obtient $\\cos\\alpha = \\frac{\\sqrt{3}}{2}$. La seule solution dans $[0, \\pi/2]$ est $\\alpha = \\frac{\\pi}{6}$."
+            },
+            20: {
+                text: "Pour tout entier naturel non nul n et pour tout réel x on pose : $f_n(x)=e^x-nx$. On a :",
+                options: ["$(\\forall n \\in \\mathbb{N}^*), (\\exists ! a_n \\in ]0;1[) : f_n(a_n)=0 \\text{ et } \\lim na_n=1$", "$(\\forall n \\in \\mathbb{N}^*), (\\exists ! a_n \\in ]0;1[) : f_n(a_n)=0 \\text{ et } \\lim na_n=0$", "$(\\forall n \\in \\mathbb{N}^*), (\\exists ! a_n \\in ]-1;0]) : f_n(a_n)=0 \\text{ et } \\lim na_n=e$", "$(\\forall n \\in \\mathbb{N}^*), (\\exists ! a_n \\in ]-1;0]) : f_n(a_n)=0 \\text{ et } \\lim na_n=0$", "$(\\forall n \\in \\mathbb{N}^*), (\\exists ! a_n \\in ]-1;0]) : f_n(a_n)=0 \\text{ et } \\lim na_n=1$"],
+                correct: "a",
+                discuss: "Pour $n \\ge 3$, $f_n(0)=1>0$ et $f_n(1)=e-n<0$. Par le théorème des valeurs intermédiaires, il existe une racine $a_n \\in ]0,1[$. On a $f_n(a_n)=0 \\implies e^{a_n} = na_n$. Comme $a_n \\in ]0,1[$, la suite $(a_n)$ est bornée. Si $a_n$ ne tendait pas vers 0, alors $na_n$ tendrait vers l'infini, tandis que $e^{a_n}$ resterait borné. Donc $\\lim_{n \\to \\infty} a_n = 0$. Quand $a_n \\to 0$, $e^{a_n} \\to 1$. Puisque $na_n = e^{a_n}$, on en déduit que $\\lim_{n \\to \\infty} na_n = 1$."
+            }
+        },
+		2020:{}
     },
     "ENSAM": {},
     "ENCG": {}
