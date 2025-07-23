@@ -11,7 +11,7 @@ document.onkeydown = function (e) {
         return false;
     }
 };
-
+// ----------------------------------------------------------------
 const data = {
     "ENSA": {
         2025: {
@@ -1587,15 +1587,98 @@ const data = {
                 correct: "$\\begin{pmatrix}1&13&91\\\\ 0&1&13\\\\ 0&0&1\\end{pmatrix}$",
                 discuss: "En utilisant la formule du binôme de Newton avec $B = I + N$ où $N$ est nilpotente : $B^{13} = I + 13N + C_{13}^2 N^2 = I + 13N + 78N^2$."
             }
-			//TEST TEST
+    }},
+    "FMP": {
+        2025: {
+            1: {
+                text: "Soit $I = \\int_{0}^{\\pi} |\\cos x| dx$. Quelle est la valeur de I ?",
+                options: ["0", "1", "2", "π", "Aucune des réponses n'est juste"],
+                correct: "c",
+                discuss: "La fonction cosinus est positive sur l'intervalle $[0, \\frac{\\pi}{2}]$ et négative sur $[\\frac{\\pi}{2}, \\pi]$. Nous devons donc diviser l'intégrale en deux parties : 1. Sur $[0, \\frac{\\pi}{2}]$, $|\\cos x| = \\cos x$. 2. Sur $[\\frac{\\pi}{2}, \\pi]$, $|\\cos x| = -\\cos x$. L'intégrale devient : $I = \\int_{0}^{\\frac{\\pi}{2}} \\cos x \\,dx + \\int_{\\frac{\\pi}{2}}^{\\pi} (-\\cos x) \\,dx = [\\sin x]_{0}^{\\frac{\\pi}{2}} - [\\sin x]_{\\frac{\\pi}{2}}^{\\pi} = (1 - 0) - (0 - 1) = 1 - (-1) = 2$."
+            },
+            2: {
+                text: "Quelle est la valeur de l'intégrale définie suivante : $J = \\int_{0}^{1} \\frac{1-x^2}{(1+x^2)^2} dx$ ?",
+                options: ["1/2", "π/4", "1", "0", "Aucune des réponses n'est juste"],
+                correct: "a",
+                discuss: "Utilisons un changement de variable trigonométrique. Posons $x = \\tan(\\theta)$, ce qui implique $dx = \\sec^2(\\theta) d\\theta$. L'intégrale devient : $J = \\int_{0}^{\\frac{\\pi}{4}} \\frac{1-\\tan^2\\theta}{(1+\\tan^2\\theta)^2} \\sec^2\\theta \\,d\\theta = \\int_{0}^{\\frac{\\pi}{4}} \\cos(2\\theta) \\,d\\theta = \\frac{1}{2}\\sin(\\frac{\\pi}{2}) = \\frac{1}{2}$."
+            },
+            3: {
+                text: "Soit la suite $(U_n)$ définie par : $U_1 = 1$ et pour tout $n \\ge 1$, $U_{n+1} = \\sqrt{2+U_n}$. Quelle est la limite de la suite $(U_n)$ ?",
+                options: ["$\\sqrt{2}$", "$1+\\sqrt{2}$", "la suite est divergente", "2", "Aucune des réponses n'est juste"],
+                correct: "d",
+                discuss: "Si la suite converge vers une limite finie $L$, alors $L = \\sqrt{2+L}$. En élevant au carré : $L^2 = 2+L$, soit $L^2 - L - 2 = 0$. Les solutions sont $(L-2)(L+1) = 0$, donc $L=2$ ou $L=-1$. Comme tous les termes sont positifs, la limite est $L=2$."
+            },
+            4: {
+                text: "Soient a et b deux nombres complexes tels que $ab \\ne 1$ et $|a|=1$. Quelle est la valeur de $|\\frac{a-b}{1-\\bar{a}b}|$ ?",
+                options: ["0", "1", "2", "$\\sqrt{2}$", "Aucune des réponses n'est juste"],
+                correct: "b",
+                discuss: "Calculons $|Z|^2 = \\frac{(a-b)(\\bar{a}-\\bar{b})}{(1-\\bar{a}b)(1-a\\bar{b})} = \\frac{a\\bar{a} - a\\bar{b} - b\\bar{a} + b\\bar{b}}{1 - a\\bar{b} - \\bar{a}b + \\bar{a}ba\\bar{b}}$. Avec $|a|=1$, donc $a\\bar{a}=1$, le numérateur devient $1 - a\\bar{b} - b\\bar{a} + |b|^2$ et le dénominateur $1 - a\\bar{b} - \\bar{a}b + |b|^2$. Ils sont identiques, donc $|Z|=1$."
+            },
+            5: {
+                text: "Soit $C = 1+\\cos(2\\pi/5) + \\cos(4\\pi/5) + \\cos(6\\pi/5) + \\cos(8\\pi/5)$, quelle est la valeur de C ?",
+                options: ["1", "2", "-1", "0", "Aucune des réponses n'est juste"],
+                correct: "d",
+                discuss: "Cette somme est la partie réelle de la somme des 5-ièmes racines de l'unité : $1 + e^{i\\frac{2\\pi}{5}} + e^{i\\frac{4\\pi}{5}} + e^{i\\frac{6\\pi}{5}} + e^{i\\frac{8\\pi}{5}} = 0$. La partie réelle étant nulle, $C=0$."
+            },
+            6: {
+                text: "On définit la fonction $f(x) = \\begin{cases} \\frac{\\sqrt{1+x}-1}{x}, & x \\ne 0 \\\\ a, & x=0 \\end{cases}$. Pour quelle valeur de a la fonction f est-elle continue en x=0 ?",
+                options: ["0", "1/2", "1", "-1", "Aucune des réponses n'est juste"],
+                correct: "b",
+                discuss: "Pour la continuité, $\\lim_{x \\to 0} \\frac{\\sqrt{1+x}-1}{x} = a$. En multipliant par la quantité conjuguée : $\\lim_{x \\to 0} \\frac{(1+x)-1}{x(\\sqrt{1+x}+1)} = \\lim_{x \\to 0} \\frac{1}{\\sqrt{1+x}+1} = \\frac{1}{2}$. Donc $a = \\frac{1}{2}$."
+            },
+            7: {
+                text: "Soit la fonction f(x) = sin(x)·cos(x). Quelle est la valeur maximale de f(x) sur ℝ ?",
+                options: ["1/2", "$\\sqrt{2}+1$", "2", "$\\sqrt{2}$", "Aucune des réponses n'est juste"],
+                correct: "a",
+                discuss: "En utilisant la formule de l'angle double : $f(x) = \\sin(x)\\cos(x) = \\frac{1}{2}\\sin(2x)$. La valeur maximale de $\\sin(2x)$ étant 1, la valeur maximale de $f(x)$ est $\\frac{1}{2}$."
+            },
+            8: {
+                text: "Résoudre dans ℝ l'équation : $e^{-x} = \\frac{\\sqrt{e^{2x+4}}}{e^x}$. Quelle est la bonne réponse ?",
+                options: ["x=1", "x=0", "x=3/2", "x=-1", "Aucune des réponses n'est juste"],
+                correct: "e",
+                discuss: "En simplifiant : $\\sqrt{e^{2x+4}} = e^{x+2}$, donc $e^{-x} = \\frac{e^{x+2}}{e^x} = e^2$. En égalant les exposants : $-x = 2$, soit $x = -2$. Cette valeur ne figure pas dans les options a, b, c, d."
+            },
+            9: {
+                text: "Une urne contient 9 boules : dont 5 boules rouges numérotées de 1 à 5 et 4 boules noires numérotées de 1 à 4. On tire simultanément deux boules. Calculer $P_A(B)$ où A : « les deux boules sont de même couleur » et B : « les deux boules portent un numéro pair » ?",
+                options: ["1/8", "1/18", "2/9", "1/9", "Aucune des réponses n'est juste"],
+                correct: "a",
+                discuss: "$P(A) = \\frac{C(5,2)+C(4,2)}{C(9,2)} = \\frac{16}{36}$. $P(A \\cap B) = \\frac{C(2,2)+C(2,2)}{C(9,2)} = \\frac{2}{36}$ (boules rouges paires {2,4} et noires paires {2,4}). Donc $P_A(B) = \\frac{2/36}{16/36} = \\frac{1}{8}$."
+            },
+            10: {
+                text: "On lance deux dés équilibrés à 6 faces. Quelle est la probabilité d'obtenir au moins un 6 ?",
+                options: ["1/6", "11/36", "5/6", "25/36", "Aucune des réponses n'est juste"],
+                correct: "b",
+                discuss: "La probabilité de ne pas obtenir de 6 sur un dé est $\\frac{5}{6}$. Pour deux dés indépendants : $P(\\text{aucun 6}) = \\frac{5}{6} \\times \\frac{5}{6} = \\frac{25}{36}$. Donc $P(\\text{au moins un 6}) = 1 - \\frac{25}{36} = \\frac{11}{36}$."
+            },
+            11: {
+                text: "Soient les points A(1,1,-2), B(0,5,5), C(6,-3,-5), D(1,2,0). Le vecteur $\\vec{AD}$ appartient-il au plan vectoriel engendré par $\\vec{AB}$ et $\\vec{AC}$ ?",
+                options: ["Oui, pour x=1/4, y=1/4", "Oui, pour x=5/16, y=1/16", "Oui, pour x=1/2, y=1/2", "Non, car le vecteur $\\vec{AD}$ n'est pas une combinaison linéaire", "Aucune des réponses n'est juste"],
+                correct: "b",
+                discuss: "On résout $\\vec{AD} = x\\vec{AB} + y\\vec{AC}$ avec $\\vec{AD}(0,1,2)$, $\\vec{AB}(-1,4,7)$, $\\vec{AC}(5,-4,-3)$. Le système donne $x = 5y$ et de la deuxième équation $1 = 4x - 4y = 16y$, donc $y = \\frac{1}{16}$ et $x = \\frac{5}{16}$."
+            },
+            12: {
+                text: "Soient les vecteurs : $\\vec{u}(1,2,-1)$, $\\vec{v}(3,6,-3)$, $\\vec{w}(0,1,1)$. Quelle est la valeur de ce produit : $(\\vec{u} \\wedge \\vec{v}) \\cdot \\vec{w}$ ?",
+                options: ["0", "3", "-1", "2", "Aucune des réponses n'est juste"],
+                correct: "a",
+                discuss: "On observe que $\\vec{v} = 3\\vec{u}$, donc les vecteurs $\\vec{u}$ et $\\vec{v}$ sont colinéaires. Le produit vectoriel de deux vecteurs colinéaires est nul : $\\vec{u} \\wedge \\vec{v} = \\vec{0}$. Donc $(\\vec{u} \\wedge \\vec{v}) \\cdot \\vec{w} = 0$."
+            },
+            13: {
+                text: "La fonction $f(x) = \\frac{\\ln(x+1)}{x+e^x}$ admet au point O(0,0) une tangente d'équation :",
+                options: ["y = x/e", "y = x", "y = -2x", "y = x-1", "Aucune des réponses n'est juste"],
+                correct: "b",
+                discuss: "L'équation de la tangente est $y = f'(0)x$. En calculant $f'(x) = \\frac{\\frac{1}{x+1}(x+e^x) - \\ln(x+1)(1+e^x)}{(x+e^x)^2}$ et en évaluant en $x=0$ : $f'(0) = \\frac{1 \\cdot 1 - 0 \\cdot 2}{1^2} = 1$. Donc l'équation est $y = x$."
+            },
+            14: {
+                text: "On considère le nombre complexe : $z = (1+i)^{20}$. Quelle est la partie imaginaire de z ?",
+                options: ["$2^{10}$", "$-2^{10}$", "0", "$\\sqrt{2}$", "Aucune des réponses n'est juste"],
+                correct: "c",
+                discuss: "En forme exponentielle : $1+i = \\sqrt{2}e^{i\\pi/4}$. Donc $z = (\\sqrt{2})^{20} \\cdot e^{i5\\pi} = 2^{10} \\cdot e^{i5\\pi}$. Comme $e^{i5\\pi} = \\cos(5\\pi) + i\\sin(5\\pi) = -1 + 0i$, on a $z = -2^{10}$ qui est un réel pur. Sa partie imaginaire est 0."
+            }
         }
     },
-    "FMP": {},
     "ENSAM": {},
     "ENCG": {}
 };
-
-
 // Initialisation corrigée
 document.addEventListener('DOMContentLoaded', function () {
     const params = new URLSearchParams(window.location.search);
@@ -1606,36 +1689,74 @@ document.addEventListener('DOMContentLoaded', function () {
         return;
     }
     console.log("École choisie :", school);
-    // si l'ecole n'existe pas dans les données, on affiche un message d'erreur
+    
+    // Vérifier si l'école existe dans les données
     if (!data[school] || Object.keys(data[school]).length === 0) {
         alert(`Aucune donnée disponible pour l'école ${school}`);
-        // revenir en arriere
+        // revenir en arrière
         window.history.back();
         return;
     }
-    goToSchool(school, Object.keys(data[school]).length); // Appel de la fonction avec l'école choisie et le nombre de concours
+    goToSchool(school, Object.keys(data[school]).length);
 });
 
 let ecole = "ENSA"; // École cible
-
+const optionLetters = ["A", "B", "C", "D", "E"];
+// État des questions
+let questionsState = {};
+let correctAnswers = {};
+let yearOfConcour = "2025"; // Année du concours
+let road = {}; // Initialisé comme objet vide
 
 function goToSchool(school, numberOfconcours = 1) {
     ecole = school; // Mettre à jour l'école cible
     const concoursYears = document.querySelector(".year-links");
+    const linkVirtual=document.querySelector(".btn-virtual-contest").querySelector('a');
+    if (linkVirtual) {
+        linkVirtual.href = `contest.html?school=${school}`; // Mettre à jour le lien du concours virtuel
+    }
+
+    if (!concoursYears) {
+        console.error("Élément .year-links non trouvé");
+        return;
+    }
+    
     concoursYears.innerHTML = ''; // Vider le contenu actuel
     let html = '';
-    for (let i = 0; i < numberOfconcours; i++) {
-        html += `<li><a href="#" onclick="goToConcour('${2025 - i}','${2025 - i}-10-01')">${2025 - i}</a></li>`
+    
+    if (school === "ENSA") {
+        for (let i = 0; i < numberOfconcours + 1; i++) {
+            if (i === 5) continue; // Sauter l'année 2020
+            html += `<li><a href="#" onclick="goToConcour('${2025 - i}','${2025 - i}-10-01')">${2025 - i}</a></li>`;
+        }
+    } else {
+        for (let i = 0; i < numberOfconcours; i++) {
+            html += `<li><a href="#" onclick="goToConcour('${2025 - i}','${2025 - i}-10-01')">${2025 - i}</a></li>`;
+        }
     }
-    concoursYears.innerHTML = html; // Mettre à jour le contenu avec les années de concours
+    
+    concoursYears.innerHTML = html;
+
+    // Vérifier si les données existent pour l'année par défaut
+    if (!data[school] || !data[school][yearOfConcour]) {
+        console.error(`Données non disponibles pour ${school} année ${yearOfConcour}`);
+        return;
+    }
 
     const grid = document.querySelector(".progress-grid");
+    if (!grid) {
+        console.error("Élément .progress-grid non trouvé");
+        return;
+    }
+    
     grid.innerHTML = ''; // Vider le contenu actuel
     let gridHtml = '';
-    for (let i = 1; i <= 20; i++) {
+    const questionsCount = Object.keys(data[school][yearOfConcour]).length;
+    
+    for (let i = 1; i <= questionsCount; i++) {
         gridHtml += `<div class="progress-item unanswered" onclick="goToQuestion(${i})">${i}</div>`;
     }
-    grid.innerHTML = gridHtml; // Mettre à jour le contenu de la grille
+    grid.innerHTML = gridHtml;
 
     goToConcour("2025", "2025-10-01");
 }
@@ -1643,28 +1764,29 @@ function goToSchool(school, numberOfconcours = 1) {
 function goToConcour(year, lastUpdate) {
     const container = document.querySelector(".main-content");
 
-    // Vérifier si le container existe
     if (!container) {
         console.error("Container .main-content non trouvé");
         return;
     }
 
     // Vérifier si l'année existe dans les données
-    if (!data[ecole][year]) {
-        console.error(`Année ${year} non trouvée dans les données`);
+    if (!data[ecole] || !data[ecole][year]) {
+        console.error(`Année ${year} non trouvée dans les données pour l'école ${ecole}`);
+        alert(`Les données pour l'année ${year} ne sont pas disponibles.`);
         return;
     }
 
     yearOfConcour = year;
     road = data[ecole][yearOfConcour]; // Mettre à jour la variable road
 
-    if (!road || road.length === 0) {
+    if (!road || Object.keys(road).length === 0) {
         alert("Le concours n'est pas encore disponible.");
         return;
     }
+    
     container.innerHTML = ''; // Vider le contenu actuel
 
-    // Mettre à jour les liens d'années (si ils existent)
+    // Mettre à jour les liens d'années
     const yearLinks = document.querySelectorAll('.year-links a');
     yearLinks.forEach(link => {
         if (link.textContent === year) {
@@ -1677,30 +1799,44 @@ function goToConcour(year, lastUpdate) {
     generateQuestions(lastUpdate);
 }
 
-
-
-
-
-
-const optionLetters = ["A", "B", "C", "D"];
-
-// État des questions
-let questionsState = {};
-let correctAnswers = {};
-let yearOfConcour = "2025"; // Année du concours
-let road = data[ecole][yearOfConcour];
 // Initialiser l'état des questions
 function initializeQuestionsState() {
-    for (let i = 1; i <= 20; i++) {
-        questionsState[i] = { answered: false, correct: null, selectedOption: null };
-        correctAnswers[i] = optionLetters[road[i].options.indexOf(road[i].correct)];
+    // Réinitialiser les objets
+    questionsState = {};
+    correctAnswers = {};
+    
+    if (!road || Object.keys(road).length === 0) {
+        console.error("Aucune donnée de questions disponible");
+        return;
     }
+    
+    Object.keys(road).forEach(key => {
+        const questionNumber = parseInt(key);
+        if (!isNaN(questionNumber)) {
+            questionsState[questionNumber] = { 
+                answered: false, 
+                correct: null, 
+                selectedOption: null 
+            };
+            
+            // Vérifier que la question a les propriétés nécessaires
+            if (road[key].options && road[key].correct !== undefined) {
+                const correctIndex = road[key].options.indexOf(road[key].correct);
+                if (correctIndex !== -1) {
+                    correctAnswers[questionNumber] = optionLetters[correctIndex];
+                } else {
+                    console.error(`Réponse correcte non trouvée dans les options pour la question ${key}`);
+                }
+            } else {
+                console.error(`Données manquantes pour la question ${key}`);
+            }
+        }
+    });
 }
 
 function generateQuestions(lastUpdate) {
     const container = document.querySelector(".main-content");
 
-    // Vérifier si le container existe
     if (!container) {
         console.error("Container .main-content non trouvé");
         return;
@@ -1715,7 +1851,7 @@ function generateQuestions(lastUpdate) {
     const tit = document.createElement("div");
     tit.className = "header";
     let titre = document.createElement("h1");
-    titre.textContent = `concours ${ecole} ${yearOfConcour}`;
+    titre.textContent = `Concours ${ecole} ${yearOfConcour}`;
     tit.appendChild(titre);
     container.appendChild(tit);
 
@@ -1730,8 +1866,14 @@ function generateQuestions(lastUpdate) {
     container.appendChild(lastup);
 
     // Générer les questions
-    for (let key in road) {
+    Object.keys(road).forEach(key => {
         const question = road[key];
+        
+        // Vérifier que la question a les propriétés nécessaires
+        if (!question || !question.text || !question.options) {
+            console.error(`Données manquantes pour la question ${key}`);
+            return;
+        }
 
         const questionCard = document.createElement("div");
         questionCard.className = "question-card";
@@ -1754,6 +1896,11 @@ function generateQuestions(lastUpdate) {
         ul.className = "options";
 
         question.options.forEach((optionText, i) => {
+            if (i >= optionLetters.length) {
+                console.warn(`Trop d'options pour la question ${key}`);
+                return;
+            }
+            
             const li = document.createElement("li");
             li.setAttribute("data-option", optionLetters[i]);
             li.setAttribute("onclick", `selectOption(this, '${optionLetters[i]}')`);
@@ -1783,17 +1930,22 @@ function generateQuestions(lastUpdate) {
         // Discuss Answer
         const discussAnswer = document.createElement("div");
         discussAnswer.className = "discuss-answer";
-        discussAnswer.innerHTML = (question.discuss == null) ? `<p>makaynch</p>` : `<p>${question.discuss}</p>`;
+        discussAnswer.innerHTML = (question.discuss == null) ? 
+            `<p>Pas de discussion disponible</p>` : 
+            `<p>${question.discuss}</p>`;
         questionCard.appendChild(discussAnswer);
 
         container.appendChild(questionCard);
-    }
+    });
 
     // Initialiser l'état des questions
     initializeQuestionsState();
 
     // Ajouter les event listeners pour les discuss links
     setupDiscussLinks();
+    // Mettre à jour la grille de progression et les statistiques
+    updateProgressGrid();
+        updateStats();
 
     // Recompiler les formules LaTeX après avoir injecté le HTML
     if (window.MathJax) {
@@ -1806,6 +1958,12 @@ function selectOption(element, option) {
     const questionNumber = getCurrentQuestionNumber(element);
     if (!questionNumber) {
         console.error('Numéro de question non trouvé.');
+        return;
+    }
+
+    // Vérifier si la question existe dans l'état
+    if (!questionsState[questionNumber]) {
+        console.error(`Question ${questionNumber} non trouvée dans l'état.`);
         return;
     }
 
@@ -1874,7 +2032,7 @@ function getCurrentQuestionNumber(element) {
     const questionNumber = questionId.replace('Q', '');
     const parsedNumber = parseInt(questionNumber, 10);
 
-    if (isNaN(parsedNumber) || parsedNumber < 1 || parsedNumber > 20) {
+    if (isNaN(parsedNumber) || parsedNumber < 1) {
         return null;
     }
 
@@ -1924,11 +2082,14 @@ function updateStats() {
     const statValueCorrect = document.querySelector('.stat-value.correct');
     const statValueIncorrect = document.querySelector('.stat-value.incorrect');
     const statValueUnanswered = document.querySelector('.stats .stat-item:nth-child(3) .stat-value');
+    const statValueTotal = document.querySelector('.stat-value.total');
 
     if (statValueCorrect) statValueCorrect.textContent = correct;
     if (statValueIncorrect) statValueIncorrect.textContent = incorrect;
     if (statValueUnanswered) statValueUnanswered.textContent = unanswered;
+    if (statValueTotal) statValueTotal.textContent = correct + incorrect + unanswered;
 }
+
 
 function setupDiscussLinks() {
     const discussLinks = document.querySelectorAll('.discuss-link');
@@ -1939,10 +2100,18 @@ function setupDiscussLinks() {
             const questionCard = link.closest('.question-card');
             const discussAnswer = questionCard.querySelector('.discuss-answer');
 
+            if (!discussAnswer) {
+                console.error('Élément discuss-answer non trouvé');
+                return;
+            }
+
             // Cacher toutes les autres réponses
             document.querySelectorAll('.question-card').forEach(card => {
                 if (card !== questionCard) {
-                    card.querySelector('.discuss-answer')?.classList.remove('active');
+                    const otherDiscussAnswer = card.querySelector('.discuss-answer');
+                    if (otherDiscussAnswer) {
+                        otherDiscussAnswer.classList.remove('active');
+                    }
                 }
             });
 
@@ -1983,7 +2152,6 @@ function resetAllQuestions() {
     });
 }
 
-
 function goToQuestion(question) {
     const questionCard = document.getElementById(`Q${question}`);
     if (questionCard) {
@@ -1991,6 +2159,4 @@ function goToQuestion(question) {
     } else {
         console.error(`Question ${question} non trouvée.`);
     }
-
-
 }
