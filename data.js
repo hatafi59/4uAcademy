@@ -1573,7 +1573,7 @@ const data = {
                 correct: "$\\begin{pmatrix}1&13&91\\\\ 0&1&13\\\\ 0&0&1\\end{pmatrix}$",
                 discuss: "En utilisant la formule du binôme de Newton avec $B = I + N$ où $N$ est nilpotente : $B^{13} = I + 13N + C_{13}^2 N^2 = I + 13N + 78N^2$."
             }
-    },
+    }},
     "FMP": {
         2025: {
             1: {
