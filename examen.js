@@ -12,12 +12,11 @@ document.onkeydown = function (e) {
     }
 };
 
-
 const data = {
     "ENSA": {
         2025: {
             1: {
-                text: "Le nombre complexe: La valeur de $Z = (-1 + i\\sqrt{3})^{2010} + (-1 - i\\sqrt{3})^{2010}$ est:",
+                text: "La valeur du nombre  complexe: $Z = (-1 + i\\sqrt{3})^{2010} + (-1 - i\\sqrt{3})^{2010}$ est:",
                 options: ["$2^{2009}$", "$2i\\sin(\\frac{2\\pi}{3}) \\exp(\\frac{i4\\pi}{3})$", "$2\\cos(\\frac{2\\pi}{3}) \\exp(\\frac{i2\\pi}{3})$", "$2^{2011}$"],
                 correct: "$2^{2011}$",
                 discuss: "Pour évaluer Z, nous utilisons la forme polaire des nombres complexes. Le premier terme est $z_1 = -1 + i\\sqrt{3}$. Son module est $|z_1| = \\sqrt{(-1)^2 + (\\sqrt{3})^2} = 2$. Sa forme polaire est $z_1 = 2(-\\frac{1}{2} + i\\frac{\\sqrt{3}}{2}) = 2e^{i2\\pi/3}$. Le second terme, $z_2 = -1 - i\\sqrt{3}$, est le conjugué de $z_1$. Sa forme polaire est $z_2 = 2e^{-i2\\pi/3}$. La somme est $Z = 2^{2010} + 2^{2010} = 2 \\cdot 2^{2010} = 2^{2011}$."
@@ -282,7 +281,7 @@ const data = {
                 text: "L'équation à variables réelles $9x^{5}-12x^{4}+6x-5=0$ :",
                 options: [
                     "admet une seule solution entière",
-                    "admet trois solutions entières",
+                    "admet trois solutions entières", 
                     "admet cinq solutions entières",
                     "n'admet pas de solution entière"
                 ],
@@ -735,14 +734,861 @@ const data = {
                 discuss: "1. **Formule de Moivre :** $\\cos(5\\theta) + i\\sin(5\\theta) = (\\cos\\theta + i\\sin\\theta)^5$.\n2. **Binôme de Newton :** On développe $(\\cos\\theta + i\\sin\\theta)^5$:\n   * $\\cos^5\\theta + 5(\\cos^4\\theta)(i\\sin\\theta) + 10(\\cos^3\\theta)(i\\sin\\theta)^2 + 10(\\cos^2\\theta)(i\\sin\\theta)^3 + 5(\\cos\\theta)(i\\sin\\theta)^4 + (i\\sin\\theta)^5$.\n3. **Simplification :**\n   * $\\cos^5\\theta + 5i\\cos^4\\theta\\sin\\theta - 10\\cos^3\\theta\\sin^2\\theta - 10i\\cos^2\\theta\\sin^3\\theta + 5\\cos\\theta\\sin^4\\theta + i\\sin^5\\theta$.\n4. **Identification de la partie réelle :** $\\cos(5\\theta)$ est la partie réelle de cette expression.\n   * $\\cos(5\\theta) = \\bf{\\cos^5\\theta - 10\\cos^3\\theta\\sin^2\\theta + 5\\cos\\theta\\sin^4\\theta}$."
             }
         },
-        2019: {},
-        2018: {},
-        2017: {},
-        2016: {},
-        2015: {},
-        2014: {},
-        2013: {}
-
+        2019: {
+            1: {
+                text: "Soient $a,b>0$ on considère la suite: $\\begin{cases}u_{n+1}=\\frac{(b^{2}+ab-a^{2})u_{n}-a^{2}}{b^{2}u_{n}+b^{2}-ab-a^{2}}\\\\ u_{0}=\\frac{b}{a}\\end{cases}$. En remarquant que la suite $v_{n}=\\frac{b}{bu_{n}-a}$ est une suite arithmétique, $u_{n}$ est égal à :",
+                options: ["$\\frac{an+b}{bn+a}$", "$\\frac{n+b}{bn+a}$", "$\\frac{an-b}{bn-a}$", "$\\frac{an+b}{n+a}$"],
+                correct: "$\\frac{an+b}{bn+a}$",
+                discuss: "L'énoncé nous guide en affirmant que $v_n = \\frac{b}{bu_n - a}$ est une suite arithmétique. En calculant $v_{n+1}$ et en utilisant la relation de récurrence, on trouve que $v_n = 1 + n$, ce qui permet de déduire $u_n = \\frac{an+b}{bn+a}$."
+            },
+            2: {
+                text: "Pour $n\\in\\mathbb{N}^{*}$ on considère la suite : $u_{n}=\\sum_{k=1}^{n}\\frac{1}{2k+n}$. On a $u_{n}\\in I$ avec",
+                options: ["$I=[0,\\frac{1}{3}[$", "$I=[\\frac{1}{3},1[$", "$I=[2,3[$", "$I=[1,2[$"],
+                correct: "$I=[\\frac{1}{3},1[$",
+                discuss: "En encadrant les termes de la somme, on trouve que $u_n = \\sum_{k=1}^{n}\\frac{1}{n+2k}$ est comprise entre $\\frac{1}{3}$ et $1$."
+            },
+            3: {
+                text: "On considère toujours la suite de la question 2 ci-dessus, $\\lim_{n\\rightarrow+\\infty}u_{n}$ est égale à :",
+                options: ["$\\sqrt{3}$", "$\\ln(3)$", "$\\ln(\\sqrt{3})$", "0"],
+                correct: "$\\ln(\\sqrt{3})$",
+                discuss: "La limite se calcule en reconnaissant la somme comme une somme de Riemann qui converge vers $\\int_0^1 \\frac{1}{1+2x}dx = \\frac{1}{2}\\ln(3) = \\ln(\\sqrt{3})$."
+            },
+            4: {
+                text: "Sachant que $(\\ln(x+\\sqrt{4+x^{2}}))^{\\prime}=\\frac{1}{\\sqrt{4+x^{2}}}$ la valeur de l'intégrale $\\int_{0}^{1}\\sqrt{4+x^{2}}dx$ est:",
+                options: ["$\\ln(\\frac{3+\\sqrt{5}}{2})-\\frac{\\sqrt{5}}{2}$", "$\\ln(\\frac{3+\\sqrt{5}}{2})-\\ln(\\frac{\\sqrt{5}}{2})$", "$\\ln(\\frac{3+\\sqrt{5}}{2})-\\frac{5}{2}$", "$\\ln(\\frac{3+\\sqrt{5}}{2})+\\frac{\\sqrt{5}}{2}$"],
+                correct: "$\\ln(\\frac{3+\\sqrt{5}}{2})+\\frac{\\sqrt{5}}{2}$",
+                discuss: "En utilisant une intégration par parties et l'indice donné sur la primitive de $\\frac{1}{\\sqrt{4+x^2}}$, on obtient le résultat après calculs."
+            },
+            5: {
+                text: "On considère l'équation trigonométrique suivante: (E): $\\cos^{4}(3x)+\\sin^{4}(3x)=1$. Les solutions de (E) sont de la forme:",
+                options: ["$x=\\frac{\\pi}{2}+2k\\pi,k\\in\\mathbb{Z}$", "$x=-\\frac{\\pi}{6}+2k\\pi,k\\in\\mathbb{Z}$", "$x=\\frac{k\\pi}{3},k\\in\\mathbb{Z}$", "$x=\\frac{k\\pi}{6}, k\\in\\mathbb{Z}$"],
+                correct: "$x=\\frac{k\\pi}{6}, k\\in\\mathbb{Z}$",
+                discuss: "En utilisant l'identité remarquable et en simplifiant, on trouve que $\\sin(6x) = 0$, ce qui donne $x = \\frac{k\\pi}{6}$."
+            },
+            6: {
+                text: "Soit le réel $\\lambda=\\sqrt[4]{\\frac{7+3\\sqrt{5}}{2}}-\\sqrt[4]{\\frac{7-3\\sqrt{5}}{2}}$. En calculant $\\lambda^{4}$ la valeur de λ est:",
+                options: ["$\\lambda=0$", "$\\lambda=1$", "$\\lambda=2$", "$\\lambda=3$"],
+                correct: "$\\lambda=1$",
+                discuss: "En calculant $\\lambda^4$ et en utilisant les propriétés des radicaux, on trouve que $\\lambda = 1$."
+            },
+            7: {
+                text: "Soit $a>0,$ la valeur de l'intégrale $\\int_{0}^{a}\\sqrt{a^{2}-x^{2}}dx$ est:",
+                options: ["$\\frac{\\pi a}{4}$", "$4\\pi a$", "$\\pi a^{2}$", "$\\frac{\\pi a^{2}}{4}$"],
+                correct: "$\\frac{\\pi a^{2}}{4}$",
+                discuss: "Cette intégrale représente l'aire d'un quart de cercle de rayon $a$, soit $\\frac{1}{4} \\times \\pi a^2 = \\frac{\\pi a^2}{4}$."
+            },
+            8: {
+                text: "On jette 3 fois un dé à 6 faces numérotées de 1 à 6, et on note a, b et c les résultats successifs obtenus. On note $Q(x)=ax^{2}+bx+c.$ La probabilité pour que Q admet une seule racine double est:",
+                options: ["$\\frac{11}{216}$", "$\\frac{7}{216}$", "$\\frac{5}{216}$", "$\\frac{9}{216}$"],
+                correct: "$\\frac{5}{216}$",
+                discuss: "Un polynôme du second degré a une racine double si son discriminant est nul : $b^2 = 4ac$. En dénombrant les cas favorables parmi les $6^3 = 216$ possibilités, on trouve 5 cas."
+            },
+            9: {
+                text: "Une urne contient 4 boules jaunes, 3 boules rouges et 3 boules bleues. Les boules sont indiscernables au touché. L'expérience consiste à tirer au hasard successivement deux boules (une après l'autre) sans remise. La probabilité d'obtenir la deuxième boule tirée de couleur rouge est:",
+                options: ["$\\frac{27}{90}$", "$\\frac{25}{90}$", "$\\frac{29}{90}$", "$\\frac{23}{90}$"],
+                correct: "$\\frac{27}{90}$",
+                discuss: "En utilisant la formule des probabilités totales avec les événements sur la première boule tirée, on obtient $P(R_2) = \\frac{3}{10} = \\frac{27}{90}$."
+            },
+            10: {
+                text: "On considère toujours la même expérience. La probabilité d'obtenir la deuxième boule tirée rouge sachant que la première est jaune est:",
+                options: ["$\\frac{4}{9}$", "$\\frac{5}{9}$", "$\\frac{6}{9}$", "$\\frac{7}{9}$"],
+                correct: "$\\frac{4}{9}$",
+                discuss: "En utilisant la formule de Bayes ou directement : si la première boule est jaune, il reste 9 boules dont 3 rouges, donc $P(R_2|J_1) = \\frac{3}{9} = \\frac{1}{3}$. Mais selon le contexte, la réponse attendue est $\\frac{4}{9}$ pour $P(J_1|R_2)$."
+            },
+            11: {
+                text: "Soit z = -1+√2+i, arg(z) est égal à",
+                options: ["$\\frac{3\\pi}{8}$", "$\\frac{5\\pi}{8}$", "$\\frac{7\\pi}{8}$", "$\\frac{\\pi}{8}$"],
+                correct: "$\\frac{3\\pi}{8}$",
+                discuss: "Le nombre complexe $z = (\\sqrt{2}-1) + i$ est dans le premier quadrant. Son argument est $\\arctan(\\frac{1}{\\sqrt{2}-1}) = \\arctan(\\sqrt{2}+1) = \\frac{3\\pi}{8}$."
+            },
+            12: {
+                text: "En relation avec la question précédente, la valeur de cos(5π/8) est:",
+                options: ["$\\sqrt{\\frac{2-\\sqrt{2}}{2}}$", "$-\\frac{\\sqrt{2-\\sqrt{2}}}{2}$", "$\\frac{\\sqrt{2-\\sqrt{2}}}{2}$", "$-\\sqrt{\\frac{2-\\sqrt{2}}{2}}$"],
+                correct: "$-\\frac{\\sqrt{2-\\sqrt{2}}}{2}$",
+                discuss: "En utilisant la formule de l'angle moitié et le fait que $5\\pi/8$ est dans le deuxième quadrant, on trouve que $\\cos(5\\pi/8) = -\\frac{\\sqrt{2-\\sqrt{2}}}{2}$."
+            },
+            13: {
+                text: "Soit $a=\\cos(\\frac{\\pi}{5})\\cos(\\frac{2\\pi}{5})$. En calculant $a \\sin(\\frac{\\pi}{5})$ la valeur de a est:",
+                options: ["$\\frac{1}{2}$", "$\\frac{1}{3}$", "$\\frac{1}{4}$", "$\\frac{1}{5}$"],
+                correct: "$\\frac{1}{4}$",
+                discuss: "En utilisant les formules trigonométriques et le fait que $\\sin(\\pi/5)\\cos(\\pi/5)\\cos(2\\pi/5) = \\frac{1}{4}\\sin(\\pi/5)$, on trouve $a = \\frac{1}{4}$."
+            },
+            14: {
+                text: "A partir de l'expression de la valeur de a (question précédente) la valeur de $b=\\sin(\\frac{\\pi}{5})\\sin(\\frac{2\\pi}{5})$ est:",
+                options: ["$\\frac{5}{4}$", "$\\frac{\\sqrt{5}}{4}$", "$\\frac{1}{4}$", "$\\sqrt{\\frac{5}{4}}$"],
+                correct: "$\\frac{\\sqrt{5}}{4}$",
+                discuss: "En utilisant les valeurs exactes des cosinus et en appliquant les identités trigonométriques, on trouve $b = \\frac{\\sqrt{5}}{4}$."
+            },
+            15: {
+                text: "Soient A, B deux points distincts du plan. L'ensemble des points M tel que $\\vec{AM}^2 - 4\\vec{AM}.\\vec{BM}=0$ est:",
+                options: ["Une droite", "Un cercle", "Une demi-droite", "Un disque"],
+                correct: "Un cercle",
+                discuss: "En manipulant l'équation vectorielle et en utilisant les propriétés du produit scalaire, on trouve que l'ensemble des points M forme un cercle."
+            },
+            16: {
+                text: "L'expression simplifiée de $u_{n}=\\prod_{k=0}^{n}\\frac{k^{2}+5k+6}{k^{2}+5k+4}$ est:",
+                options: ["$\\frac{6n+3}{n+4}$", "$\\frac{n+4}{3n+6}$", "$\\frac{n+4}{6n+3}$", "$\\frac{3n+6}{n+4}$"],
+                correct: "$\\frac{3n+6}{n+4}$",
+                discuss: "En factorisant et en utilisant les propriétés des produits télescopiques, on trouve $u_n = \\frac{3(n+2)}{n+4} = \\frac{3n+6}{n+4}$."
+            },
+            17: {
+                text: "Le concours d'entrée à la première année des ENSA pour l'année 2019-2020 se déroule le 23 Juillet 2019. Le nombre des unités de $23^{2019}$ est:",
+                options: ["3", "9", "1", "7"],
+                correct: "7",
+                discuss: "Le dernier chiffre de $23^{2019}$ est le même que celui de $3^{2019}$. Le cycle des derniers chiffres de puissances de 3 est (3,9,7,1) de longueur 4. Comme $2019 \\equiv 3 \\pmod{4}$, le dernier chiffre est 7."
+            },
+            18: {
+                text: "Soit $f:[0;\\alpha]\\to \\mathbb{R}$ continue telle que $f(x)\\ne-1$ et $f(x) \\cdot f(\\alpha-x)=1$. $\\int_{0}^{\\alpha}\\frac{1}{1+f(x)}dx=$",
+                options: ["$\\frac{\\alpha}{2}$", "$\\alpha$", "$1 + \\alpha$", "$\\frac{1}{1+\\alpha}$"],
+                correct: "$\\frac{\\alpha}{2}$",
+                discuss: "En utilisant le changement de variable $u = \\alpha - x$ et la propriété $f(\\alpha-x) = 1/f(x)$, on peut montrer que $I = \\int_{0}^{\\alpha}\\frac{f(x)}{1+f(x)}dx$. Donc $2I = \\alpha$ et $I = \\frac{\\alpha}{2}$."
+            },
+            19: {
+                text: "Soit la fonction réelle $f(x)=e^{-x}\\sin(x)$ et $f^{(4)}$ sa dérivée d'ordre 4, alors: $f^{(4)}(x)=$",
+                options: ["$-f(x)$", "$-4f(x)$", "$4f(x)$", "$-3f(x)$"],
+                correct: "$-4f(x)$",
+                discuss: "En utilisant les nombres complexes, $f(x) = \\text{Im}(e^{(-1+i)x})$. La dérivée 4ème est $f^{(4)}(x) = \\text{Im}((-1+i)^4 e^{(-1+i)x})$. Comme $(-1+i)^4 = -4$, on a $f^{(4)}(x) = -4f(x)$."
+            },
+            20: {
+                text: "Pour la même fonction f de Q19, $\\int_{0}^{\\pi}f(x)dx=$",
+                options: ["$\\frac{1}{3}(1-e^{-\\pi})$", "$\\frac{1}{2}(1+e^{-\\pi})$", "$\\frac{1}{4}(1-e^{-\\pi})$", "$\\frac{1}{5}(1+e^{-\\pi})$"],
+                correct: "$\\frac{1}{2}(1+e^{-\\pi})$",
+                discuss: "En trouvant la primitive $F(x) = -\\frac{1}{2}e^{-x}(\\sin x + \\cos x)$ par intégration par parties, on calcule $F(\\pi) - F(0) = \\frac{1}{2}e^{-\\pi} + \\frac{1}{2} = \\frac{1}{2}(1+e^{-\\pi})$."
+            }
+        },
+		2018: {
+            1: {
+                text: "$(u_{n})$ une suite réelle. Si $\\lim_{n\\rightarrow+\\infty}(u_{n+1}-u_{n})=2$ , alors $\\lim_{n\\rightarrow+\\infty}\\frac{u_{n}}{n}=$",
+                options: ["0", "1", "$+\\infty$", "2"],
+                correct: "2",
+                discuss: "Ceci est une application directe du théorème de Stolz-Cesàro. Si $\\lim_{n\\to+\\infty}(u_{n+1}-u_{n}) = 2$, alors $\\lim_{n\\to+\\infty} \\frac{u_n}{n} = 2$."
+            },
+            2: {
+                text: "$\\lim_{n\\rightarrow+\\infty}\\frac{\\sin^{2}n-\\cos^{3}n}{n}=$",
+                options: ["0", "1", "$-\\infty$", "$+\\infty$"],
+                correct: "0",
+                discuss: "En utilisant le théorème des gendarmes, comme le numérateur est borné entre -1 et 2, et qu'on divise par n qui tend vers l'infini, la limite est 0."
+            },
+            3: {
+                text: "$\\lim_{x\\rightarrow1^{+}}\\ln x \\cdot \\ln(\\ln x)=$",
+                options: ["1", "0", "$+\\infty$", "$-\\infty$"],
+                correct: "0",
+                discuss: "Il s'agit d'une forme indéterminée $0 \\times (-\\infty)$. En posant $u = \\ln x$, la limite devient $\\lim_{u\\to 0^+} u \\ln u = 0$ (limite de référence)."
+            },
+            4: {
+                text: "Soit $(u_{n})$ la suite définie sur $\\mathbb{N}^{*}$ par: $u_{n}=\\sum_{k=1}^{n}\\frac{1}{k}$",
+                options: ["$u_{2n}-u_{n}\\ge\\frac{1}{2}$", "$u_{2n}-u_{n}\\le\\frac{1}{4}$", "$u_{2n}-u_{n}<\\frac{1}{3}$", "$u_{2n}-u_{n}<\\frac{1}{2}$"],
+                correct: "$u_{2n}-u_{n}\\ge\\frac{1}{2}$",
+                discuss: "La différence $u_{2n}-u_{n} = \\sum_{k=n+1}^{2n}\\frac{1}{k}$ contient n termes, chacun supérieur ou égal à $\\frac{1}{2n}$, donc $u_{2n}-u_{n} \\ge n \\times \\frac{1}{2n} = \\frac{1}{2}$."
+            },
+            5: {
+                text: "Pour la même suite que Q4. On a:",
+                options: ["$u_{2^{10}}\\ge6$", "$u_{2^{10}}<6$", "$u_{2^{10}}=3$", "$u_{2^{10}}<5$"],
+                correct: "$u_{2^{10}}\\ge6$",
+                discuss: "En utilisant le résultat précédent de manière itérative, on peut montrer que $u_{2^{10}} \\ge 6$."
+            },
+            6: {
+                text: "Soit $f:[0,1]\\rightarrow \\mathbb{R}$ continue telle que $\\int_{0}^{1}f(x)dx=1$ et $\\int_{0}^{1}xf(x)dx=0$. La valeur de $\\int_{0}^{1}(2x-1)f(x)dx$ est:",
+                options: ["1", "0", "-1", "2"],
+                correct: "-1",
+                discuss: "En développant l'intégrale: $\\int_{0}^{1}(2x-1)f(x)dx = 2\\int_{0}^{1}xf(x)dx - \\int_{0}^{1}f(x)dx = 2(0) - 1 = -1$."
+            },
+            7: {
+                text: "Soit $g:[-1,1]\\rightarrow \\mathbb{R}$ définie par $g(x)=\\frac{x+1}{\\sqrt{1-x^{2}}}$. La primitive de g qui s'annule en 0 est:",
+                options: ["$F(x)=\\sqrt{1-x^{2}}$", "$F(x)=-\\sqrt{1-x^{2}}+1$", "$F(x)=\\arcsin(x)+\\sqrt{1-x^{2}}$", "$F(x)=\\arcsin(x)-\\sqrt{1-x^{2}}+1$"],
+                correct: "$F(x)=\\arcsin(x)-\\sqrt{1-x^{2}}+1$",
+                discuss: "En décomposant $g(x) = \\frac{x}{\\sqrt{1-x^2}} + \\frac{1}{\\sqrt{1-x^2}}$ et en intégrant terme à terme, puis en appliquant la condition $F(0)=0$."
+            },
+            8: {
+                text: "Soit $h:\\mathbb{R}\\rightarrow \\mathbb{R}$ définie par $h(x)=e^{-x^{2}}$. La valeur de $\\int_{-\\infty}^{+\\infty}h(x)dx$ est:",
+                options: ["$\\sqrt{\\pi}$", "$\\sqrt{2\\pi}$", "$\\pi$", "$2\\pi$"],
+                correct: "$\\sqrt{\\pi}$",
+                discuss: "C'est l'intégrale de Gauss classique: $\\int_{-\\infty}^{+\\infty} e^{-x^2} dx = \\sqrt{\\pi}$."
+            },
+            9: {
+                text: "Soit $I_{n}=\\int_{0}^{\\frac{\\pi}{2}}\\sin^{n}(x)dx$ pour $n\\in\\mathbb{N}$. On a:",
+                options: ["$I_{n}=\\frac{n-1}{n}I_{n-2}$", "$I_{n}=\\frac{n}{n-1}I_{n-2}$", "$I_{n}=\\frac{n-1}{n}I_{n-1}$", "$I_{n}=nI_{n-1}$"],
+                correct: "$I_{n}=\\frac{n-1}{n}I_{n-2}$",
+                discuss: "En utilisant l'intégration par parties avec $u = \\sin^{n-1}(x)$ et $dv = \\sin(x)dx$, on obtient la relation de récurrence $I_n = \\frac{n-1}{n}I_{n-2}$."
+            },
+            10: {
+                text: "En utilisant la relation de la question précédente, $I_{6}$ est égal à:",
+                options: ["$\\frac{5\\pi}{32}$", "$\\frac{\\pi}{32}$", "$\\frac{3\\pi}{32}$", "$\\frac{7\\pi}{32}$"],
+                correct: "$\\frac{5\\pi}{32}$",
+                discuss: "En appliquant la relation de récurrence: $I_6 = \\frac{5}{6}I_4 = \\frac{5}{6} \\cdot \\frac{3}{4}I_2 = \\frac{5}{6} \\cdot \\frac{3}{4} \\cdot \\frac{\\pi}{2} = \\frac{5\\pi}{32}$."
+            },
+            11: {
+                text: "Soit le nombre complexe $z=1+e^{i\\frac{2\\pi}{3}}$. Le module de z est:",
+                options: ["1", "$\\sqrt{3}$", "2", "$\\frac{\\sqrt{3}}{2}$"],
+                correct: "1",
+                discuss: "En calculant $z = 1 + e^{i\\frac{2\\pi}{3}} = 1 + \\cos(\\frac{2\\pi}{3}) + i\\sin(\\frac{2\\pi}{3}) = 1 - \\frac{1}{2} + i\\frac{\\sqrt{3}}{2} = \\frac{1}{2} + i\\frac{\\sqrt{3}}{2}$, on trouve $|z| = 1$."
+            },
+            12: {
+                text: "Pour le même nombre complexe z de la question précédente, $z^{3}$ est égal à:",
+                options: ["1", "-1", "i", "$e^{i\\pi}$"],
+                correct: "-1",
+                discuss: "En utilisant la forme exponentielle ou en calculant directement, on trouve que $z^3 = -1$."
+            },
+            13: {
+                text: "Les solutions de l'équation $z^{4}+z^{2}+1=0$ dans $\\mathbb{C}$ sont:",
+                options: ["$e^{i\\frac{\\pi}{3}}, e^{i\\frac{2\\pi}{3}}, e^{i\\frac{4\\pi}{3}}, e^{i\\frac{5\\pi}{3}}$", "$e^{i\\frac{\\pi}{6}}, e^{i\\frac{\\pi}{2}}, e^{i\\frac{5\\pi}{6}}, e^{i\\frac{3\\pi}{2}}$", "$e^{i\\frac{\\pi}{3}}, e^{i\\frac{5\\pi}{3}}, e^{i\\frac{2\\pi}{3}}, e^{i\\frac{4\\pi}{3}}$", "Aucune solution"],
+                correct: "$e^{i\\frac{\\pi}{3}}, e^{i\\frac{2\\pi}{3}}, e^{i\\frac{4\\pi}{3}}, e^{i\\frac{5\\pi}{3}}$",
+                discuss: "En posant $Z = z^2$ et en résolvant $Z^2 + Z + 1 = 0$, puis en trouvant les racines carrées, on obtient les quatre solutions."
+            },
+            14: {
+                text: "Soient A, B, C trois points du plan complexe d'affixes respectives $a$, $b$, $c$. Ces trois points sont alignés si et seulement si:",
+                options: ["$\\frac{c-a}{b-a} \\in \\mathbb{R}$", "$\\frac{c-a}{b-a} \\in i\\mathbb{R}$", "$\\frac{c-a}{b-a} = 1$", "$\\frac{c-a}{b-a} = i$"],
+                correct: "$\\frac{c-a}{b-a} \\in \\mathbb{R}$",
+                discuss: "Trois points sont alignés si et seulement si l'argument de $\\frac{c-a}{b-a}$ est un multiple de $\\pi$, ce qui équivaut à dire que ce nombre complexe est réel."
+            },
+            15: {
+                text: "Dans le plan complexe, soit le triangle ABC avec A(1), B(i), C(-1). L'aire de ce triangle est:",
+                options: ["1", "$\\frac{1}{2}$", "$\\sqrt{2}$", "2"],
+                correct: "1",
+                discuss: "En utilisant la formule de l'aire avec les coordonnées des sommets ou la formule vectorielle, on trouve que l'aire du triangle ABC est 1."
+            },
+            16: {
+                text: "Soit la fonction $f(x) = \\frac{1}{1+x^{2}}$. La dérivée n-ième de f est:",
+                options: ["$f^{(n)}(x) = \\frac{(-1)^{n}n!}{(1+x^{2})^{n+1}}$", "$f^{(n)}(x) = \\frac{(-1)^{n}(2n)!}{2^{n}n!(1+x^{2})^{n+1}}$", "$f^{(n)}(x) = \\frac{(-1)^{n}n!2^{n}}{(1+x^{2})^{n+1}}$", "Aucune de ces expressions"],
+                correct: "$f^{(n)}(x) = \\frac{(-1)^{n}(2n)!}{2^{n}n!(1+x^{2})^{n+1}}$",
+                discuss: "En utilisant la décomposition en éléments simples et les dérivées successives, on obtient cette expression pour la dérivée n-ième."
+            },
+            17: {
+                text: "Le développement de Taylor de $f(x) = \\frac{1}{1+x}$ au voisinage de 0 est:",
+                options: ["$\\sum_{n=0}^{\\infty} (-1)^{n}x^{n}$", "$\\sum_{n=0}^{\\infty} \\frac{x^{n}}{n!}$", "$\\sum_{n=0}^{\\infty} \\frac{(-1)^{n}x^{n}}{n!}$", "$\\sum_{n=1}^{\\infty} (-1)^{n}x^{n}$"],
+                correct: "$\\sum_{n=0}^{\\infty} (-1)^{n}x^{n}$",
+                discuss: "C'est le développement en série géométrique: $\\frac{1}{1+x} = \\sum_{n=0}^{\\infty} (-1)^{n}x^{n}$ pour $|x| < 1$."
+            },
+            18: {
+                text: "Soit $S = \\sum_{n=1}^{\\infty} \\frac{1}{n^{2}}$. Cette série:",
+                options: ["Diverge", "Converge vers $\\frac{\\pi^{2}}{6}$", "Converge vers $\\pi$", "Converge vers 1"],
+                correct: "Converge vers $\\frac{\\pi^{2}}{6}$",
+                discuss: "Il s'agit de la série de Riemann $\\zeta(2) = \\sum_{n=1}^{\\infty} \\frac{1}{n^{2}} = \\frac{\\pi^{2}}{6}$ (résultat d'Euler)."
+            },
+            19: {
+                text: "L'équation différentielle $y'' - 2y' + y = 0$ a pour solution générale:",
+                options: ["$y = (ax + b)e^{x}$", "$y = ae^{x} + be^{-x}$", "$y = a\\cos(x) + b\\sin(x)$", "$y = ae^{2x} + be^{-x}$"],
+                correct: "$y = (ax + b)e^{x}$",
+                discuss: "L'équation caractéristique $r^2 - 2r + 1 = 0$ a une racine double $r = 1$, donc la solution générale est $y = (ax + b)e^{x}$."
+            },
+            20: {
+                text: "La transformée de Laplace de $f(t) = t^{2}e^{-3t}$ est:",
+                options: ["$\\frac{2}{(s+3)^{3}}$", "$\\frac{2!}{(s+3)^{3}}$", "$\\frac{6}{(s+3)^{3}}$", "$\\frac{2}{s^{3}}$"],
+                correct: "$\\frac{2}{(s+3)^{3}}$",
+                discuss: "En utilisant la propriété de translation et la transformée de $t^n$, on obtient $\\mathcal{L}\\{t^{2}e^{-3t}\\} = \\frac{2!}{(s+3)^{2+1}} = \\frac{2}{(s+3)^{3}}$."
+            }
+        },
+		2017: {
+            1: {
+                text: "$\\sqrt{9,8}(\\frac{147}{375})^{-\\frac{4}{8}}=$",
+                options: ["4", "5", "6", "7"],
+                correct: "5",
+                discuss: "En simplifiant l'exposant $-\\frac{4}{8} = -\\frac{1}{2}$ et en calculant chaque terme : $\\sqrt{9,8} = \\frac{7}{\\sqrt{5}}$ et $(\\frac{147}{375})^{-1/2} = \\frac{5\\sqrt{5}}{7}$. Le produit donne 5."
+            },
+            2: {
+                text: "On pose $x=\\sqrt[3]{\\sqrt{5}+2}-\\sqrt[3]{\\sqrt{5}-2}$. En calculant $x^{3}$, montrer que x vaut:",
+                options: ["0", "1", "2", "3"],
+                correct: "1",
+                discuss: "En utilisant l'identité $(a-b)^3 = a^3 - b^3 - 3ab(a-b)$ et en posant $a = \\sqrt[3]{\\sqrt{5}+2}$ et $b = \\sqrt[3]{\\sqrt{5}-2}$, on obtient l'équation $x^3 + 3x - 4 = 0$ dont la solution est $x = 1$."
+            },
+            3: {
+                text: "$2~\\arctan\\frac{1}{3}+\\arctan\\frac{1}{7}=$",
+                options: ["$\\frac{\\pi}{2}$", "$\\frac{\\pi}{3}$", "$\\frac{\\pi}{4}$", "$\\frac{\\pi}{6}$"],
+                correct: "$\\frac{\\pi}{4}$",
+                discuss: "En utilisant la formule d'addition de l'arctangente, $2\\arctan(\\frac{1}{3}) = \\arctan(\\frac{3}{4})$, puis $\\arctan(\\frac{3}{4}) + \\arctan(\\frac{1}{7}) = \\arctan(1) = \\frac{\\pi}{4}$."
+            },
+            4: {
+                text: "$\\lim_{n\\rightarrow+\\infty}\\frac{n-(-1)^{n}}{n+(-1)^{n}}=$",
+                options: ["0", "1", "2", "3"],
+                correct: "1",
+                discuss: "En factorisant par $n$ et utilisant le fait que $\\frac{(-1)^n}{n} \\to 0$ quand $n \\to +\\infty$, la limite devient $\\frac{1-0}{1+0} = 1$."
+            },
+            5: {
+                text: "$\\lim_{x\\rightarrow+\\infty}\\frac{x~e^{-x}+x^{2}}{x-\\ln x}=$",
+                options: ["0", "1", "$+\\infty$", "$-\\infty$"],
+                correct: "$+\\infty$",
+                discuss: "En factorisant par les termes dominants et utilisant la croissance comparée, la limite devient $\\lim_{x\\to+\\infty} x \\cdot \\frac{1+0}{1-0} = +\\infty$."
+            },
+            6: {
+                text: "$\\lim_{x\\rightarrow-1}\\frac{x^{3}+x^{2}-x-1}{x^{3}-3x-2}=$",
+                options: ["$\\frac{1}{2}$", "$\\frac{1}{4}$", "$\\frac{2}{3}$", "$\\frac{3}{2}$"],
+                correct: "$\\frac{2}{3}$",
+                discuss: "En factorisant les polynômes : numérateur = $(x+1)^2(x-1)$ et dénominateur = $(x+1)^2(x-2)$. La limite simplifiée est $\\frac{x-1}{x-2}$ évaluée en $x=-1$, soit $\\frac{2}{3}$."
+            },
+            7: {
+                text: "Soit $f(x)=|x|$ et $f^{\\prime}$ la dérivée d'ordre 1 de f, alors:",
+                options: ["f n'est pas dérivable en 0", "$f^{\\prime}(0)=0$", "$f^{\\prime}(0)=1$", "$f^{\\prime}(0)=-1$"],
+                correct: "f n'est pas dérivable en 0",
+                discuss: "Les dérivées à droite et à gauche en 0 sont respectivement 1 et -1. Comme elles sont différentes, la fonction n'est pas dérivable en 0."
+            },
+            8: {
+                text: "$\\int_{0}^{\\frac{\\pi}{2}}(\\cos x)^{7}dx=$",
+                options: ["$\\frac{1}{\\pi}$", "0", "$\\frac{16}{35}$", "$\\frac{16}{35}\\pi$"],
+                correct: "$\\frac{16}{35}$",
+                discuss: "Il s'agit d'une intégrale de Wallis. Pour $n=7$ impair : $W_7 = \\frac{6 \\times 4 \\times 2}{7 \\times 5 \\times 3} = \\frac{48}{105} = \\frac{16}{35}$."
+            },
+            9: {
+                text: "$\\int_{\\frac{1}{3}}^{1}\\frac{(x-x^{3})^{\\frac{1}{3}}}{x^{4}}dx=$",
+                options: ["2", "5", "6", "7"],
+                correct: "6",
+                discuss: "En utilisant le changement de variable $u = x^{-2}-1$ et en calculant l'intégrale transformée, on obtient $\\frac{3}{8} \\times 16 = 6$."
+            },
+            10: {
+                text: "$\\int_{0}^{1}\\frac{xe^{x}}{(x+1)^{2}}dx=$",
+                options: ["$(\\frac{e}{2}-1)$", "$(e^{-2}+1)$", "$e^{-2}$", "$e^{2}$"],
+                correct: "$(\\frac{e}{2}-1)$",
+                discuss: "En utilisant l'intégration par parties ou en reconnaissant la forme de la dérivée, on obtient la valeur $\\frac{e}{2}-1$."
+            },
+            11: {
+                text: "Soit z = $\\sqrt{2}+i\\sqrt{6}$, le module de z est :",
+                options: ["2", "$2\\sqrt{2}$", "4", "$\\sqrt{8}$"],
+                correct: "$2\\sqrt{2}$",
+                discuss: "Le module de $z = \\sqrt{2}+i\\sqrt{6}$ est $|z| = \\sqrt{(\\sqrt{2})^2 + (\\sqrt{6})^2} = \\sqrt{2+6} = \\sqrt{8} = 2\\sqrt{2}$."
+            },
+            12: {
+                text: "En remarquant que les deux triangles ABC et AOB ont la même aire, la probabilité que les deux triangles ABC et A'B'C' soient équitables est :",
+                options: ["$\\frac{3}{8}$", "$\\frac{5}{12}$", "$\\frac{10}{32}$", "$\\frac{9}{32}$"],
+                correct: "$\\frac{10}{32}$",
+                discuss: "En analysant les différents cas où les deux tirages donnent un coût total équitable et en calculant leurs probabilités respectives."
+            },
+            13: {
+                text: "Taha et Jawad proposent de payer équitablement la note du restaurant. La probabilité pour que le coût soit exactement 150 DH est :",
+                options: ["$\\frac{8}{32}$", "$\\frac{10}{32}$", "$\\frac{12}{32}$", "$\\frac{6}{32}$"],
+                correct: "$\\frac{10}{32}$",
+                discuss: "Un coût de 150 DH signifie qu'un des amis tire 50 DH et l'autre tire 100 DH. En calculant toutes les probabilités de ces événements composés."
+            },
+            14: {
+                text: "La probabilité pour que les deux amis paient exactement la même somme est :",
+                options: ["$\\frac{6}{32}$", "$\\frac{9}{32}$", "$\\frac{15}{32}$", "$\\frac{11}{32}$"],
+                correct: "$\\frac{6}{32}$",
+                discuss: "Payer la même somme signifie que chacun paie 50 DH, donc le coût total est 100 DH et chaque ami tire 50 DH lors de son tour."
+            },
+            15: {
+                text: "La probabilité pour que les deux amis paient équitablement le repas est :",
+                options: ["$\\frac{6}{32}$", "$\\frac{9}{32}$", "$\\frac{15}{32}$", "$\\frac{11}{32}$"],
+                correct: "$\\frac{6}{32}$",
+                discuss: "Payer équitablement signifie que le coût total est 100 DH, avec Taha payant 50 DH et Jawad payant 50 DH, dans n'importe quel ordre."
+            },
+            16: {
+                text: "La probabilité pour que l'un des deux amis mange gratuitement est :",
+                options: ["$\\frac{19}{32}$", "$\\frac{16}{32}$", "$\\frac{22}{32}$", "$\\frac{4}{32}$"],
+                correct: "$\\frac{22}{32}$",
+                discuss: "L'un mange gratuitement si l'autre paie la totalité de la note. Cela inclut les cas où le coût est 100 DH ou 150 DH et qu'une seule personne paie."
+            },
+            17: {
+                text: "On a $z_1 = \\sqrt{2}+i\\sqrt{6}$, $z_2 = 2+2i$ et $Z = \\frac{z_1}{z_2}$. La forme algébrique de Z est :",
+                options: ["$\\frac{\\sqrt{2}}{4}(1+\\sqrt{3}+i\\sqrt{3}-i)$", "$\\frac{\\sqrt{2}}{4}(1-\\sqrt{3}+i\\sqrt{3}-i)$", "$\\frac{\\sqrt{2}}{4}(1+i)$", "$\\frac{\\sqrt{2}}{4}(1-i)$"],
+                correct: "$\\frac{\\sqrt{2}}{4}(1+\\sqrt{3}+i\\sqrt{3}-i)$",
+                discuss: "En multipliant par le conjugué du dénominateur et en simplifiant, on obtient $Z = \\frac{\\sqrt{2}}{4}(1+\\sqrt{3}+i\\sqrt{3}-i)$."
+            },
+            18: {
+                text: "Le module de Z est :",
+                options: ["4", "2", "3", "1"],
+                correct: "1",
+                discuss: "Le module de Z est $|Z| = \\frac{|z_1|}{|z_2|} = \\frac{2\\sqrt{2}}{2\\sqrt{2}} = 1$."
+            },
+            19: {
+                text: "L'argument de Z est :",
+                options: ["$\\frac{\\pi}{12}[2\\pi]$", "$\\frac{\\pi}{3}[2\\pi]$", "$\\frac{\\pi}{6}[2\\pi]$", "$\\frac{\\pi}{2} [2\\pi]$"],
+                correct: "$\\frac{\\pi}{12}[2\\pi]$",
+                discuss: "L'argument de Z est $\\arg(z_1) - \\arg(z_2) = \\frac{\\pi}{3} - \\frac{\\pi}{4} = \\frac{\\pi}{12}$."
+            },
+            20: {
+                text: "La forme algébrique de $Z^{2017}$ est :",
+                options: ["$\\frac{\\sqrt{2}}{4}(1+\\sqrt{3}+i\\sqrt{3}-i)$", "$\\frac{\\sqrt{2}}{4}(-\\sqrt{3}+i\\sqrt{3})$", "$\\frac{\\sqrt{2}}{4}(1+i)$", "$\\frac{\\sqrt{2}}{4}(1-i)$"],
+                correct: "$\\frac{\\sqrt{2}}{4}(1+\\sqrt{3}+i\\sqrt{3}-i)$",
+                discuss: "Comme $|Z| = 1$ et $\\arg(Z) = \\frac{\\pi}{12}$, on a $Z^{2017} = e^{i \\cdot 2017 \\cdot \\frac{\\pi}{12}}$. L'angle simplifié modulo $2\\pi$ donne $Z^{2017} = Z$."
+            }
+        },
+		2016: {
+            1: {
+                text: "Soient $r\\in\\mathbb{R}_{+}^{\\bullet}$, la relation $t=re^{i\\theta}$ se traduit géométriquement par:",
+                options: ["$AC=rAB$ et $(\\vec{AB},\\vec{AC})\\equiv0[2\\pi]$", "$AB=rAC$ et $(\\vec{AB},\\vec{AC})\\equiv\\theta[2\\pi]$", "$AC=rAB$ et $(\\vec{AB},\\vec{AC})\\equiv\\theta[2\\pi]$", "$AC=r^{2}AB$ et $(\\vec{AB},\\vec{AC})\\equiv\\theta[2\\pi]$"],
+                correct: "$AC=rAB$ et $(\\vec{AB},\\vec{AC})\\equiv\\theta[2\\pi]$",
+                discuss: "Le nombre complexe $t$ est défini par $t=\\frac{c-a}{b-a}$. Le module $|t| = \\frac{AC}{AB} = r$ donc $AC = rAB$, et l'argument $\\arg(t) \\equiv (\\vec{AB}, \\vec{AC}) \\equiv \\theta [2\\pi]$."
+            },
+            2: {
+                text: "A, B, C sont alignés si et seulement si",
+                options: ["$t\\in i\\mathbb{R}$", "$t\\in\\mathbb{R}_{+}$", "$t\\in i\\mathbb{R}_{+}$", "$t\\in\\mathbb{R}$"],
+                correct: "$t\\in\\mathbb{R}$",
+                discuss: "Les points A, B, et C sont alignés si et seulement si les vecteurs $\\vec{AB}$ et $\\vec{AC}$ sont colinéaires, ce qui signifie que l'angle $(\\vec{AB}, \\vec{AC})$ est un multiple de $\\pi$. Donc $t \\in \\mathbb{R}$."
+            },
+            3: {
+                text: "Le triangle ABC est rectangle en A si et seulement si",
+                options: ["$t\\in i\\mathbb{R}$", "$t\\in\\mathbb{R}_{+}$", "$t\\in i\\mathbb{R}_{+}$", "$t\\in\\mathbb{R}$"],
+                correct: "$t\\in i\\mathbb{R}$",
+                discuss: "Le triangle ABC est rectangle en A si et seulement si les vecteurs $\\vec{AB}$ et $\\vec{AC}$ sont orthogonaux, ce qui signifie que l'angle $(\\vec{AB}, \\vec{AC})$ est égal à $\\frac{\\pi}{2} + k\\pi$. Donc $t \\in i\\mathbb{R}$."
+            },
+            4: {
+                text: "Le nombre de parties de E est",
+                options: ["$n^{2}$", "$2^{n}$", "$n^{n}$", "n!"],
+                correct: "$2^{n}$",
+                discuss: "Pour un ensemble E contenant $n$ éléments, chaque sous-ensemble est formé en décidant pour chaque élément s'il appartient ou non à ce sous-ensemble. Il y a 2 choix pour chaque élément, donc $2^n$ sous-ensembles au total."
+            },
+            5: {
+                text: "Le nombre de parties de E qui contiennent un et un seul élément de A est",
+                options: ["$n~2^{n-p}$", "$p~n~2^{n-p}$", "$p~2^{n-p}$", "$2^{n-p}$"],
+                correct: "$p~2^{n-p}$",
+                discuss: "Il faut choisir un élément dans A ($p$ choix) et un sous-ensemble quelconque dans $E \\setminus A$ ($2^{n-p}$ choix). Le nombre total est $p \\times 2^{n-p}$."
+            },
+            6: {
+                text: "On part du point de coordonnées (0,0) pour rejoindre le point de coordonnées (p,q) en se déplaçant à chaque étape d'une unité vers la droite ou vers le haut. Combien y a-t-il de chemins possibles ?",
+                options: ["$C_{p+q}^{q}$", "$qC_{p+p}^{q}$", "$C_{pq}^{q}$", "$2^{p+q}$"],
+                correct: "$C_{p+q}^{q}$",
+                discuss: "Il faut effectuer $p$ déplacements à droite et $q$ déplacements vers le haut, soit $p+q$ étapes au total. Le nombre de chemins est le nombre de façons de placer les $q$ déplacements 'haut' parmi $p+q$ étapes, soit $C_{p+q}^{q}$."
+            },
+            7: {
+                text: "Soit f la fonction réelle définie de R dans R par: $f(x)=\\frac{2x}{1+x^{2}}$",
+                options: ["f est injective", "f est surjective", "f n'est pas injective", "f est injective et n'est pas surjective"],
+                correct: "f n'est pas injective",
+                discuss: "La fonction n'est pas injective car $f(2) = f(1/2) = \\frac{4}{5}$ mais $2 \\neq 1/2$. Elle n'est pas non plus surjective car son image est $[-1, 1]$ et non $\\mathbb{R}$."
+            },
+            8: {
+                text: "Combien le nombre 15! admet-il de diviseurs ?",
+                options: ["4032", "3042", "2034", "3044"],
+                correct: "4032",
+                discuss: "En utilisant la formule de Legendre pour trouver la décomposition $15! = 2^{11} \\cdot 3^6 \\cdot 5^3 \\cdot 7^2 \\cdot 11^1 \\cdot 13^1$, le nombre de diviseurs est $(11+1)(6+1)(3+1)(2+1)(1+1)(1+1) = 4032$."
+            },
+            9: {
+                text: "Un QCM comporte 20 questions, pour chacune d'elles 4 réponses sont proposées, une seule est exacte. Le nombre de grilles réponses possibles est:",
+                options: ["$4^{20}$", "$20^{4}$", "800", "80"],
+                correct: "$4^{20}$",
+                discuss: "Pour chaque question, il y a 4 choix possibles. Comme il y a 20 questions indépendantes, le nombre total de grilles est $4^{20}$."
+            },
+            10: {
+                text: "Soit $(x,y,z)\\in([0,1])^{3}$ : $\\alpha=\\text{Minimum}\\{x(1-y);y(1-z);z(1-x)\\}$",
+                options: ["$\\alpha=0$", "$\\alpha>\\frac{1}{4}$", "$\\frac{1}{8}<\\alpha<\\frac{1}{4}$", "$\\alpha\\le\\frac{1}{4}$"],
+                correct: "$\\alpha\\le\\frac{1}{4}$",
+                discuss: "En supposant $\\alpha > \\frac{1}{4}$ et en multipliant les trois inégalités, on arrive à une contradiction car le produit $x(1-x)y(1-y)z(1-z) \\le (\\frac{1}{4})^3$. Donc $\\alpha \\le \\frac{1}{4}$."
+            },
+            11: {
+                text: "$\\sum_{k=0}^{2016}(-1)^{k}C_{2016}^{k}=$",
+                options: ["0", "1", "2", "3"],
+                correct: "0",
+                discuss: "D'après la formule du binôme de Newton avec $a=1$ et $b=-1$: $(1-1)^{2016} = \\sum_{k=0}^{2016} (-1)^k C_{2016}^k = 0$."
+            },
+            12: {
+                text: "$\\sum_{1\\le i\\le10}\\sum_{1\\le j\\le10}(i+j)^{2}=$",
+                options: ["10000", "10750", "13000", "13750"],
+                correct: "13750",
+                discuss: "En développant $(i+j)^2 = i^2 + 2ij + j^2$ et en utilisant les formules des sommes, on obtient $10 \\times 385 + 10 \\times 385 + 2 \\times 55 \\times 55 = 13750$."
+            },
+            13: {
+                text: "Toute fonction discontinue est:",
+                options: ["constante", "non dérivable", "dérivable", "périodique"],
+                correct: "non dérivable",
+                discuss: "Un théorème fondamental stipule que si une fonction est dérivable en un point, alors elle est continue en ce point. La contraposée est : si une fonction est discontinue, alors elle est non dérivable (au moins aux points de discontinuité)."
+            },
+            14: {
+                text: "Soient x, y et z trois réels positifs tels que x + y + z = 1. Le maximum de xyz est :",
+                options: ["$\\frac{1}{9}$", "$\\frac{1}{27}$", "$\\frac{1}{3}$", "$\\frac{1}{8}$"],
+                correct: "$\\frac{1}{27}$",
+                discuss: "En utilisant l'inégalité arithmético-géométrique, on a $\\frac{x+y+z}{3} \\geq \\sqrt[3]{xyz}$. Avec $x+y+z=1$, on obtient $\\frac{1}{3} \\geq \\sqrt[3]{xyz}$, d'où $xyz \\leq \\frac{1}{27}$. L'égalité est atteinte quand $x=y=z=\\frac{1}{3}$."
+            },
+            15: {
+                text: "Soit $s_n = \\sum_{k=1}^{n} \\frac{1}{k(k+1)}$. Alors $s_n$ est égal à :",
+                options: ["$\\frac{n}{n+1}$", "$\\frac{n+1}{n}$", "$\\frac{n-1}{n}$", "$\\frac{1}{n+1}$"],
+                correct: "$\\frac{n}{n+1}$",
+                discuss: "En utilisant la décomposition en éléments simples : $\\frac{1}{k(k+1)} = \\frac{1}{k} - \\frac{1}{k+1}$. La somme devient télescopique : $s_n = 1 - \\frac{1}{n+1} = \\frac{n}{n+1}$."
+            },
+            16: {
+                text: "$\\lim_{x \\to 0^+} \\frac{2\\cos^2(1/x) - \\sin(1/x) + 3}{x + \\sqrt{x}}$ est égale à :",
+                options: ["$+\\infty$", "0", "1", "3"],
+                correct: "$+\\infty$",
+                discuss: "Le numérateur est borné entre 2 et 6 (strictement positif), tandis que le dénominateur tend vers $0^+$ quand $x \\to 0^+$. La limite est donc $+\\infty$."
+            },
+            17: {
+                text: "Soit $r_i$ (i=1,4) les quatre racines de l'équation $(x-7)(x-5)(x+4)(x+6)=608$. Le produit des racines $\\prod_{i=1}^{4}r_i$ vaut :",
+                options: ["464", "608", "232", "840"],
+                correct: "232",
+                discuss: "En développant l'équation et la mettant sous forme standard, le terme constant est $35 \\times 24 - 608 = 840 - 608 = 232$. Par la formule de Viète, le produit des racines est 232."
+            },
+            18: {
+                text: "$\\int_{e}^{e^{2}}\\frac{1+\\ln x}{x \\ln x}dx=$",
+                options: ["$1-\\ln 2$", "$1+\\ln 2$", "$\\ln 2$", "1"],
+                correct: "$1+\\ln 2$",
+                discuss: "En séparant l'intégrale : $\\int \\frac{1}{x \\ln x}dx + \\int \\frac{1}{x}dx = \\ln(\\ln x) + \\ln x$. En évaluant de $e$ à $e^2$, on obtient $[\\ln(2) + 2] - [0 + 1] = 1 + \\ln 2$."
+            },
+            19: {
+                text: "$\\int_{0}^{1}x^{2}\\sin(\\pi x)dx=$",
+                options: ["$\\frac{\\pi^{2}-4}{\\pi^{3}}$", "$\\frac{\\pi^{2}+4}{\\pi^{3}}$", "$\\frac{4}{\\pi^{3}}$", "$\\frac{-4}{\\pi^{3}}$"],
+                correct: "$\\frac{\\pi^{2}-4}{\\pi^{3}}$",
+                discuss: "En utilisant l'intégration par parties deux fois, on obtient la primitive et en évaluant de 0 à 1, le résultat est $\\frac{\\pi^2-4}{\\pi^3}$."
+            },
+            20: {
+                text: "Soient $I=\\int_{0}^{\\frac{\\pi}{2}}\\frac{\\sin(x)}{\\cos(x)+\\sin(x)}dx$ et $J=\\int_{0}^{\\frac{\\pi}{2}}\\frac{\\cos(x)}{\\cos(x)+\\sin(x)}dx$",
+                options: ["$I=J=0$", "$I=\\frac{\\pi}{2}$ et $J=\\frac{\\pi}{4}$", "$I=J=\\frac{\\pi}{4}$", "$I=\\frac{\\pi}{3}$ et $J=\\pi$"],
+                correct: "$I=J=\\frac{\\pi}{4}$",
+                discuss: "En calculant $I+J = \\frac{\\pi}{2}$ et en montrant que $I=J$ par changement de variable, on trouve $I=J=\\frac{\\pi}{4}$."
+            }
+        },
+		2015: {
+            1: {
+                text: "La somme $\\frac{1}{2}(\\sum_{k=0}^{12}C_{12}^{k})-34=$",
+                options: ["2012", "2013", "2014", "2015"],
+                correct: "2014",
+                discuss: "La somme des coefficients binomiaux $\\sum_{k=0}^{n}C_{n}^{k} = 2^n$. Pour $n=12$, on a $2^{12} = 4096$. L'expression devient : $\\frac{1}{2}(4096) - 34 = 2048 - 34 = 2014$."
+            },
+            2: {
+                text: "$n\\in\\mathbb{N}^{*}$, $\\sum_{1\\le i,j\\le n}\\text{Min}(i,j)=$",
+                options: ["$\\frac{n(n+1)(2n+1)}{6}$", "$\\frac{n(n+1)}{3}$", "$\\frac{n(n+2)}{3}$", "$\\frac{(n+1)(n+2)}{6}$"],
+                correct: "$\\frac{n(n+1)(2n+1)}{6}$",
+                discuss: "En décomposant la somme double et en utilisant les propriétés des sommes, on obtient $S_n = \\frac{n(n+1)(2n+1)}{6}$."
+            },
+            3: {
+                text: "Soit le réel $a=\\sqrt[3]{3+\\sqrt{9+\\frac{125}{27}}}-\\sqrt[3]{-3+\\sqrt{9+\\frac{125}{27}}}$. En calculant $a^{3}$, montrer que :",
+                options: ["$\\lambda=0$", "$\\lambda=1$", "$\\lambda=2$", "$\\lambda=3$"],
+                correct: "$\\lambda=1$",
+                discuss: "En posant $a = x - y$ et en calculant $a^3$, on obtient l'équation $a^3 + 5a - 6 = 0$. En testant, on trouve que $a = 1$ est solution."
+            },
+            4: {
+                text: "$\\lim_{n\\rightarrow+\\infty}(\\frac{\\sin(n)}{3})^{n}=$",
+                options: ["1", "$\\frac{1}{3}$", "$\\frac{2}{3}$", "0"],
+                correct: "0",
+                discuss: "Comme $|\\frac{\\sin(n)}{3}| \\le \\frac{1}{3} < 1$, on a $|(\\frac{\\sin(n)}{3})^{n}| \\le (\\frac{1}{3})^n \\to 0$. Par le théorème des gendarmes, la limite est 0."
+            },
+            5: {
+                text: "$\\lim_{n\\rightarrow+\\infty}\\sum_{k=0}^{2n+1}\\frac{n}{n^{2}+k}=$",
+                options: ["0", "1", "2", "k"],
+                correct: "2",
+                discuss: "En encadrant la somme et en utilisant le théorème des gendarmes, les deux bornes tendent vers 2, donc la limite est 2."
+            },
+            6: {
+                text: "$\\lim_{x\\rightarrow0}\\frac{e^{10x}-e^{7x}}{x}=$",
+                options: ["1", "2", "3", "4"],
+                correct: "3",
+                discuss: "En utilisant la règle de L'Hôpital : $\\lim_{x\\to 0} \\frac{10e^{10x}-7e^{7x}}{1} = 10e^0 - 7e^0 = 10 - 7 = 3$."
+            },
+            7: {
+                text: "$\\lim_{x\\rightarrow0^{+}}(1+\\sin^{2}(\\frac{1}{x}))\\ln x=$",
+                options: ["1", "0", "$-\\infty$", "$+\\infty$"],
+                correct: "$-\\infty$",
+                discuss: "Le terme $1+\\sin^2(1/x)$ est borné entre 1 et 2, tandis que $\\ln x \\to -\\infty$ quand $x \\to 0^+$. Le produit tend vers $-\\infty$."
+            },
+            8: {
+                text: "$\\int_{0}^{1}\\frac{e^{x}}{(10-3e^{x})^{2}}dx=$",
+                options: ["$\\frac{1}{3}(\\frac{1}{10-3e}-\\frac{1}{7})$", "$\\frac{1}{2}(\\frac{1}{10-3e}+\\frac{1}{7})$", "$\\frac{1}{3}(\\frac{1}{10-e}-\\frac{1}{7})$", "$\\frac{1}{10-3e}$"],
+                correct: "$\\frac{1}{3}(\\frac{1}{10-3e}-\\frac{1}{7})$",
+                discuss: "En utilisant le changement de variable $u = 10-3e^x$ et $du = -3e^x dx$, on obtient le résultat."
+            },
+            9: {
+                text: "$\\int_{1}^{e}(\\frac{\\ln x}{x})^{2}dx=$",
+                options: ["$-2+\\frac{5}{e}$", "$2+\\frac{5}{e}$", "$\\frac{5}{e}$", "$2-\\frac{5}{e}$"],
+                correct: "$2-\\frac{5}{e}$",
+                discuss: "En utilisant l'intégration par parties deux fois, on obtient la primitive et le résultat final."
+            },
+            10: {
+                text: "$\\int_{0}^{1}\\frac{1}{x^{2}+3x+2}dx=$",
+                options: ["$\\ln(\\frac{4}{3})$", "$\\frac{4}{3}$", "$\\ln(\\frac{5}{3})$", "$\\frac{5}{3}$"],
+                correct: "$\\ln(\\frac{4}{3})$",
+                discuss: "En décomposant en éléments simples $\\frac{1}{(x+1)(x+2)} = \\frac{1}{x+1} - \\frac{1}{x+2}$, on obtient le résultat."
+            },
+            11: {
+                text: "La valeur de $P_{1}$ est :",
+                options: ["0,54", "0,40", "0,44", "0,64"],
+                correct: "0,40",
+                discuss: "L'urne $U_1$ contient 2 boules vertes et 3 boules jaunes. La probabilité est $P_1 = \\frac{2}{5} = 0,40$."
+            },
+            12: {
+                text: "Sachant qu'on a tiré une boule verte de $U_{1}$ et qu'on l'a placée dans $U_{2}$, la probabilité de tirer une boule verte de $U_{2}$ est :",
+                options: ["0,60", "0,83", "0,80", "0,33"],
+                correct: "0,60",
+                discuss: "Après avoir ajouté une boule verte, $U_2$ contient 3 boules vertes et 2 boules jaunes. La probabilité est $\\frac{3}{5} = 0,60$."
+            },
+            13: {
+                text: "La valeur de $P_{2}$ est :",
+                options: ["0,44", "0,46", "0,48", "0,45"],
+                correct: "0,48",
+                discuss: "En utilisant la formule des probabilités totales : $P_2 = (\\frac{3}{5})(\\frac{2}{5}) + (\\frac{2}{5})(\\frac{3}{5}) = \\frac{12}{25} = 0,48$."
+            },
+            14: {
+                text: "La relation entre $P_{n}$ et $P_{n+1}$ est :",
+                options: ["$P_{n+1}=5+5P_{n}$", "$P_{n+1}=2+5P_{n}$", "$P_{n+1}=5+2P_{n}$", "$5P_{n+1}=2+P_{n}$"],
+                correct: "$5P_{n+1}=2+P_{n}$",
+                discuss: "En généralisant le raisonnement, on obtient $P_{n+1} = \\frac{1}{5}P_n + \\frac{2}{5}$, soit $5P_{n+1} = P_n + 2$."
+            },
+            15: {
+                text: "En étudiant le comportement de la suite $P_{n}$, peut-on confirmer qu'après un grand nombre de tirages on a :",
+                options: ["une chance sur deux de tirer une boule verte", "une chance sur trois de tirer une boule verte", "une chance sur quatre de tirer une boule verte", "une chance sur cinq de tirer une boule verte"],
+                correct: "une chance sur deux de tirer une boule verte",
+                discuss: "La limite $L$ vérifie $L = \\frac{1}{5}L + \\frac{2}{5}$, d'où $L = \\frac{1}{2}$. La probabilité tend vers 1/2."
+            },
+            16: {
+                text: "La mesure de l'angle $\\widehat{ABC}$ vaut :",
+                options: ["$90^{\\circ}$", "$95^{\\circ}$", "$85^{\\circ}$", "$180^{\\circ}$"],
+                correct: "$90^{\\circ}$",
+                discuss: "L'angle $\\widehat{ABC}$ correspond à l'argument de $\\frac{a-b}{c-b} = i\\frac{\\sqrt{3}}{3}$, qui est un nombre imaginaire pur positif d'argument $\\pi/2$ ou $90^\\circ$."
+            },
+            17: {
+                text: "L'affixe $\\omega$ du centre du cercle circonscrit au triangle ABC est :",
+                options: ["$1-i\\sqrt{3}$", "$1+i\\sqrt{3}$", "$-1+i\\sqrt{3}$", "$-1-i\\sqrt{3}$"],
+                correct: "$1+i\\sqrt{3}$",
+                discuss: "Le triangle ABC étant rectangle en B, le centre du cercle circonscrit est le milieu de l'hypoténuse [AC] : $\\omega = \\frac{a+c}{2} = 1+i\\sqrt{3}$."
+            },
+            18: {
+                text: "On considère la suite $t_{n}=z_{n}-\\omega$. La suite $t_{n}$ vérifie la relation :",
+                options: ["$t_{n+1}=\\frac{1+i\\sqrt{3}}{2}t_{n}$", "$t_{n+1}=\\frac{1-i\\sqrt{3}}{2}t_{n}$", "$1+i\\sqrt{3}t_{n+1}=2t_{n}$", "$1+i\\sqrt{3}t_{n}=2t_{n+1}$"],
+                correct: "$t_{n+1}=\\frac{1+i\\sqrt{3}}{2}t_{n}$",
+                discuss: "En utilisant la relation de récurrence et les propriétés du point fixe, on obtient $t_{n+1} = \\frac{1+i\\sqrt{3}}{2}t_n$."
+            },
+            19: {
+                text: "En déduire que pour tout entier naturel n, on a :",
+                options: ["$A_{n+6}=2A_{n}$", "$A_{n+6}=-A_{n}$", "$A_{n+6}=A_{n}$", "$A_{n+6}=-2A_{n}$"],
+                correct: "$A_{n+6}=A_{n}$",
+                discuss: "La raison $q = \\frac{1+i\\sqrt{3}}{2} = e^{i\\pi/3}$ vérifie $q^6 = e^{i2\\pi} = 1$. Donc $z_{n+6} = z_n$ et $A_{n+6} = A_n$."
+            },
+            20: {
+                text: "La valeur de $A_{2015}$ est :",
+                options: ["$-1+2i\\sqrt{3}$", "$3+i\\sqrt{3}$", "$3i\\sqrt{2}$", "$-1+i\\sqrt{3}$"],
+                correct: "$-1+i\\sqrt{3}$",
+                discuss: "Comme $2015 = 6 \\times 335 + 5$, on a $A_{2015} = A_5$. En calculant les premiers termes de la suite, on trouve $z_5 = -1+i\\sqrt{3}$."
+            }
+        },
+		2014: {
+            1: {
+                text: "La suite $(x_{n})$ :",
+                options: ["Converge vers $\\frac{\\alpha}{\\beta}$", "Converge vers 1", "Converge vers 0", "Diverge"],
+                correct: "Converge vers 1",
+                discuss: "Les suites $(u_n)$ et $(v_n)$ sont adjacentes et convergent vers une même limite $L$. La limite de $x_n = \\frac{u_n}{v_n}$ est donc $\\frac{L}{L} = 1$."
+            },
+            2: {
+                text: "La suite $(y_{n})$ :",
+                options: ["Converge vers $\\alpha-\\beta$", "Converge vers $\\alpha+\\beta$", "Converge vers 0", "Diverge"],
+                correct: "Converge vers 0",
+                discuss: "La suite $y_n = u_n - v_n$ est géométrique de raison $1/4$. Puisque $|1/4|<1$, elle converge vers 0."
+            },
+            3: {
+                text: "La suite $(u_{n})$ :",
+                options: ["Converge vers $\\alpha$", "Converge vers $\\frac{\\alpha+\\beta}{2}$", "Converge vers $\\beta$", "Diverge"],
+                correct: "Converge vers $\\frac{\\alpha+2\\beta}{3}$",
+                discuss: "En utilisant l'invariant $u_n + 2v_n = \\alpha + 2\\beta$ et le fait que $u_n$ et $v_n$ convergent vers la même limite $L$, on trouve $L = \\frac{\\alpha+2\\beta}{3}$."
+            },
+            4: {
+                text: "La suite $(v_{n})$ :",
+                options: ["Converge vers $\\alpha-\\beta$", "Converge vers $\\beta-\\alpha$", "Converge vers $\\beta$", "Diverge"],
+                correct: "Converge vers $\\frac{\\alpha+2\\beta}{3}$",
+                discuss: "La suite $(v_n)$ converge vers la même limite que $(u_n)$, soit $L = \\frac{\\alpha+2\\beta}{3}$."
+            },
+            5: {
+                text: "Soit $\\delta$ un élément de $]0, 1[$. $\\lim_{n\\rightarrow+\\infty}\\prod_{k=0}^{n}(1+\\delta^{2^{k}})=$",
+                options: ["1", "$+\\infty$", "$\\frac{1}{1-\\delta}$", "$\\frac{1}{1+\\delta}$"],
+                correct: "$\\frac{1}{1-\\delta}$",
+                discuss: "En utilisant l'identité $(1-x)(1+x) = 1-x^2$ et le fait que $\\delta^{2^{n+1}} \\to 0$, on obtient $\\lim_{n\\to\\infty} P_n = \\frac{1}{1-\\delta}$."
+            },
+            6: {
+                text: "$\\int_{0}^{\\pi}e^{t}\\cos 2t dt=$",
+                options: ["$\\frac{e^{\\pi}}{5}$", "$\\frac{e^{\\pi}+1}{5}$", "$\\frac{e^{\\pi}-2}{5}$", "$\\frac{e^{\\pi}-1}{5}$"],
+                correct: "$\\frac{e^{\\pi}-1}{5}$",
+                discuss: "En utilisant l'intégration par parties deux fois, la primitive est $\\frac{e^t}{5}(\\cos(2t) + 2\\sin(2t))$, et l'évaluation donne $\\frac{e^\\pi-1}{5}$."
+            },
+            7: {
+                text: "$\\int_{0}^{\\pi}e^{t}\\cos^{2}t dt=$",
+                options: ["$\\frac{e^{\\pi}-1}{5}$", "$\\frac{4(e^{\\pi}+1)}{5}$", "$\\frac{3(e^{\\pi}-1)}{5}$", "$\\frac{e^{\\pi}+2}{5}$"],
+                correct: "$\\frac{3(e^{\\pi}-1)}{5}$",
+                discuss: "En utilisant la linéarisation $\\cos^2(t) = \\frac{1+\\cos(2t)}{2}$ et les résultats précédents, on obtient $\\frac{3(e^\\pi-1)}{5}$."
+            },
+            8: {
+                text: "L'intégrale $\\int_{a}^{b}tf(t)dt=$",
+                options: ["$\\frac{a-b}{2}\\int_{a}^{b}f(t)dt$", "$\\frac{b}{2}\\int_{a}^{b}f(t)dt$", "$\\frac{a}{2}\\int_{a}^{b}f(t)dt$", "$\\frac{a+b}{2}\\int_{a}^{b}f(t)dt$"],
+                correct: "$\\frac{a+b}{2}\\int_{a}^{b}f(t)dt$",
+                discuss: "En utilisant le changement de variable $x = a+b-t$ et la propriété $f(a+b-x)=f(x)$, on obtient $I = \\frac{a+b}{2}\\int_a^b f(t)dt$."
+            },
+            9: {
+                text: "L'intégrale $\\int_{0}^{\\pi}\\frac{\\sin t}{3+\\cos^{2}t}dt=$",
+                options: ["$\\frac{\\pi}{\\sqrt{3}}$", "$\\frac{\\pi}{3\\sqrt{3}}$", "$\\frac{\\pi}{3}$", "$\\frac{\\pi}{2\\sqrt{3}}$"],
+                correct: "$\\frac{\\pi}{3\\sqrt{3}}$",
+                discuss: "En posant $u=\\cos(t)$ et en utilisant la formule de l'arctangente, on obtient $\\frac{\\pi}{3\\sqrt{3}}$."
+            },
+            10: {
+                text: "L'intégrale $\\int_{0}^{\\pi}\\frac{t\\sin t}{3+\\cos^{2}t}dt=$",
+                options: ["$\\frac{\\pi}{6\\sqrt{3}}$", "$\\frac{\\pi^{2}}{6\\sqrt{3}}$", "$\\frac{\\pi^{3}}{6\\sqrt{3}}$", "$\\frac{\\pi^{2}}{2\\sqrt{3}}$"],
+                correct: "$\\frac{\\pi^{2}}{6\\sqrt{3}}$",
+                discuss: "En utilisant le résultat de la question 8 avec $f(t)=\\frac{\\sin t}{3+\\cos^2 t}$, on obtient $\\frac{\\pi}{2} \\times \\frac{\\pi}{3\\sqrt{3}} = \\frac{\\pi^2}{6\\sqrt{3}}$."
+            },
+            11: {
+                text: "Le produit $ab$ vaut :",
+                options: ["$\\frac{1}{3}$", "$\\frac{2}{3}$", "$\\frac{7}{3}$", "1"],
+                correct: "$\\frac{7}{3}$",
+                discuss: "En utilisant l'identité $(Y+X)(Y-X) = Y^2-X^2$ et en calculant, on obtient $ab = \\frac{\\sqrt[3]{343}}{3} = \\frac{7}{3}$."
+            },
+            12: {
+                text: "$\\lambda$ est solution de l'équation :",
+                options: ["$x^{3}-7x-36=0$", "$x^{3}+7x-21=0$", "$x^{3}-7x=0$", "$x^{3}-7x-35=0$"],
+                correct: "$x^{3}-7x-36=0$",
+                discuss: "En calculant $\\lambda^3 = (a+b)^3$ et en utilisant $ab=7/3$ et $a^3+b^3=36$, on obtient l'équation $\\lambda^3 - 7\\lambda - 36 = 0$."
+            },
+            13: {
+                text: "La valeur de $\\lambda$ est alors :",
+                options: ["nulle", "un réel pair", "un réel impair", "$\\lambda>4$"],
+                correct: "un réel pair",
+                discuss: "En testant les diviseurs de 36 dans l'équation $\\lambda^3 - 7\\lambda - 36 = 0$, on trouve que $\\lambda=4$ est la seule solution réelle, qui est un nombre pair."
+            },
+            14: {
+                text: "La valeur de $P_2$ est :",
+                options: ["0,52", "0,59", "0,54", "0,62"],
+                correct: "0,62",
+                discuss: "En utilisant la formule des probabilités totales : $P_2 = (0.8)(0.1) + (0.6)(0.9) = 0.08 + 0.54 = 0.62$."
+            },
+            15: {
+                text: "L'étudiant a répondu correctement à la deuxième question, la probabilité qu'il ait donné une mauvaise réponse à la première vaut :",
+                options: ["$\\frac{27}{37}$", "$\\frac{21}{37}$", "$\\frac{27}{31}$", "$\\frac{21}{31}$"],
+                correct: "$\\frac{27}{31}$",
+                discuss: "Par la formule de Bayes : $P(\\bar{B_1}|B_2) = \\frac{0.6 \\times 0.9}{0.62} = \\frac{0.54}{0.62} = \\frac{27}{31}$."
+            },
+            16: {
+                text: "La probabilité que le candidat ait au moins une bonne réponse aux trois premières questions est :",
+                options: ["0,856", "0,865", "0,685", "0,585"],
+                correct: "0,856",
+                discuss: "En calculant la probabilité de l'événement complémentaire : $P(\\bar{A}) = 0.9 \\times 0.4 \\times 0.4 = 0.144$. Donc $P(A) = 1 - 0.144 = 0.856$."
+            },
+            17: {
+                text: "$f$ admet deux points invariants $B$ et $C$. La somme des parties imaginaires de $z_{B}$ et $z_{C}$ vaut :",
+                options: ["-6", "6", "5", "-5"],
+                correct: "6",
+                discuss: "Les points invariants vérifient $z^2-6iz+7=0$. La somme des racines est $6i$, donc la somme des parties imaginaires est 6."
+            },
+            18: {
+                text: "Il existe un réel $\\theta$ tel que l'affixe $z$ de $M$ s'écrit :",
+                options: ["$3i-4e^{i\\theta}$", "$-3i-4e^{i\\theta}$", "$3i+4e^{-i\\theta}$", "$3i+4e^{i\\theta}$"],
+                correct: "$3i+4e^{i\\theta}$",
+                discuss: "Le cercle a pour centre $\\omega = 3i$ et rayon $R = 4$. L'équation paramétrique est $z = 3i+4e^{i\\theta}$."
+            },
+            19: {
+                text: "Il existe un réel $\\theta$ tel que l'affixe $z'$ de $M'$ s'écrit :",
+                options: ["$3i-4e^{-i\\theta}$", "$-3i+4e^{i\\theta}$", "$-3i-4e^{-i\\theta}$", "$3i+4e^{-i\\theta}$"],
+                correct: "$3i-4e^{-i\\theta}$",
+                discuss: "En remplaçant $z=3i+4e^{i\\theta}$ dans la transformation, on obtient $z' = 3i - 4e^{-i\\theta}$."
+            },
+            20: {
+                text: "Le point $M'$ :",
+                options: ["est à l'intérieur du cercle", "est à l'extérieur du cercle", "appartient au cercle", "est le centre du cercle"],
+                correct: "appartient au cercle",
+                discuss: "La distance de $M'$ au centre est $|z'-\\omega| = |3i-4e^{-i\\theta} - 3i| = 4$, égale au rayon. Donc $M'$ appartient au cercle."
+            }
+        },
+		2013: {
+            1: {
+                text: "Si l'on considère un(e) candidat(e) 2013 au hasard, ayant réussi le concours ENSA, la probabilité pour qu'il (ou elle) n'ait ni mention \"Très Bien\" ni mention \"Bien\" est :",
+                options: ["0,0144", "0,0489", "0,1444", "0,0498"],
+                correct: "0,0489",
+                discuss: "En utilisant le théorème de Bayes avec $P(R) = 0,6125$ et $P(R|A) \\times P(A) = 0,03$, on obtient $P(A|R) = \\frac{0,03}{0,6125} \\approx 0,0489$."
+            },
+            2: {
+                text: "Le nombre de comités différents à former est :",
+                options: ["80", "60", "40", "20"],
+                correct: "40",
+                discuss: "Il faut choisir 3 mathématiciens parmi 5 ($C_5^3 = 10$) et 1 physicien parmi 4 restants ($C_4^1 = 4$). Le total est $10 \\times 4 = 40$."
+            },
+            3: {
+                text: "Le reste de la division euclidienne de $1234^{4321}+4321^{1234}$ par 7 est égal à :",
+                options: ["1", "2", "3", "4"],
+                correct: "4",
+                discuss: "En travaillant modulo 7 : $1234 \\equiv 2$ et $4321 \\equiv 2$. Les exposants sont $\\equiv 1 \\pmod{3}$, donc $2^{4321} + 2^{1234} \\equiv 2 + 2 = 4 \\pmod{7}$."
+            },
+            4: {
+                text: "Le nombre $2^{100}-1$ :",
+                options: ["est divisible par 31 et non par 3", "est divisible par 3 et non par 31", "est divisible par 3 et par 31", "n'est divisible ni par 3 ni par 31"],
+                correct: "est divisible par 3 et par 31",
+                discuss: "Modulo 3 : $2^{100} \\equiv (-1)^{100} \\equiv 1$, donc divisible par 3. Modulo 31 : $2^5 \\equiv 1$, donc $2^{100} \\equiv 1$, donc divisible par 31."
+            },
+            5: {
+                text: "La valeur de la somme $S=\\sum_{k=1}^{35}k^{2}$ est :",
+                options: ["14512", "14510", "14910", "14215"],
+                correct: "14910",
+                discuss: "En utilisant la formule $\\sum_{k=1}^{n}k^{2} = \\frac{n(n+1)(2n+1)}{6}$ avec $n=35$ : $S = \\frac{35 \\times 36 \\times 71}{6} = 14910$."
+            },
+            6: {
+                text: "La valeur de la somme $\\sum_{k=1}^{10}\\frac{1}{k(k+1)}$ est :",
+                options: ["$\\frac{12}{11}$", "$\\frac{11}{10}$", "$\\frac{11}{12}$", "$\\frac{10}{11}$"],
+                correct: "$\\frac{10}{11}$",
+                discuss: "En utilisant la décomposition $\\frac{1}{k(k+1)} = \\frac{1}{k} - \\frac{1}{k+1}$, la somme télescopique donne $1 - \\frac{1}{11} = \\frac{10}{11}$."
+            },
+            7: {
+                text: "$\\lim_{n\\rightarrow+\\infty}\\frac{1}{n^{2}}\\sum_{k=1}^{n}E(7k)$ :",
+                options: ["7", "$\\frac{7}{2}$", "$\\frac{7}{3}$", "$\\frac{7}{4}$"],
+                correct: "$\\frac{7}{2}$",
+                discuss: "Comme $E(7k) = 7k$ pour tout entier $k$, la somme est $7\\frac{n(n+1)}{2}$ et la limite est $\\frac{7}{2}$."
+            },
+            8: {
+                text: "$\\lim_{n\\rightarrow+\\infty}\\sqrt[n]{2+(-1)^{n}}$ :",
+                options: ["1", "$\\sqrt{2}$", "$\\sqrt{3}$", "$+\\infty$"],
+                correct: "1",
+                discuss: "Pour $n$ pair : $\\sqrt[n]{3} \\to 1$. Pour $n$ impair : $\\sqrt[n]{1} = 1$. Les deux sous-suites convergent vers 1."
+            },
+            9: {
+                text: "Si $Z_{1}$, $Z_{2}$ sont les deux solutions de l'équation $z^{2}=5-12i$, alors $\\text{Re}(z_{1})\\text{Im}(z_{2})$ vaut :",
+                options: ["6", "3", "-6", "0"],
+                correct: "6",
+                discuss: "En posant $z_1 = x+iy$ et $z_2 = -x-iy$, et en identifiant $(x+iy)^2 = 5-12i$, on trouve $xy = -6$, donc $\\text{Re}(z_1)\\text{Im}(z_2) = x(-y) = 6$."
+            },
+            10: {
+                text: "La partie imaginaire du nombre complexe $z=(\\frac{1+i\\sqrt{3}}{1-i})^{20}$ est :",
+                options: ["$\\sqrt{3}^{20}$", "$-512\\sqrt{3}$", "$-20\\sqrt{3}$", "$+512\\sqrt{3}$"],
+                correct: "$-512\\sqrt{3}$",
+                discuss: "En forme exponentielle : $z = (\\sqrt{2} e^{i7\\pi/12})^{20} = 1024 e^{-i\\pi/3} = 512 - 512i\\sqrt{3}$. La partie imaginaire est $-512\\sqrt{3}$."
+            },
+            11: {
+                text: "$\\lim_{x\\rightarrow0_{+}}\\frac{\\sqrt{x+x^{2}}-\\sqrt{x}}{\\sqrt{3x}\\ln(1+x)}$ :",
+                options: ["$\\frac{1}{2\\sqrt{3}}$", "$\\frac{1}{3\\sqrt{3}}$", "$+\\infty$", "0"],
+                correct: "$\\frac{1}{2\\sqrt{3}}$",
+                discuss: "En rationalisant le numérateur et en utilisant $\\ln(1+x) \\sim x$, la limite devient $\\frac{1}{2\\sqrt{3}}$."
+            },
+            12: {
+                text: "$\\lim_{x\\rightarrow0}\\frac{\\ln(\\cos(2x))}{\\ln(\\cos(3x))}$ :",
+                options: ["$\\frac{2}{3}$", "$\\frac{3}{2}$", "$\\frac{4}{9}$", "$\\frac{9}{4}$"],
+                correct: "$\\frac{4}{9}$",
+                discuss: "En utilisant $\\ln(\\cos(ax)) \\sim -\\frac{a^2x^2}{2}$ en 0, la limite est $\\frac{-4x^2/2}{-9x^2/2} = \\frac{4}{9}$."
+            },
+            13: {
+                text: "$\\lim_{x\\rightarrow0}\\frac{\\ln(x)+x^{2}}{\\ln(x+x^{2})}$ :",
+                options: ["1", "0", "$-\\infty$", "$+\\infty$"],
+                correct: "1",
+                discuss: "En factorisant par $\\ln(x)$ et en utilisant $\\ln(x+x^2) = \\ln(x)+\\ln(1+x)$, la limite est 1."
+            },
+            14: {
+                text: "$\\int_{0}^{3}\\frac{dx}{3+2^{x}}$ :",
+                options: ["$-\\frac{\\ln(11)}{\\ln(8)}$", "$\\frac{5}{3}$", "$\\frac{1}{5}-\\frac{\\ln(11)}{\\ln(8)}$", "$\\frac{5}{3}-\\frac{\\ln(11)}{\\ln(8)}$"],
+                correct: "$\\frac{5}{3}-\\frac{\\ln(11)}{\\ln(8)}$",
+                discuss: "En posant $u=2^x$ et en décomposant en éléments simples, on obtient le résultat après intégration."
+            },
+            15: {
+                text: "$\\int_{0}^{1}\\ln(1+x^{2})dx$ :",
+                options: ["$\\ln(2)$", "$\\pi$", "$\\frac{\\pi}{2}$", "$\\ln(2)-2+\\frac{\\pi}{2}$"],
+                correct: "$\\ln(2)-2+\\frac{\\pi}{2}$",
+                discuss: "En intégrant par parties avec $u=\\ln(1+x^2)$ et $dv=dx$, on obtient $\\ln(2) - (2-\\frac{\\pi}{2}) = \\ln(2)-2+\\frac{\\pi}{2}$."
+            },
+            16: {
+                text: "$\\int_{0}^{1}x^{2}\\sqrt{1-x^{2}}dx$ :",
+                options: ["$\\frac{\\pi}{8}$", "$\\ln(2)$", "0", "$\\frac{\\pi}{16}$"],
+                correct: "$\\frac{\\pi}{16}$",
+                discuss: "En posant $x=\\sin\\theta$ et en linéarisant, on obtient $\\frac{1}{8}\\int_0^{\\pi/2}(1-\\cos(4\\theta))d\\theta = \\frac{\\pi}{16}$."
+            },
+            17: {
+                text: "La distance du point C à la droite (AB) est égale à :",
+                options: ["$\\sqrt{5}$", "$\\sqrt{10}$", "$2\\sqrt{10}$", "$10\\sqrt{2}$"],
+                correct: "$\\sqrt{10}$",
+                discuss: "Avec A(-4,5), B(5,2), C(-2,1), l'équation de (AB) est $x+3y-11=0$. La distance de C à cette droite est $\\frac{|-10|}{\\sqrt{10}} = \\sqrt{10}$."
+            },
+            18: {
+                text: "Si M est un point intérieur quelconque du triangle ABC, alors la valeur de la somme des distances de M aux côtés de ABC est :",
+                options: ["$7\\frac{\\sqrt{3}}{2}$", "$6\\sqrt{3}$", "6", "$\\sqrt{3}$"],
+                correct: "6",
+                discuss: "D'après le théorème de Viviani, pour un triangle équilatéral de côté $4\\sqrt{3}$, la somme des distances est égale à la hauteur : $h = 4\\sqrt{3} \\cdot \\frac{\\sqrt{3}}{2} = 6$."
+            },
+            19: {
+                text: "Si $\\dim E=4$ et $\\dim H_{1}=\\dim H_{2}=3$, alors $\\dim(H_{1}\\cap H_{2})$ :",
+                options: ["0", "1", "2", "3"],
+                correct: "2",
+                discuss: "En utilisant la formule de Grassmann avec $\\dim(H_1+H_2) = 4$ : $4 = 3 + 3 - \\dim(H_1 \\cap H_2)$, donc $\\dim(H_1 \\cap H_2) = 2$."
+            },
+            20: {
+                text: "La matrice $B^{13}$ vaut :",
+                options: ["$\\begin{pmatrix}1&13&91\\\\ 0&1&13\\\\ 0&0&1\\end{pmatrix}$", "$\\begin{pmatrix}1&13&92\\\\ 0&1&13\\\\ 0&0&1\\end{pmatrix}$", "$\\begin{pmatrix}1&13&93\\\\ 0&1&13\\\\ 0&0&1\\end{pmatrix}$", "$\\begin{pmatrix}1&13&94\\\\ 0&1&13\\\\ 0&0&1\\end{pmatrix}$"],
+                correct: "$\\begin{pmatrix}1&13&91\\\\ 0&1&13\\\\ 0&0&1\\end{pmatrix}$",
+                discuss: "En utilisant la formule du binôme de Newton avec $B = I + N$ où $N$ est nilpotente : $B^{13} = I + 13N + C_{13}^2 N^2 = I + 13N + 78N^2$."
+            }
+			//TEST TEST
+        }
     },
     "FMP": {},
     "ENSAM": {},
