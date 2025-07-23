@@ -350,7 +350,7 @@ button {
   padding: 15px 25px;
   border: unset;
   border-radius: 15px;
-  color: #3b3b3b;
+  color: var(--dark-blue);
   z-index: 1;
   background: rgb(255, 255, 255);
   position: relative;
