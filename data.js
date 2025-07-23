@@ -1,4 +1,4 @@
-const questions = {
+const data = {
     "ENSA": {
         2025: {
             1: {

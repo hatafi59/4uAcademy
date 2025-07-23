@@ -2,8 +2,18 @@
 document.querySelector('.main-content')?.addEventListener('selectstart', function (e) {
     e.preventDefault();
 });
+//-----------------------------Désactiver le clic droit et les raccourcis clavier
+document.addEventListener('contextmenu', e => e.preventDefault());
+document.onkeydown = function (e) {
+    
+    if (e.key === "F12" || (e.ctrlKey && e.shiftKey && e.key === "I")) {
+        alert("Fonction désactivée.");
+        return false;
+    }
+};
 
-const questions = {
+
+const data = {
     "ENSA": {
         2025: {
             1: {
@@ -603,6 +613,7 @@ const questions = {
                 discuss: "Il s'agit d'une probabilité conditionnelle. Nombre total de garçons = 300 - 180 = 120. Garçons en Environnement = 150 - 108 = 42. Donc $P(\\text{Environnement} | \\text{Garçon}) = \\frac{42}{120} = 0.35$."
             }
         },
+<<<<<<< HEAD
         2021: {
             1: {
                 text: "Une condition nécessaire (pas forcément suffisante) pour réussir le concours de l'ENSA est :",
@@ -733,7 +744,102 @@ const questions = {
 		2014: {},
 		2013: {}
     }
+=======
+        2021: {},
+        2020: {}
+    },
+    "FMP":{},
+    "ENSAM":{},
+    "ENCG":{}
+>>>>>>> 2b10cc5a454535eb7732fc030f8d85d55d4368b2
 };
+
+
+// Initialisation corrigée
+document.addEventListener('DOMContentLoaded', function () {
+    const params = new URLSearchParams(window.location.search);
+    const school = params.get('school'); // => "ENSA" ou autre
+
+    if (!school) {
+        alert("Aucune école sélectionnée !");
+        return;
+    }
+    console.log("École choisie :", school);
+    // si l'ecole n'existe pas dans les données, on affiche un message d'erreur
+    if (!data[school] || Object.keys(data[school]).length === 0) {
+        alert(`Aucune donnée disponible pour l'école ${school}`);
+        // revenir en arriere
+        window.history.back();
+        return;
+    }
+    goToSchool(school,Object.keys(data[school]).length); // Appel de la fonction avec l'école choisie et le nombre de concours
+});
+
+let ecole = "ENSA"; // École cible
+
+
+ function goToSchool(school,numberOfconcours = 1) {
+    ecole = school; // Mettre à jour l'école cible
+    const concoursYears=document.querySelector(".year-links");
+    concoursYears.innerHTML = ''; // Vider le contenu actuel
+    let html= '';
+    for(let i = 0; i < numberOfconcours; i++) {
+        html+=`<li><a href="#" onclick="goToConcour('${2025-i}','${2025-i}-10-01')">${2025-i}</a></li>`
+    }
+    concoursYears.innerHTML = html; // Mettre à jour le contenu avec les années de concours
+
+    const grid = document.querySelector(".progress-grid");
+    grid.innerHTML = ''; // Vider le contenu actuel
+    let gridHtml = '';
+    for (let i = 1; i <= 20; i++) {
+        gridHtml += `<div class="progress-item unanswered" onclick="goToQuestion(${i})">${i}</div>`;
+    }
+    grid.innerHTML = gridHtml; // Mettre à jour le contenu de la grille
+
+    goToConcour("2025", "2025-10-01");
+ }
+
+function goToConcour(year, lastUpdate) {
+    const container = document.querySelector(".main-content");
+    
+    // Vérifier si le container existe
+    if (!container) {
+        console.error("Container .main-content non trouvé");
+        return;
+    }
+    
+    // Vérifier si l'année existe dans les données
+    if (!data[ecole][year]) {
+        console.error(`Année ${year} non trouvée dans les données`);
+        return;
+    }
+    
+    yearOfConcour = year;
+    road = data[ecole][yearOfConcour]; // Mettre à jour la variable road
+    
+    if (!road || road.length === 0) {
+        alert("Le concours n'est pas encore disponible.");
+        return;
+    }
+    container.innerHTML = ''; // Vider le contenu actuel
+    
+    // Mettre à jour les liens d'années (si ils existent)
+    const yearLinks = document.querySelectorAll('.year-links a');
+    yearLinks.forEach(link => {
+        if (link.textContent === year) {
+            link.classList.add('active');
+        } else {
+            link.classList.remove('active');
+        }
+    });
+    
+    generateQuestions(lastUpdate);
+}
+
+
+
+
+
 
 const optionLetters = ["A", "B", "C", "D"];
 
@@ -741,8 +847,7 @@ const optionLetters = ["A", "B", "C", "D"];
 let questionsState = {};
 let correctAnswers = {};
 let yearOfConcour = "2025"; // Année du concours
-let road = questions["ENSA"][yearOfConcour];
-
+let road = data[ecole][yearOfConcour];
 // Initialiser l'état des questions
 function initializeQuestionsState() {
     for (let i = 1; i <= 20; i++) {
@@ -769,13 +874,13 @@ function generateQuestions(lastUpdate) {
     const tit = document.createElement("div");
     tit.className = "header";
     let titre = document.createElement("h1");
-    titre.textContent = `concours ENSA ${yearOfConcour}`;
+    titre.textContent = `concours ${ecole} ${yearOfConcour}`;
     tit.appendChild(titre);
     container.appendChild(tit);
 
     const subtit = document.createElement("p");
     subtit.className = "subtitle";
-    subtit.textContent = 'This section covers the questions for ENSA concours.';
+    subtit.textContent = `This section covers the questions for ${ecole} concours.`;
     container.appendChild(subtit);
 
     const lastup = document.createElement("p");
@@ -1037,55 +1142,14 @@ function resetAllQuestions() {
     });
 }
 
-// CORRECTION : Fonction corrigée avec paramètre year
-function goToConcour(year, lastUpdate) {
-    const container = document.querySelector(".main-content");
-    
-    // Vérifier si le container existe
-    if (!container) {
-        console.error("Container .main-content non trouvé");
-        return;
-    }
-    
-    // Vérifier si l'année existe dans les données
-    if (!questions["ENSA"][year]) {
-        console.error(`Année ${year} non trouvée dans les données`);
-        return;
-    }
-    
-    yearOfConcour = year;
-    road = questions["ENSA"][yearOfConcour]; // Mettre à jour la variable road
-    
-    if (!road || road.length === 0) {
-        alert("Le concours n'est pas encore disponible.");
-        return;
-    }
-    container.innerHTML = ''; // Vider le contenu actuel
-    
-    // Mettre à jour les liens d'années (si ils existent)
-    const yearLinks = document.querySelectorAll('.year-links a');
-    yearLinks.forEach(link => {
-        if (link.textContent === year) {
-            link.classList.add('active');
-        } else {
-            link.classList.remove('active');
-        }
-    });
-    
-    generateQuestions(lastUpdate);
-}
 
-// Initialisation corrigée
-function initializeApp() {
-    // Vérifier si le DOM est prêt
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', function () {
-            goToConcour("2025", "2023-10-01");
-        });
+function goToQuestion(question){
+    const questionCard = document.getElementById(`Q${question}`);
+    if (questionCard) {
+        questionCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
     } else {
-        goToConcour("2025", "2023-10-01");
+        console.error(`Question ${question} non trouvée.`);
     }
-}
+   
 
-// Appeler l'initialisation
-initializeApp();
+}
