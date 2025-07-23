@@ -5,7 +5,7 @@ document.querySelector('.main-content')?.addEventListener('selectstart', functio
 //-----------------------------Désactiver le clic droit et les raccourcis clavier
 document.addEventListener('contextmenu', e => e.preventDefault());
 document.onkeydown = function (e) {
-    
+
     if (e.key === "F12" || (e.ctrlKey && e.shiftKey && e.key === "I")) {
         alert("Fonction désactivée.");
         return false;
@@ -282,7 +282,7 @@ const data = {
                 text: "L'équation à variables réelles $9x^{5}-12x^{4}+6x-5=0$ :",
                 options: [
                     "admet une seule solution entière",
-                    "admet trois solutions entières", 
+                    "admet trois solutions entières",
                     "admet cinq solutions entières",
                     "n'admet pas de solution entière"
                 ],
@@ -613,7 +613,6 @@ const data = {
                 discuss: "Il s'agit d'une probabilité conditionnelle. Nombre total de garçons = 300 - 180 = 120. Garçons en Environnement = 150 - 108 = 42. Donc $P(\\text{Environnement} | \\text{Garçon}) = \\frac{42}{120} = 0.35$."
             }
         },
-<<<<<<< HEAD
         2021: {
             1: {
                 text: "Une condition nécessaire (pas forcément suffisante) pour réussir le concours de l'ENSA est :",
@@ -737,21 +736,17 @@ const data = {
             }
         },
         2019: {},
-		2018: {},
-		2017: {},
-		2016: {},
-		2015: {},
-		2014: {},
-		2013: {}
-    }
-=======
-        2021: {},
-        2020: {}
+        2018: {},
+        2017: {},
+        2016: {},
+        2015: {},
+        2014: {},
+        2013: {}
+
     },
-    "FMP":{},
-    "ENSAM":{},
-    "ENCG":{}
->>>>>>> 2b10cc5a454535eb7732fc030f8d85d55d4368b2
+    "FMP": {},
+    "ENSAM": {},
+    "ENCG": {}
 };
 
 
@@ -772,19 +767,19 @@ document.addEventListener('DOMContentLoaded', function () {
         window.history.back();
         return;
     }
-    goToSchool(school,Object.keys(data[school]).length); // Appel de la fonction avec l'école choisie et le nombre de concours
+    goToSchool(school, Object.keys(data[school]).length); // Appel de la fonction avec l'école choisie et le nombre de concours
 });
 
 let ecole = "ENSA"; // École cible
 
 
- function goToSchool(school,numberOfconcours = 1) {
+function goToSchool(school, numberOfconcours = 1) {
     ecole = school; // Mettre à jour l'école cible
-    const concoursYears=document.querySelector(".year-links");
+    const concoursYears = document.querySelector(".year-links");
     concoursYears.innerHTML = ''; // Vider le contenu actuel
-    let html= '';
-    for(let i = 0; i < numberOfconcours; i++) {
-        html+=`<li><a href="#" onclick="goToConcour('${2025-i}','${2025-i}-10-01')">${2025-i}</a></li>`
+    let html = '';
+    for (let i = 0; i < numberOfconcours; i++) {
+        html += `<li><a href="#" onclick="goToConcour('${2025 - i}','${2025 - i}-10-01')">${2025 - i}</a></li>`
     }
     concoursYears.innerHTML = html; // Mettre à jour le contenu avec les années de concours
 
@@ -797,32 +792,32 @@ let ecole = "ENSA"; // École cible
     grid.innerHTML = gridHtml; // Mettre à jour le contenu de la grille
 
     goToConcour("2025", "2025-10-01");
- }
+}
 
 function goToConcour(year, lastUpdate) {
     const container = document.querySelector(".main-content");
-    
+
     // Vérifier si le container existe
     if (!container) {
         console.error("Container .main-content non trouvé");
         return;
     }
-    
+
     // Vérifier si l'année existe dans les données
     if (!data[ecole][year]) {
         console.error(`Année ${year} non trouvée dans les données`);
         return;
     }
-    
+
     yearOfConcour = year;
     road = data[ecole][yearOfConcour]; // Mettre à jour la variable road
-    
+
     if (!road || road.length === 0) {
         alert("Le concours n'est pas encore disponible.");
         return;
     }
     container.innerHTML = ''; // Vider le contenu actuel
-    
+
     // Mettre à jour les liens d'années (si ils existent)
     const yearLinks = document.querySelectorAll('.year-links a');
     yearLinks.forEach(link => {
@@ -832,7 +827,7 @@ function goToConcour(year, lastUpdate) {
             link.classList.remove('active');
         }
     });
-    
+
     generateQuestions(lastUpdate);
 }
 
@@ -1143,13 +1138,13 @@ function resetAllQuestions() {
 }
 
 
-function goToQuestion(question){
+function goToQuestion(question) {
     const questionCard = document.getElementById(`Q${question}`);
     if (questionCard) {
         questionCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
     } else {
         console.error(`Question ${question} non trouvée.`);
     }
-   
+
 
 }
