@@ -52,26 +52,47 @@ const observerOptions = {
   
 
   
-//--------------incrment and decrement like button----------------
-const likeBtn = document.getElementById('like-btn');
-const likeCount = document.getElementById('like-count');
-const heartIcon = document.getElementById('heart-icon');
-let liked = false;
 
-if (likeBtn && likeCount && heartIcon) {
-  likeBtn.addEventListener('click', () => {
-    let current = parseInt(likeCount.textContent);
-    if (!liked) {
-      likeCount.textContent = current + 1;
-      heartIcon.classList.replace('fa-regular', 'fa-solid');
-      liked = true;
-    } else {
-      likeCount.textContent = current - 1;
-      heartIcon.classList.replace('fa-solid', 'fa-regular');
-      liked = false;
-    }
-  });
+
+
+//--------------experiencies----------------
+
+const prev = document.querySelector('.prev');
+const next = document.querySelector('.next');
+const container = document.querySelector('.container-experiences');
+const slides = document.querySelectorAll('.slide-persons');
+
+let idx = 0;
+
+function showImg() {
+  if (idx >= slides.length) idx = 0;
+  if (idx < 0) idx = slides.length - 1;
+
+  container.style.transform = `translateX(-${idx * 100}%)`;
 }
+
+next.addEventListener('click', () => {
+  idx++;
+  showImg();
+});
+
+prev.addEventListener('click', () => {
+  idx--;
+  showImg();
+});
+
+// // Auto scroll
+// setInterval(() => {
+//   idx++;
+//   showImg();
+// }, 5000);
+
+showImg(); // initial render
+
+
+
+
+
 
 
 
